@@ -1,10 +1,15 @@
 # client_init.py
 import os
 from openai import OpenAI
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def build_openai_client():
-    api_key = os.getenv("OPENAI_API_KEY", "")
-    base_url = os.getenv("OPENAI_API_BASE_URL") or "https://api.openai.com/v1"
+    api_key = os.getenv("OPENAI_API_KEY")
+    base_url = os.getenv("OPENAI_API_BASE_URL")
+    # print(f"Using OpenAI API base URL: {base_url}")
+    # print(f"Using OpenAI API key: {api_key}")
 
     if not api_key or api_key.startswith("sk-None"):
         raise RuntimeError(

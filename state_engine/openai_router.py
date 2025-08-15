@@ -43,7 +43,7 @@ class OpenAIRouter:
         system_msg = (
             "你是一个严格的状态机路由器；只能从候选状态中选择一个 state_id，"
             "或在不确定时返回 'abstain'。"
-            "DECISION=提问/判断；SOLUTION=执行动作后仅判断是否解决。"
+            "FEATURE=提问/判断；SOLUTION=执行动作后仅判断是否解决。"
         )
 
         user_prompt = f"""

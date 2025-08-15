@@ -1,4 +1,4 @@
-from produce import Graph
+from production import Graph
 from state import State, StateCategory
 
 def build_graph() -> Graph:
@@ -13,7 +13,7 @@ def build_graph() -> Graph:
 
     # 步骤 1 → 纯判断
     s1 = add(State(
-        "S1", StateCategory.DECISION,
+        "S1", StateCategory.FEATURE,
         "【步骤1】查看 RCS 日志，确认是否电量低导致无法开机；是→步骤2，否→步骤3。\n请回复：是/否"
     ))
     s1.add_transition("S2", mark="yes")
@@ -53,7 +53,7 @@ def build_graph() -> Graph:
 
     # 步骤 6 → 纯判断：AP 是否离线
     s6 = add(State(
-        "S6", StateCategory.DECISION,
+        "S6", StateCategory.FEATURE,
         "【步骤6】RCS 上确认 AP 是否离线；离线→步骤7；在线→转人工。\n请回复：离线/在线"
     ))
     s6.add_transition(g.human_escalation_id, mark="online")  # 在线→人工

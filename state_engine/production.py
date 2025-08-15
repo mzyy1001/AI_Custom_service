@@ -1,7 +1,8 @@
 from __future__ import annotations
 from dataclasses import dataclass, field
-from typing import Dict, List, Optional, Any, Protocol
+from typing import Dict, List, Optional, Any, Protocol, Callable
 import json
+from uuid import uuid4
 
 from state import State, StateCategory  # 你的 state.py
 
@@ -45,18 +46,24 @@ class RouterLLM(Protocol):
 
 # ===== 生产引擎（只做安全转移） =====
 class Engine:
-    def __init__(self, graph: Graph, router: RouterLLM, *, threshold: float = 0.6,
-                 allow_jump_outside_candidates: bool = False):
+    def __init__(self, graph: Graph, router, *,
+                 threshold: float = 0.6,
+                 allow_jump_outside_candidates: bool = False,
+                 log_fn: Callable[[str], None] = print,
+                 trace_id: Optional[str] = None,
+                 show_desc: bool = True):
+        self._log = log_fn
+        self._trace = trace_id or uuid4().hex[:8]
         self.graph = graph
         self.router = router
         self.threshold = threshold
         self.allow_jump = allow_jump_outside_candidates  # 默认为 False，更安全
+        self._show_desc = show_desc  # 是否打印状态描述
 
     def _p(self, msg: str):
         self._log(f"[ENGINE {self._trace}] {msg}")
 
     def transition(self, current_state_id: str, user_text: str) -> State:
-        # 取当前状态
         current = self.graph.get_state(current_state_id)
         if current is None:
             raise KeyError(f"unknown state: {current_state_id}")
@@ -72,7 +79,8 @@ class Engine:
         candidate_ids = [t.to_state_id for t in current.transitions]
         candidates: List[State] = [self.graph.get_state(sid) for sid in candidate_ids if self.graph.get_state(sid)]
         cand_str = ", ".join(
-            f"{s.state_id}:{s.category.name}" + (f"({len((s.description or '').split())}wds)" if self._show_desc else "")
+            f"{s.state_id}:{s.category.name}"
+            + (f"({len((s.description or '').split())}wds)" if self._show_desc else "")
             for s in candidates
         ) or "<none>"
         self._p(f"candidates=[{cand_str}]")
@@ -97,26 +105,39 @@ class Engine:
         except Exception:
             conf = 0.0
 
-        # 低置信或无目标
-        if not target_id or conf < self.threshold:
-            self._p(f"-> ESCALATE due to abstain_or_low_confidence (target_id={target_id!r}, conf={conf:.3f}, th={self.threshold:.3f})")
-            return self._escalate(current, reason="abstain_or_low_confidence")
+        # === 关键改动：在 FEATURE 上无法判断 -> 原地等待更多对话 ===
+        abstain = (not target_id) or (str(target_id).lower() == "abstain")
+        if abstain or conf < self.threshold:
+            if current.category == StateCategory.FEATURE:
+                self.need_more = True
+                self._p(f"-> ASK_MORE (stay at {current.state_id}) "
+                        f"(target_id={target_id!r}, conf={conf:.3f}, th={self.threshold:.3f})")
+                self._p(f"-> FEATURE  {current.description} cannot decide, waiting for more input")
+                return current  # 原地不动，等待你下一轮把更多对话压入
+            else:
+                self.need_more = False
+                self._p(f"-> ESCALATE due to abstain_or_low_confidence "
+                        f"(target_id={target_id!r}, conf={conf:.3f}, th={self.threshold:.3f})")
+                return self._escalate(current, reason="abstain_or_low_confidence")
 
         # 非候选跳转但禁跳
         if not self.allow_jump and target_id not in candidate_ids:
+            self.need_more = False
             self._p(f"-> ESCALATE due to target_not_in_candidates (target_id={target_id!r})")
             return self._escalate(current, reason="target_not_in_candidates")
 
         # 取目标
         target = self.graph.get_state(target_id)
         if target is None:
+            self.need_more = False
             self._p(f"-> ESCALATE due to target_missing (target_id={target_id!r})")
             return self._escalate(current, reason="target_missing")
 
         # 成功跳转
+        self.need_more = False
         self._p(f"-> NEXT {target.state_id} ({target.category.name})")
         return target
-
+    
     def _escalate(self, current: State, reason: str) -> State:
         self._p(f"ESCALATE from {current.state_id} reason={reason}")
         human = self.graph.get_or_create_human()

@@ -5,16 +5,18 @@
 #   - from openai_router import OpenAIRouter          # 你的 LLM 路由器
 #   - from state import StateCategory
 
-from state_engine.production import Graph, Engine
+from production import Graph, Engine
 from build_graph_robot_flow import build_graph
 from openai_router import OpenAIRouter
 from state import StateCategory
-
+from history_router import HistoryAwareRouter
+from io import StringIO
 SCENARIOS = [
     {
         "name": "A_低电_充电成功_END",
         "dialogue": [
             "RCS里有低电告警，估计电量不够。",
+            "RCS 确认电量不足",
             "我充了半个小时，现在一按电源就能起来了。"
         ],
         "expect_terminal": "END"
@@ -146,23 +148,45 @@ SCENARIOS = [
         "expect_terminal": "ESCALATE"
     },
 ]
+SCENARIO_IDX = None
 
 def run_all():
-    graph = build_graph()
-    router = OpenAIRouter()  # 读取你环境变量中的 OPENAI_API_KEY/BASE_URL
-    ok, fail = 0, 0
+    ok = fail = 0
+    total = len(SCENARIOS)
+    if isinstance(SCENARIO_IDX, int):
+        idx = SCENARIO_IDX if SCENARIO_IDX >= 0 else total + SCENARIO_IDX
+        if not (0 <= idx < total):
+            print(f"[WARN] SCENARIO_IDX 超界：{SCENARIO_IDX} (共有 {total} 个)。不执行。")
+            return
+        to_run = [idx]
+    else:
+        to_run = list(range(total))
 
-    for sc in SCENARIOS:
-        engine = Engine(graph, router, threshold=0.6, allow_jump_outside_candidates=False)
+    for i in to_run:
+        sc = SCENARIOS[i]
+
+        graph = build_graph()
+
+        # 路由：历史上下文包装 → 注入完整对话历史
+        base_router = OpenAIRouter()
+        router = HistoryAwareRouter(base_router)
+
+        # 日志缓冲：运行中不打印，结束后统一输出
+        buf = StringIO()
+        engine = Engine(graph, router,
+                               threshold=0.6,
+                               allow_jump_outside_candidates=False,
+                               log_fn=lambda s: print(s, file=buf),
+                               show_desc=False)
+
         cur = "S1"
         path = [cur]
         terminal = None
 
-        print(f"\n=== RUN {sc['name']} ===")
+        # 一边推进 FSM，一边把每条用户话术注入到 router 历史
         for ut in sc["dialogue"]:
-            st = graph.get_state(cur)
-            nxt = engine.transition(cur, ut)
-            print(f"[{st.state_id}:{st.category.name}]  <<{ut}>>  ->  [{nxt.state_id}:{nxt.category.name}]")
+            router.push(ut)
+            nxt = engine.transition(cur, ut)   # 此处传的 ut 会被 router 注入“历史+当前”
             cur = nxt.state_id
             path.append(cur)
             if nxt.category in (StateCategory.END, StateCategory.ESCALATE):
@@ -173,12 +197,16 @@ def run_all():
             terminal = graph.get_state(cur).category.name
 
         result = "OK" if terminal == sc["expect_terminal"] else f"FAIL(expected={sc['expect_terminal']})"
-        if result == "OK":
-            ok += 1
-        else:
-            fail += 1
+        ok += (result == "OK")
+        fail += (result != "OK")
+
+        # —— 场景结束后一次性打印 —— #
+        print(f"\n=== RUN {sc['name']} ===")
+        print("DIALOGUE:", " | ".join(sc["dialogue"]))
         print("PATH:", " -> ".join(path))
-        print("RESULT:", result)
+        print("TERMINAL:", terminal, "| RESULT:", result)
+        print("--- ENGINE TRACE (full) ---")
+        print(buf.getvalue())
 
     print(f"\n=== SUMMARY ===  OK={ok}  FAIL={fail}  TOTAL={len(SCENARIOS)}")
 

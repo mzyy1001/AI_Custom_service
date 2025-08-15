@@ -7,7 +7,7 @@ from typing import Callable, Dict, List, Optional, Any
 # 1) 状态类别：把你关心的“解决方法/决策层”等纳入类型集合
 class StateCategory(Enum):
     # “决策层”：只负责路由/判断，不直接回答
-    DECISION = auto()
+    FEATURE = auto()
     # “解决方法”：直接生成最终答复/方案（可走 LLM/RAG）
     SOLUTION = auto()
     # 收集槽位/信息
@@ -20,6 +20,8 @@ class StateCategory(Enum):
     ESCALATE = auto()
     # 结束
     END = auto()
+    # 编排形节点
+    HUB = auto()
 
 
 # 2) 转移条件：支持“文字mark”（给 LLM 用）+ 可选的可执行谓词（本地规则）
@@ -58,6 +60,12 @@ class State:
 
     # 多条可选的转移边
     transitions: List[Transition] = field(default_factory=list)
+
+    def has_edge_to(self, to_state_id: str) -> bool:
+        """
+        检查是否有到指定状态的转移边。
+        """
+        return any(t.to_state_id == to_state_id for t in self.transitions)
 
     def add_transition(self, to_state_id: str, mark: str,
                        predicate: Optional[Callable[[Dict[str, Any]], bool]] = None,
