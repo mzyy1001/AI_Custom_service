@@ -1,5 +1,5 @@
 from typing import Callable, Optional, Any
-from ..Node import Node, NodeType  # 按你的目录结构调整路径
+from ..node import Node, NodeType  # 按你的目录结构调整路径
 
 class FailureNode(Node):
     def __init__(

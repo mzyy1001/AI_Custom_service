@@ -1,5 +1,5 @@
 from typing import Callable, Optional, Any
-from ..Node import Node, NodeType
+from ..node import Node, NodeType
 
 class SuccessNode(Node):
     def __init__(

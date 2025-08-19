@@ -1,5 +1,5 @@
 from typing import Callable, Optional, Any
-from ..Node import Node, NodeType  # 按实际路径调整
+from ..node import Node, NodeType  # 按实际路径调整
 
 class SolutionNode(Node):
     def __init__(
@@ -27,7 +27,8 @@ class SolutionNode(Node):
         self.success_node = success_node
         self.parent_problem = parent_problem
         self.visited = False
-        self.interaction_callback = interaction_callback or self.default_interaction
+        if interaction_callback is not None:
+            self.set_interaction_callback(interaction_callback)
 
     def default_interaction(self, prompt: str) -> Any:
         """

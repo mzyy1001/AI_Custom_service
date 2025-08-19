@@ -1,5 +1,5 @@
 from typing import Callable, Optional, Any, List
-from ..Node import Node, NodeType
+from ..node import Node, NodeType
 
 
 class OriginNode(Node):
@@ -21,7 +21,28 @@ class OriginNode(Node):
         )
         self.child_features = child_features or []
         self.visited = False
-        self.interaction_callback = interaction_callback or self.default_interaction
+        if interaction_callback is not None:
+            self.set_interaction_callback(interaction_callback)
+
+    # 只允许添加 FEATURE 子节点；否则报错
+    def add_node(self, node: 'Node') -> None:
+        if not isinstance(node, Node):
+            raise TypeError("OriginNode.add_node: 需要传入 Node 实例")
+        if node.node_type != NodeType.FEATURE:
+            raise ValueError("规则违反：ORIGIN 只能连接到 FEATURE 节点")
+
+        # 去重
+        if any(n.node_id == node.node_id for n in self.child_features):
+            self.output_callback(f"⚠️ 节点 {node.node_id} 已存在于 ORIGIN 的子特征中，已跳过")
+            return
+
+        # 建立对象引用
+        self.child_features.append(node)
+        # 给子特征记录父指针（若该属性存在或允许动态设置）
+        try:
+            setattr(node, "parent_node", self)
+        except Exception:
+            pass
 
     def default_interaction(self, prompt: str) -> Any:
         """默认交互"""
@@ -49,6 +70,6 @@ class OriginNode(Node):
             self.output_callback(f"🔍 进入子特征: {target_feature.node_id}")
             return {"next_node": target_feature}
 
-        # 所有子特征访问完毕 → 直接进入 Failure
+        # 所有子特征访问完毕 → 直接进入 Failure（可在引擎中映射为唯一的 FAILURE 节点）
         self.output_callback("❌ 所有子特征已访问，流程结束 → 跳转到 Failure")
-        return {"next_node": "FAILURE"}  # 这里也可以直接返回 FailureNode 对象
+        return {"next_node": "FAILURE"}

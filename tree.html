@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Feature Tree</title>
+<link rel="preconnect" href="https://unpkg.com">
+<link rel="stylesheet" href="https://unpkg.com/vis-network@9.1.6/styles/vis-network.min.css">
+<script src="https://unpkg.com/vis-network@9.1.6/dist/vis-network.min.js"></script>
+<style>
+  body { font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial; margin: 0; }
+  #toolbar { padding: 10px 14px; border-bottom: 1px solid #e5e5e5; display: flex; gap: 12px; align-items:center; flex-wrap: wrap; }
+  #network { height: 82vh; border-top: 0; }
+  .pill { display:inline-flex; gap:6px; align-items:center; padding:6px 10px; border:1px solid #ddd; border-radius:999px; }
+  .sep { height: 20px; width:1px; background:#e5e5e5; margin:0 4px; }
+  #info { font-size:13px; color:#666; }
+  #details { padding: 8px 14px; font-size: 13px; border-top: 1px solid #eee; height: 16vh; overflow:auto; }
+  code { background:#f6f8fa; padding:2px 4px; border-radius:4px; }
+</style>
+</head>
+<body>
+
+<div id="toolbar">
+  <div class="pill">
+    <input id="query" placeholder="搜索节点 ID 或描述关键字…" style="width:260px; padding:6px 8px; border:1px solid #ccc; border-radius:8px;">
+    <button id="btnSearch">搜索并定位</button>
+    <button id="btnClear">清除高亮</button>
+  </div>
+
+  <div class="sep"></div>
+
+  <div class="pill">
+    <label><input type="checkbox" class="typeToggle" value="Origin" checked> Origin</label>
+    <label><input type="checkbox" class="typeToggle" value="Feature" checked> Feature</label>
+    <label><input type="checkbox" class="typeToggle" value="Problem" checked> Problem</label>
+    <label><input type="checkbox" class="typeToggle" value="Solution" checked> Solution</label>
+    <label><input type="checkbox" class="typeToggle" value="Success" checked> Success</label>
+    <label><input type="checkbox" class="typeToggle" value="Failure" checked> Failure</label>
+  </div>
+
+  <div class="sep"></div>
+
+  <div class="pill">
+    <label><input type="checkbox" id="hier" checked> 层级布局</label>
+    <label><input type="checkbox" id="physics" checked> 物理引擎</label>
+    <button id="btnFit">Fit</button>
+  </div>
+
+  <div id="info"></div>
+</div>
+
+<div id="network"></div>
+<div id="details">👈 点击节点查看详情</div>
+
+<script>
+const RAW_NODES = [{"id": "FAILURE", "label": "失败", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: FAILURE</div><div><b>Type</b>: Failure</div><div style='margin-top:6px;'><b>Description</b>:<br>失败</div></div>", "shape": "hexagon", "color": "#d62728", "group": "Failure"}, {"id": "SUCCESS", "label": "完成", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: SUCCESS</div><div><b>Type</b>: Success</div><div style='margin-top:6px;'><b>Description</b>:<br>完成</div></div>", "shape": "hexagon", "color": "#17becf", "group": "Success"}, {"id": "ORIGIN", "label": "训练树入口", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: ORIGIN</div><div><b>Type</b>: Origin</div><div style='margin-top:6px;'><b>Description</b>:<br>训练树入口</div></div>", "shape": "star", "color": "#7b68ee", "group": "Origin"}, {"id": "F_e54537e4", "label": "机器人开不了机", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: F_e54537e4</div><div><b>Type</b>: Feature</div><div style='margin-top:6px;'><b>Description</b>:<br>机器人开不了机</div></div>", "shape": "box", "color": "#1f77b4", "group": "Feature"}, {"id": "F_a8e14f58", "label": "rcs显示电量低", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: F_a8e14f58</div><div><b>Type</b>: Feature</div><div style='margin-top:6px;'><b>Description</b>:<br>rcs显示电量低</div></div>", "shape": "box", "color": "#1f77b4", "group": "Feature"}, {"id": "P_fe489f0e", "label": "设备电量不足。", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: P_fe489f0e</div><div><b>Type</b>: Problem</div><div style='margin-top:6px;'><b>Description</b>:<br>设备电量不足。</div></div>", "shape": "ellipse", "color": "#ff7f0e", "group": "Problem"}, {"id": "S_6de9704c", "label": "进行手动充电20分钟", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: S_6de9704c</div><div><b>Type</b>: Solution</div><div style='margin-top:6px;'><b>Description</b>:<br>进行手动充电20分钟</div></div>", "shape": "diamond", "color": "#2ca02c", "group": "Solution"}, {"id": "P_3fde200f", "label": "设备无法正常启动或运行。", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: P_3fde200f</div><div><b>Type</b>: Problem</div><div style='margin-top:6px;'><b>Description</b>:<br>设备无法正常启动或运行。</div></div>", "shape": "ellipse", "color": "#ff7f0e", "group": "Problem"}, {"id": "S_26ee44e5", "label": "检查电池连接线是否松动，尝试重新\n插拔电池连接线", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: S_26ee44e5</div><div><b>Type</b>: Solution</div><div style='margin-top:6px;'><b>Description</b>:<br>检查电池连接线是否松动，尝试重新插拔电池连接线</div></div>", "shape": "diamond", "color": "#2ca02c", "group": "Solution"}, {"id": "S_8121710f", "label": "检查电池模块是否损坏，尝试更换电\n池模块", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: S_8121710f</div><div><b>Type</b>: Solution</div><div style='margin-top:6px;'><b>Description</b>:<br>检查电池模块是否损坏，尝试更换电池模块</div></div>", "shape": "diamond", "color": "#2ca02c", "group": "Solution"}, {"id": "S_46bb6c6d", "label": "检查电源板和BMSP板是否损坏，\n尝试更换电源板和BMSP板", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: S_46bb6c6d</div><div><b>Type</b>: Solution</div><div style='margin-top:6px;'><b>Description</b>:<br>检查电源板和BMSP板是否损坏，尝试更换电源板和BMSP板</div></div>", "shape": "diamond", "color": "#2ca02c", "group": "Solution"}, {"id": "F_10067773", "label": "RCS上确认AP离线", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: F_10067773</div><div><b>Type</b>: Feature</div><div style='margin-top:6px;'><b>Description</b>:<br>RCS上确认AP离线</div></div>", "shape": "box", "color": "#1f77b4", "group": "Feature"}, {"id": "P_697cca6d", "label": "AP信号不稳定或覆盖范围不足。", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: P_697cca6d</div><div><b>Type</b>: Problem</div><div style='margin-top:6px;'><b>Description</b>:<br>AP信号不稳定或覆盖范围不足。</div></div>", "shape": "ellipse", "color": "#ff7f0e", "group": "Problem"}, {"id": "S_9a852b2b", "label": "查AP的两根天线柱子是否拧紧，尝\n试重新拧紧，并且避免天线底座跟金\n属有接触。", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: S_9a852b2b</div><div><b>Type</b>: Solution</div><div style='margin-top:6px;'><b>Description</b>:<br>查AP的两根天线柱子是否拧紧，尝试重新拧紧，并且避免天线底座跟金属有接触。</div></div>", "shape": "diamond", "color": "#2ca02c", "group": "Solution"}, {"id": "S_c71041e9", "label": "检查AP的网线和电源是否正常，尝\n试重新插拔网线和电源线。", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: S_c71041e9</div><div><b>Type</b>: Solution</div><div style='margin-top:6px;'><b>Description</b>:<br>检查AP的网线和电源是否正常，尝试重新插拔网线和电源线。</div></div>", "shape": "diamond", "color": "#2ca02c", "group": "Solution"}, {"id": "S_ebcf3403", "label": "更换AP盒子", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: S_ebcf3403</div><div><b>Type</b>: Solution</div><div style='margin-top:6px;'><b>Description</b>:<br>更换AP盒子</div></div>", "shape": "diamond", "color": "#2ca02c", "group": "Solution"}, {"id": "P_d0d55eb2", "label": "无线网络信号干扰导致连接不稳定。", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: P_d0d55eb2</div><div><b>Type</b>: Problem</div><div style='margin-top:6px;'><b>Description</b>:<br>无线网络信号干扰导致连接不稳定。</div></div>", "shape": "ellipse", "color": "#ff7f0e", "group": "Problem"}, {"id": "S_f57b72bc", "label": "尝试更换AP信道", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: S_f57b72bc</div><div><b>Type</b>: Solution</div><div style='margin-top:6px;'><b>Description</b>:<br>尝试更换AP信道</div></div>", "shape": "diamond", "color": "#2ca02c", "group": "Solution"}, {"id": "F_2a4432f8", "label": "机器人无法移动", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: F_2a4432f8</div><div><b>Type</b>: Feature</div><div style='margin-top:6px;'><b>Description</b>:<br>机器人无法移动</div></div>", "shape": "box", "color": "#1f77b4", "group": "Feature"}, {"id": "F_b716e9fb", "label": "RCS 有报错代码", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: F_b716e9fb</div><div><b>Type</b>: Feature</div><div style='margin-top:6px;'><b>Description</b>:<br>RCS 有报错代码</div></div>", "shape": "box", "color": "#1f77b4", "group": "Feature"}, {"id": "P_760c7617", "label": "系统出现错误代码导致功能无法正常\n运行。", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: P_760c7617</div><div><b>Type</b>: Problem</div><div style='margin-top:6px;'><b>Description</b>:<br>系统出现错误代码导致功能无法正常运行。</div></div>", "shape": "ellipse", "color": "#ff7f0e", "group": "Problem"}, {"id": "S_72760f09", "label": "根据报错代码进行排查（按《机器人\n报错代码排查手册》）", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: S_72760f09</div><div><b>Type</b>: Solution</div><div style='margin-top:6px;'><b>Description</b>:<br>根据报错代码进行排查（按《机器人报错代码排查手册》）</div></div>", "shape": "diamond", "color": "#2ca02c", "group": "Solution"}, {"id": "F_5363378b", "label": "周围存在障碍物", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: F_5363378b</div><div><b>Type</b>: Feature</div><div style='margin-top:6px;'><b>Description</b>:<br>周围存在障碍物</div></div>", "shape": "box", "color": "#1f77b4", "group": "Feature"}, {"id": "P_46fd604b", "label": "客户的通道被障碍物阻塞。", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: P_46fd604b</div><div><b>Type</b>: Problem</div><div style='margin-top:6px;'><b>Description</b>:<br>客户的通道被障碍物阻塞。</div></div>", "shape": "ellipse", "color": "#ff7f0e", "group": "Problem"}, {"id": "S_c5aea90e", "label": "引导客户清理障碍物", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: S_c5aea90e</div><div><b>Type</b>: Solution</div><div style='margin-top:6px;'><b>Description</b>:<br>引导客户清理障碍物</div></div>", "shape": "diamond", "color": "#2ca02c", "group": "Solution"}, {"id": "F_a1a15e88", "label": "格口或分拣机状态不正常", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: F_a1a15e88</div><div><b>Type</b>: Feature</div><div style='margin-top:6px;'><b>Description</b>:<br>格口或分拣机状态不正常</div></div>", "shape": "box", "color": "#1f77b4", "group": "Feature"}, {"id": "P_92af9c49", "label": "格口或分拣机状态异常。", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: P_92af9c49</div><div><b>Type</b>: Problem</div><div style='margin-top:6px;'><b>Description</b>:<br>格口或分拣机状态异常。</div></div>", "shape": "ellipse", "color": "#ff7f0e", "group": "Problem"}, {"id": "S_e21cb014", "label": "恢复格口或分拣机状态", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: S_e21cb014</div><div><b>Type</b>: Solution</div><div style='margin-top:6px;'><b>Description</b>:<br>恢复格口或分拣机状态</div></div>", "shape": "diamond", "color": "#2ca02c", "group": "Solution"}, {"id": "F_7073dc03", "label": "全场停止但没有急停", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: F_7073dc03</div><div><b>Type</b>: Feature</div><div style='margin-top:6px;'><b>Description</b>:<br>全场停止但没有急停</div></div>", "shape": "box", "color": "#1f77b4", "group": "Feature"}, {"id": "F_d09c9c27", "label": "RCS 小车报错闪烁且颜色为粉色", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: F_d09c9c27</div><div><b>Type</b>: Feature</div><div style='margin-top:6px;'><b>Description</b>:<br>RCS 小车报错闪烁且颜色为粉色</div></div>", "shape": "box", "color": "#1f77b4", "group": "Feature"}, {"id": "P_fa32b9c9", "label": "RFID 和 RCS 之间存在不\n兼容或信息孤岛问题。", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: P_fa32b9c9</div><div><b>Type</b>: Problem</div><div style='margin-top:6px;'><b>Description</b>:<br>RFID 和 RCS 之间存在不兼容或信息孤岛问题。</div></div>", "shape": "ellipse", "color": "#ff7f0e", "group": "Problem"}, {"id": "S_bae26c1b", "label": "将RFID 和 RCS 统一", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: S_bae26c1b</div><div><b>Type</b>: Solution</div><div style='margin-top:6px;'><b>Description</b>:<br>将RFID 和 RCS 统一</div></div>", "shape": "diamond", "color": "#2ca02c", "group": "Solution"}, {"id": "P_702270df", "label": "系统在运行时出现了固定模式导致的\n效率低下。", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: P_702270df</div><div><b>Type</b>: Problem</div><div style='margin-top:6px;'><b>Description</b>:<br>系统在运行时出现了固定模式导致的效率低下。</div></div>", "shape": "ellipse", "color": "#ff7f0e", "group": "Problem"}, {"id": "S_241684ab", "label": "将模式改为随机跑", "title": "<div style='font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial;'><div><b>ID</b>: S_241684ab</div><div><b>Type</b>: Solution</div><div style='margin-top:6px;'><b>Description</b>:<br>将模式改为随机跑</div></div>", "shape": "diamond", "color": "#2ca02c", "group": "Solution"}];
+const RAW_EDGES = [{"from": "ORIGIN", "to": "F_e54537e4", "etype": "origin->feature"}, {"from": "ORIGIN", "to": "F_2a4432f8", "etype": "origin->feature"}, {"from": "F_e54537e4", "to": "P_3fde200f", "label": "hard", "etype": "feature->problem"}, {"from": "F_e54537e4", "to": "P_d0d55eb2", "label": "soft", "etype": "feature->problem"}, {"from": "F_e54537e4", "to": "F_a8e14f58", "etype": "feature->feature"}, {"from": "F_e54537e4", "to": "F_10067773", "etype": "feature->feature"}, {"from": "F_a8e14f58", "to": "P_fe489f0e", "label": "hard", "etype": "feature->problem"}, {"from": "P_fe489f0e", "to": "S_6de9704c", "etype": "problem->solution"}, {"from": "S_6de9704c", "to": "SUCCESS", "etype": "solution->success"}, {"from": "P_3fde200f", "to": "S_26ee44e5", "etype": "problem->solution"}, {"from": "P_3fde200f", "to": "S_8121710f", "etype": "problem->solution"}, {"from": "P_3fde200f", "to": "S_46bb6c6d", "etype": "problem->solution"}, {"from": "S_26ee44e5", "to": "SUCCESS", "etype": "solution->success"}, {"from": "S_8121710f", "to": "SUCCESS", "etype": "solution->success"}, {"from": "S_46bb6c6d", "to": "SUCCESS", "etype": "solution->success"}, {"from": "F_10067773", "to": "P_697cca6d", "label": "hard", "etype": "feature->problem"}, {"from": "P_697cca6d", "to": "S_9a852b2b", "etype": "problem->solution"}, {"from": "P_697cca6d", "to": "S_c71041e9", "etype": "problem->solution"}, {"from": "P_697cca6d", "to": "S_ebcf3403", "etype": "problem->solution"}, {"from": "S_9a852b2b", "to": "SUCCESS", "etype": "solution->success"}, {"from": "S_c71041e9", "to": "SUCCESS", "etype": "solution->success"}, {"from": "S_ebcf3403", "to": "SUCCESS", "etype": "solution->success"}, {"from": "P_d0d55eb2", "to": "S_f57b72bc", "etype": "problem->solution"}, {"from": "S_f57b72bc", "to": "SUCCESS", "etype": "solution->success"}, {"from": "F_2a4432f8", "to": "P_702270df", "label": "hard", "etype": "feature->problem"}, {"from": "F_2a4432f8", "to": "F_b716e9fb", "etype": "feature->feature"}, {"from": "F_2a4432f8", "to": "F_5363378b", "etype": "feature->feature"}, {"from": "F_2a4432f8", "to": "F_a1a15e88", "etype": "feature->feature"}, {"from": "F_2a4432f8", "to": "F_7073dc03", "etype": "feature->feature"}, {"from": "F_b716e9fb", "to": "P_760c7617", "label": "hard", "etype": "feature->problem"}, {"from": "P_760c7617", "to": "S_72760f09", "etype": "problem->solution"}, {"from": "S_72760f09", "to": "SUCCESS", "etype": "solution->success"}, {"from": "F_5363378b", "to": "P_46fd604b", "label": "hard", "etype": "feature->problem"}, {"from": "P_46fd604b", "to": "S_c5aea90e", "etype": "problem->solution"}, {"from": "S_c5aea90e", "to": "SUCCESS", "etype": "solution->success"}, {"from": "F_a1a15e88", "to": "P_92af9c49", "label": "hard", "etype": "feature->problem"}, {"from": "P_92af9c49", "to": "S_e21cb014", "etype": "problem->solution"}, {"from": "S_e21cb014", "to": "SUCCESS", "etype": "solution->success"}, {"from": "F_7073dc03", "to": "F_d09c9c27", "etype": "feature->feature"}, {"from": "F_d09c9c27", "to": "P_fa32b9c9", "label": "hard", "etype": "feature->problem"}, {"from": "P_fa32b9c9", "to": "S_bae26c1b", "etype": "problem->solution"}, {"from": "S_bae26c1b", "to": "SUCCESS", "etype": "solution->success"}, {"from": "P_702270df", "to": "S_241684ab", "etype": "problem->solution"}, {"from": "S_241684ab", "to": "SUCCESS", "etype": "solution->success"}];
+
+const container = document.getElementById('network');
+const details = document.getElementById('details');
+const info = document.getElementById('info');
+
+const allNodes = new vis.DataSet(RAW_NODES);
+const allEdges = new vis.DataSet(RAW_EDGES);
+
+// 初始可见集（可被过滤）
+const nodes = new vis.DataSet(allNodes.get());
+const edges = new vis.DataSet(allEdges.get());
+
+function buildOptions() {
+  return {
+    interaction: { hover: true, tooltipDelay: 120 },
+    physics: {
+      enabled: true,
+      stabilization: { iterations: 200 },
+      // 让层级布局更疏
+      hierarchicalRepulsion: {
+        nodeDistance: 150,
+        centralGravity: 0.0,
+        springLength: 200,
+        springConstant: 0.005,
+        damping: 0.09,
+        avoidOverlap: 1.0
+      }
+    },
+    nodes: {
+      font: { size: 11, multi: 'html' }  // ← 字体更小（原 12）
+    },
+    edges: {
+      arrows: { to: {enabled: true, scaleFactor: 0.7} }, // 箭头略小
+      smooth: { enabled: true, type: 'dynamic' },
+      font: { size: 9, align: 'horizontal' }               // ← 边文字更小（原 10）
+    },
+    layout: {
+      hierarchical: {
+        enabled: true,
+        direction: 'UD',
+        sortMethod: 'directed',
+        nodeSpacing: 150,        // ← 节点横向间距（原 180）
+        levelSeparation: 150     // ← 层级纵向间距（原 180）
+      }
+    }
+  };
+}
+
+
+let network = new vis.Network(container, {nodes, edges}, buildOptions());
+network.once('stabilized', () => network.fit());
+
+// 统计信息
+function updateInfo() {
+  info.textContent = `节点: ${nodes.length}  边: ${edges.length}`;
+}
+updateInfo();
+
+// 点击节点 → 右侧详情
+network.on('click', (params) => {
+  if (params.nodes.length) {
+    const nid = params.nodes[0];
+    const n = allNodes.get(nid);
+    details.innerHTML = n.title;
+  }
+});
+
+// 搜索
+const queryEl = document.getElementById('query');
+document.getElementById('btnSearch').onclick = () => {
+  const q = (queryEl.value || '').trim().toLowerCase();
+  if (!q) return;
+  // 匹配 id 或描述
+  const hits = allNodes.get().filter(n => n.id.toLowerCase().includes(q) || stripHtml(n.title).toLowerCase().includes(q));
+  if (!hits.length) return;
+  const hitIds = hits.map(h => h.id);
+  // 只高亮匹配
+  nodes.update(nodes.get().map(n => ({ id: n.id, color: allNodes.get(n.id).color })));
+  hitIds.forEach(id => nodes.update({ id, color: '#ffc107' }));
+  network.selectNodes(hitIds);
+  network.focus(hitIds[0], { scale: 1.1, animation: true });
+};
+document.getElementById('btnClear').onclick = () => {
+  nodes.update(nodes.get().map(n => ({ id: n.id, color: allNodes.get(n.id).color })));
+  network.unselectAll();
+};
+function stripHtml(s) {
+  const div = document.createElement('div'); div.innerHTML = s; return div.textContent || '';
+}
+
+// 类型过滤
+for (const cb of document.querySelectorAll('.typeToggle')) {
+  cb.addEventListener('change', () => {
+    const enabled = new Set(Array.from(document.querySelectorAll('.typeToggle:checked')).map(x => x.value));
+    // 更新 nodes 可见性（用 dataset 过滤）
+    const keepIds = allNodes.get().filter(n => enabled.has(n.group)).map(n => n.id);
+    nodes.clear();
+    nodes.add(allNodes.get(keepIds));
+    // 边：两端都在 keepIds 才保留
+    edges.clear();
+    edges.add(allEdges.get().filter(e => keepIds.includes(e.from) && keepIds.includes(e.to)));
+    updateInfo();
+  });
+}
+
+// 布局/物理切换
+document.getElementById('hier').onchange = (e) => {
+  const hier = e.target.checked;
+  const opts = buildOptions();
+  opts.layout.hierarchical.enabled = hier;
+  network.setOptions(opts);
+  network.stabilize();
+};
+document.getElementById('physics').onchange = (e) => {
+  const phys = e.target.checked;
+  const opts = buildOptions();
+  opts.physics.enabled = phys;
+  network.setOptions(opts);
+  network.stabilize();
+};
+
+// fit
+document.getElementById('btnFit').onclick = () => network.fit();
+
+</script>
+</body>
+</html>
