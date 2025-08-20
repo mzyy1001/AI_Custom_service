@@ -16162,3 +16162,2610 @@ the answer is 请提供具体的【现象】和【排查指引】，我将根据
 [LLM] 772 tokens used for prompt
 the answer is 请提供具体的【现象】和【排查指引】，我将根据您的输入生成故障诊断链条。
 
+[LLM] 202 tokens used for prompt
+the answer is problem
+
+[LLM] 78 tokens used for prompt
+the answer is 如何解决机器人无法开机的问题？
+
+[LLM] 206 tokens used for prompt
+the answer is feature
+
+[LLM] 651 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 201 tokens used for prompt
+the answer is solution
+
+[LLM] 149 tokens used for prompt
+the answer is 电池自动充电功能失效
+
+[LLM] 202 tokens used for prompt
+the answer is problem
+
+[LLM] 78 tokens used for prompt
+the answer is 问题陈述：如何解决机器人无法开机的问题？
+
+[LLM] 660 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 208 tokens used for prompt
+the answer is solution
+
+[LLM] 84 tokens used for prompt
+the answer is 是
+
+[LLM] 202 tokens used for prompt
+the answer is problem
+
+[LLM] 202 tokens used for prompt
+the answer is problem
+
+[LLM] 78 tokens used for prompt
+the answer is 问题陈述：如何解决机器人无法开机的问题？
+
+[LLM] 678 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 811 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 206 tokens used for prompt
+the answer is problem
+
+[LLM] 82 tokens used for prompt
+the answer is 问题陈述：如何查看RCS日志中的电量低提示？
+
+[LLM] 702 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 835 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 201 tokens used for prompt
+the answer is solution
+
+[LLM] 83 tokens used for prompt
+the answer is 不是
+
+[LLM] 83 tokens used for prompt
+the answer is 不是
+
+[LLM] 326 tokens used for prompt
+the answer is {"index": 2}
+
+[LLM] 202 tokens used for prompt
+the answer is problem
+
+[LLM] 78 tokens used for prompt
+the answer is 如何解决机器人无法开机的问题？
+
+[LLM] 720 tokens used for prompt
+the answer is {"index": 2}
+
+[LLM] 208 tokens used for prompt
+the answer is solution
+
+[LLM] 89 tokens used for prompt
+the answer is 是
+
+[LLM] 202 tokens used for prompt
+the answer is problem
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 553 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 156 tokens used for prompt
+the answer is feature
+
+[LLM] 561 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 153 tokens used for prompt
+the answer is solution
+
+[LLM] 182 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 553 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 158 tokens used for prompt
+the answer is solution
+
+[LLM] 210 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 553 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 153 tokens used for prompt
+the answer is solution
+
+[LLM] 205 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 85 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 557 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 156 tokens used for prompt
+the answer is feature
+
+[LLM] 565 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 155 tokens used for prompt
+the answer is solution
+
+[LLM] 184 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 85 tokens used for prompt
+the answer is {"match": true}
+
+[LLM] 556 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 557 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 158 tokens used for prompt
+the answer is solution
+
+[LLM] 210 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 621 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 557 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 153 tokens used for prompt
+the answer is solution
+
+[LLM] 205 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 85 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 89 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 106 tokens used for prompt
+the answer is 电池模块无法正常供电。
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 557 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 158 tokens used for prompt
+the answer is solution
+
+[LLM] 228 tokens used for prompt
+the answer is {"index": 2}
+
+[LLM] 556 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 557 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 155 tokens used for prompt
+the answer is feature
+
+[LLM] 564 tokens used for prompt
+the answer is {"index": 1}
+
+[LLM] 155 tokens used for prompt
+the answer is solution
+
+[LLM] 189 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 616 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 557 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 155 tokens used for prompt
+the answer is feature
+
+[LLM] 564 tokens used for prompt
+the answer is {"index": 1}
+
+[LLM] 161 tokens used for prompt
+the answer is solution
+
+[LLM] 195 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 96 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 114 tokens used for prompt
+the answer is 电源板或BMSP板故障导致设备无法正常运行。
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 557 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 155 tokens used for prompt
+the answer is feature
+
+[LLM] 564 tokens used for prompt
+the answer is {"index": 1}
+
+[LLM] 160 tokens used for prompt
+the answer is solution
+
+[LLM] 219 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 95 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 101 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 113 tokens used for prompt
+the answer is AP无法正常供电或网络连接不稳定。
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 557 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 155 tokens used for prompt
+the answer is feature
+
+[LLM] 564 tokens used for prompt
+the answer is {"index": 1}
+
+[LLM] 153 tokens used for prompt
+the answer is solution
+
+[LLM] 233 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 625 tokens used for prompt
+the answer is {"index": 2}
+
+[LLM] 151 tokens used for prompt
+the answer is feature
+
+[LLM] 556 tokens used for prompt
+the answer is {"index": 1}
+
+[LLM] 154 tokens used for prompt
+the answer is feature
+
+[LLM] 585 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 169 tokens used for prompt
+the answer is solution
+
+[LLM] 203 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 581 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 151 tokens used for prompt
+the answer is feature
+
+[LLM] 556 tokens used for prompt
+the answer is {"index": 1}
+
+[LLM] 155 tokens used for prompt
+the answer is feature
+
+[LLM] 586 tokens used for prompt
+the answer is {"index": 1}
+
+[LLM] 156 tokens used for prompt
+the answer is solution
+
+[LLM] 191 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 557 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 151 tokens used for prompt
+the answer is feature
+
+[LLM] 556 tokens used for prompt
+the answer is {"index": 1}
+
+[LLM] 158 tokens used for prompt
+the answer is feature
+
+[LLM] 589 tokens used for prompt
+the answer is {"index": 2}
+
+[LLM] 157 tokens used for prompt
+the answer is solution
+
+[LLM] 192 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 561 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 151 tokens used for prompt
+the answer is feature
+
+[LLM] 556 tokens used for prompt
+the answer is {"index": 1}
+
+[LLM] 166 tokens used for prompt
+the answer is feature
+
+[LLM] 597 tokens used for prompt
+the answer is {"index": 3}
+
+[LLM] 156 tokens used for prompt
+the answer is feature
+
+[LLM] 563 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 159 tokens used for prompt
+the answer is other
+
+[LLM] 151 tokens used for prompt
+the answer is feature
+
+[LLM] 556 tokens used for prompt
+the answer is {"index": 1}
+
+[LLM] 152 tokens used for prompt
+the answer is other
+
+[LLM] 154 tokens used for prompt
+the answer is solution
+
+[LLM] 191 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 93 tokens used for prompt
+the answer is {"match": true}
+
+[LLM] 553 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 151 tokens used for prompt
+the answer is feature
+
+[LLM] 556 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 633 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 164 tokens used for prompt
+the answer is feature
+
+[LLM] 653 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 154 tokens used for prompt
+the answer is solution
+
+[LLM] 107 tokens used for prompt
+the answer is 地毯铺设不平整导致安全隐患。
+
+[LLM] 151 tokens used for prompt
+the answer is feature
+
+[LLM] 563 tokens used for prompt
+the answer is {"index": 2}
+
+[LLM] 162 tokens used for prompt
+the answer is feature
+
+[LLM] 572 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 671 tokens used for prompt
+the answer is {"index": 5}
+
+[LLM] 158 tokens used for prompt
+the answer is solution
+
+[LLM] 193 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 559 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 151 tokens used for prompt
+the answer is feature
+
+[LLM] 563 tokens used for prompt
+the answer is {"index": 2}
+
+[LLM] 156 tokens used for prompt
+the answer is solution
+
+[LLM] 109 tokens used for prompt
+the answer is 霍尔传感器的读数不准确。
+
+[LLM] 151 tokens used for prompt
+the answer is feature
+
+[LLM] 563 tokens used for prompt
+the answer is {"index": 2}
+
+[LLM] 156 tokens used for prompt
+the answer is solution
+
+[LLM] 192 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 92 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 109 tokens used for prompt
+the answer is 轮径校准不准确导致性能下降。
+
+[LLM] 151 tokens used for prompt
+the answer is feature
+
+[LLM] 563 tokens used for prompt
+the answer is {"index": 2}
+
+[LLM] 158 tokens used for prompt
+the answer is feature
+
+[LLM] 577 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 667 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 158 tokens used for prompt
+the answer is solution
+
+[LLM] 111 tokens used for prompt
+the answer is 霍尔板和BMSP板出现故障导致设备无法正常运行。
+
+[LLM] 151 tokens used for prompt
+the answer is feature
+
+[LLM] 563 tokens used for prompt
+the answer is {"index": 2}
+
+[LLM] 152 tokens used for prompt
+the answer is problem
+
+[LLM] 61 tokens used for prompt
+the answer is 电机损坏的原因是什么？
+
+[LLM] 571 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 764 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 155 tokens used for prompt
+the answer is solution
+
+[LLM] 57 tokens used for prompt
+the answer is 不是
+
+[LLM] 57 tokens used for prompt
+the answer is 不是
+
+[LLM] 227 tokens used for prompt
+the answer is {"index": 2}
+
+[LLM] 164 tokens used for prompt
+the answer is feature
+
+[LLM] 576 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 686 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 158 tokens used for prompt
+the answer is feature
+
+[LLM] 700 tokens used for prompt
+the answer is {"index": 10}
+
+[LLM] 156 tokens used for prompt
+the answer is solution
+
+[LLM] 192 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 94 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 109 tokens used for prompt
+the answer is 地毯被移位导致空间布局不协调。
+
+[LLM] 164 tokens used for prompt
+the answer is feature
+
+[LLM] 596 tokens used for prompt
+the answer is {"index": 3}
+
+[LLM] 156 tokens used for prompt
+the answer is feature
+
+[LLM] 566 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 698 tokens used for prompt
+the answer is {"index": 5}
+
+[LLM] 153 tokens used for prompt
+the answer is solution
+
+[LLM] 188 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 567 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 164 tokens used for prompt
+the answer is feature
+
+[LLM] 596 tokens used for prompt
+the answer is {"index": 3}
+
+[LLM] 167 tokens used for prompt
+the answer is solution
+
+[LLM] 120 tokens used for prompt
+the answer is 分拣机出现故障。
+
+[LLM] 164 tokens used for prompt
+the answer is feature
+
+[LLM] 596 tokens used for prompt
+the answer is {"index": 3}
+
+[LLM] 154 tokens used for prompt
+the answer is feature
+
+[LLM] 573 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 696 tokens used for prompt
+the answer is {"index": 4}
+
+[LLM] 166 tokens used for prompt
+the answer is solution
+
+[LLM] 200 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 602 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 164 tokens used for prompt
+the answer is feature
+
+[LLM] 596 tokens used for prompt
+the answer is {"index": 3}
+
+[LLM] 155 tokens used for prompt
+the answer is feature
+
+[LLM] 583 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 697 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 167 tokens used for prompt
+the answer is solution
+
+[LLM] 120 tokens used for prompt
+the answer is 分拣机出现故障。
+
+[LLM] 153 tokens used for prompt
+the answer is feature
+
+[LLM] 585 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 705 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 162 tokens used for prompt
+the answer is solution
+
+[LLM] 115 tokens used for prompt
+the answer is 机器人极板表面存在氧化层导致接触不良。
+
+[LLM] 153 tokens used for prompt
+the answer is feature
+
+[LLM] 594 tokens used for prompt
+the answer is {"index": 4}
+
+[LLM] 156 tokens used for prompt
+the answer is feature
+
+[LLM] 717 tokens used for prompt
+the answer is {"index": 14}
+
+[LLM] 162 tokens used for prompt
+the answer is solution
+
+[LLM] 202 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 102 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 115 tokens used for prompt
+the answer is 充电桩夹嘴接触不良导致无法正常充电。
+
+[LLM] 153 tokens used for prompt
+the answer is feature
+
+[LLM] 594 tokens used for prompt
+the answer is {"index": 4}
+
+[LLM] 153 tokens used for prompt
+the answer is problem
+
+[LLM] 62 tokens used for prompt
+the answer is 电源板如何检测和更换？
+
+[LLM] 583 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 846 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 155 tokens used for prompt
+the answer is solution
+
+[LLM] 58 tokens used for prompt
+the answer is 是
+
+[LLM] 153 tokens used for prompt
+the answer is feature
+
+[LLM] 594 tokens used for prompt
+the answer is {"index": 4}
+
+[LLM] 153 tokens used for prompt
+the answer is problem
+
+[LLM] 62 tokens used for prompt
+the answer is 电池模块如何进行检测和更换？
+
+[LLM] 595 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 858 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 155 tokens used for prompt
+the answer is solution
+
+[LLM] 59 tokens used for prompt
+the answer is 是
+
+[LLM] 151 tokens used for prompt
+the answer is feature
+
+[LLM] 592 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 712 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 163 tokens used for prompt
+the answer is feature
+
+[LLM] 731 tokens used for prompt
+the answer is {"index": 10}
+
+[LLM] 156 tokens used for prompt
+the answer is solution
+
+[LLM] 214 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 94 tokens used for prompt
+the answer is {"match": true}
+
+[LLM] 93 tokens used for prompt
+the answer is {"match": true}
+
+[LLM] 556 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 151 tokens used for prompt
+the answer is feature
+
+[LLM] 599 tokens used for prompt
+the answer is {"index": 5}
+
+[LLM] 168 tokens used for prompt
+the answer is feature
+
+[LLM] 578 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 736 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 166 tokens used for prompt
+the answer is solution
+
+[LLM] 119 tokens used for prompt
+the answer is 行走系统出现打滑现象。
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 600 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 744 tokens used for prompt
+the answer is {"index": 3}
+
+[LLM] 150 tokens used for prompt
+the answer is feature
+
+[LLM] 581 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 742 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 157 tokens used for prompt
+the answer is solution
+
+[LLM] 110 tokens used for prompt
+the answer is 补光灯的亮度不足或过强导致照明效果不佳。
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 600 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 750 tokens used for prompt
+the answer is {"index": 3}
+
+[LLM] 150 tokens used for prompt
+the answer is feature
+
+[LLM] 587 tokens used for prompt
+the answer is {"index": 4}
+
+[LLM] 156 tokens used for prompt
+the answer is solution
+
+[LLM] 199 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 98 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 109 tokens used for prompt
+the answer is 相机拍摄的照片过于明亮或过于暗淡。
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 600 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 750 tokens used for prompt
+the answer is {"index": 3}
+
+[LLM] 150 tokens used for prompt
+the answer is feature
+
+[LLM] 587 tokens used for prompt
+the answer is {"index": 4}
+
+[LLM] 156 tokens used for prompt
+the answer is solution
+
+[LLM] 225 tokens used for prompt
+the answer is {"index": 1}
+
+[LLM] 558 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 600 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 750 tokens used for prompt
+the answer is {"index": 3}
+
+[LLM] 150 tokens used for prompt
+the answer is feature
+
+[LLM] 587 tokens used for prompt
+the answer is {"index": 4}
+
+[LLM] 156 tokens used for prompt
+the answer is solution
+
+[LLM] 225 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 98 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 97 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 109 tokens used for prompt
+the answer is 相机在使用过程中出现断电现象。
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 600 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 750 tokens used for prompt
+the answer is {"index": 3}
+
+[LLM] 150 tokens used for prompt
+the answer is feature
+
+[LLM] 587 tokens used for prompt
+the answer is {"index": 4}
+
+[LLM] 153 tokens used for prompt
+the answer is solution
+
+[LLM] 243 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 95 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 94 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 89 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 106 tokens used for prompt
+the answer is 扫码台软件出现故障或无法正常运行。
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 600 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 750 tokens used for prompt
+the answer is {"index": 3}
+
+[LLM] 150 tokens used for prompt
+the answer is feature
+
+[LLM] 587 tokens used for prompt
+the answer is {"index": 4}
+
+[LLM] 153 tokens used for prompt
+the answer is solution
+
+[LLM] 264 tokens used for prompt
+the answer is {"index": 1}
+
+[LLM] 567 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 600 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 750 tokens used for prompt
+the answer is {"index": 3}
+
+[LLM] 150 tokens used for prompt
+the answer is feature
+
+[LLM] 587 tokens used for prompt
+the answer is {"index": 4}
+
+[LLM] 155 tokens used for prompt
+the answer is feature
+
+[LLM] 753 tokens used for prompt
+the answer is {"index": 17}
+
+[LLM] 156 tokens used for prompt
+the answer is solution
+
+[LLM] 267 tokens used for prompt
+the answer is {"index": 2}
+
+[LLM] 557 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 600 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 750 tokens used for prompt
+the answer is {"index": 3}
+
+[LLM] 150 tokens used for prompt
+the answer is feature
+
+[LLM] 587 tokens used for prompt
+the answer is {"index": 4}
+
+[LLM] 155 tokens used for prompt
+the answer is feature
+
+[LLM] 551 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 753 tokens used for prompt
+the answer is {"index": 17}
+
+[LLM] 153 tokens used for prompt
+the answer is solution
+
+[LLM] 264 tokens used for prompt
+the answer is {"index": 3}
+
+[LLM] 551 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 600 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 750 tokens used for prompt
+the answer is {"index": 3}
+
+[LLM] 150 tokens used for prompt
+the answer is feature
+
+[LLM] 587 tokens used for prompt
+the answer is {"index": 4}
+
+[LLM] 155 tokens used for prompt
+the answer is feature
+
+[LLM] 551 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 753 tokens used for prompt
+the answer is {"index": 17}
+
+[LLM] 153 tokens used for prompt
+the answer is solution
+
+[LLM] 264 tokens used for prompt
+the answer is {"index": 1}
+
+[LLM] 575 tokens used for prompt
+the answer is {"index": 2}
+
+[LLM] 153 tokens used for prompt
+the answer is feature
+
+[LLM] 601 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 751 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 153 tokens used for prompt
+the answer is feature
+
+[LLM] 760 tokens used for prompt
+the answer is {"index": 18}
+
+[LLM] 155 tokens used for prompt
+the answer is solution
+
+[LLM] 108 tokens used for prompt
+the answer is 减速机可能存在故障或性能下降。
+
+[LLM] 153 tokens used for prompt
+the answer is feature
+
+[LLM] 610 tokens used for prompt
+the answer is {"index": 6}
+
+[LLM] 156 tokens used for prompt
+the answer is feature
+
+[LLM] 555 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 763 tokens used for prompt
+the answer is {"index": 18}
+
+[LLM] 160 tokens used for prompt
+the answer is solution
+
+[LLM] 197 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 96 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 113 tokens used for prompt
+the answer is 电机可能出现故障或无法正常工作。
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 609 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 759 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 165 tokens used for prompt
+the answer is feature
+
+[LLM] 780 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 162 tokens used for prompt
+the answer is solution
+
+[LLM] 115 tokens used for prompt
+the answer is 设备无法开机。
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 617 tokens used for prompt
+the answer is {"index": 7}
+
+[LLM] 161 tokens used for prompt
+the answer is feature
+
+[LLM] 572 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 797 tokens used for prompt
+the answer is {"index": 20}
+
+[LLM] 161 tokens used for prompt
+the answer is solution
+
+[LLM] 189 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 91 tokens used for prompt
+the answer is {"match": true}
+
+[LLM] 569 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 617 tokens used for prompt
+the answer is {"index": 7}
+
+[LLM] 153 tokens used for prompt
+the answer is feature
+
+[LLM] 564 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 789 tokens used for prompt
+the answer is {"index": 14}
+
+[LLM] 153 tokens used for prompt
+the answer is problem
+
+[LLM] 62 tokens used for prompt
+the answer is 电池损坏的可能原因是什么？
+
+[LLM] 606 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 981 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 154 tokens used for prompt
+the answer is solution
+
+[LLM] 57 tokens used for prompt
+the answer is 不是
+
+[LLM] 57 tokens used for prompt
+the answer is 不是
+
+[LLM] 275 tokens used for prompt
+the answer is {"index": 3}
+
+[LLM] 555 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 617 tokens used for prompt
+the answer is {"index": 7}
+
+[LLM] 161 tokens used for prompt
+the answer is feature
+
+[LLM] 581 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 797 tokens used for prompt
+the answer is {"index": 20}
+
+[LLM] 155 tokens used for prompt
+the answer is solution
+
+[LLM] 183 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 581 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 157 tokens used for prompt
+the answer is solution
+
+[LLM] 227 tokens used for prompt
+the answer is {"index": 2}
+
+[LLM] 568 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 617 tokens used for prompt
+the answer is {"index": 7}
+
+[LLM] 156 tokens used for prompt
+the answer is problem
+
+[LLM] 65 tokens used for prompt
+the answer is 电池传感器板如何修复或更换？
+
+[LLM] 996 tokens used for prompt
+the answer is {"index": 23}
+
+[LLM] 156 tokens used for prompt
+the answer is solution
+
+[LLM] 60 tokens used for prompt
+the answer is 不是
+
+[LLM] 60 tokens used for prompt
+the answer is 不是
+
+[LLM] 191 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 91 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 109 tokens used for prompt
+the answer is 传感器板可能存在故障或不准确的读数。
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 617 tokens used for prompt
+the answer is {"index": 7}
+
+[LLM] 153 tokens used for prompt
+the answer is problem
+
+[LLM] 62 tokens used for prompt
+the answer is 电源板如何进行检测和更换？
+
+[LLM] 577 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 1011 tokens used for prompt
+the answer is {"index": 22}
+
+[LLM] 155 tokens used for prompt
+the answer is solution
+
+[LLM] 58 tokens used for prompt
+the answer is 是
+
+[LLM] 556 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 617 tokens used for prompt
+the answer is {"index": 7}
+
+[LLM] 156 tokens used for prompt
+the answer is solution
+
+[LLM] 234 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 91 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 96 tokens used for prompt
+the answer is {"match": true}
+
+[LLM] 90 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 558 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 617 tokens used for prompt
+the answer is {"index": 7}
+
+[LLM] 155 tokens used for prompt
+the answer is solution
+
+[LLM] 233 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 90 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 95 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 89 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 108 tokens used for prompt
+the answer is 电池无法正常供电。
+
+[LLM] 157 tokens used for prompt
+the answer is solution
+
+[LLM] 227 tokens used for prompt
+the answer is {"index": 2}
+
+[LLM] 581 tokens used for prompt
+the answer is {"index": 2}
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 617 tokens used for prompt
+the answer is {"index": 7}
+
+[LLM] 156 tokens used for prompt
+the answer is problem
+
+[LLM] 65 tokens used for prompt
+the answer is 电池传感器板如何修复或更换？
+
+[LLM] 600 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 1023 tokens used for prompt
+the answer is {"index": 23}
+
+[LLM] 156 tokens used for prompt
+the answer is solution
+
+[LLM] 60 tokens used for prompt
+the answer is 不是
+
+[LLM] 60 tokens used for prompt
+the answer is 不是
+
+[LLM] 251 tokens used for prompt
+the answer is {"index": 1}
+
+[LLM] 570 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 153 tokens used for prompt
+the answer is problem
+
+[LLM] 62 tokens used for prompt
+the answer is 如何解决机器人耗电过快的问题？
+
+[LLM] 580 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 1019 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 155 tokens used for prompt
+the answer is solution
+
+[LLM] 58 tokens used for prompt
+the answer is 是
+
+[LLM] 154 tokens used for prompt
+the answer is solution
+
+[LLM] 57 tokens used for prompt
+the answer is 是
+
+[LLM] 555 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 153 tokens used for prompt
+the answer is problem
+
+[LLM] 62 tokens used for prompt
+the answer is 如何解决机器人耗电过快的问题？
+
+[LLM] 591 tokens used for prompt
+the answer is {"index": 3}
+
+[LLM] 155 tokens used for prompt
+the answer is solution
+
+[LLM] 58 tokens used for prompt
+the answer is 是
+
+[LLM] 566 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 151 tokens used for prompt
+the answer is feature
+
+[LLM] 616 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 787 tokens used for prompt
+the answer is {"index": 16}
+
+[LLM] 155 tokens used for prompt
+the answer is feature
+
+[LLM] 791 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 152 tokens used for prompt
+the answer is solution
+
+[LLM] 105 tokens used for prompt
+the answer is 设备运行不正常。
+
+[LLM] 151 tokens used for prompt
+the answer is feature
+
+[LLM] 640 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 797 tokens used for prompt
+the answer is {"index": 16}
+
+[LLM] 155 tokens used for prompt
+the answer is feature
+
+[LLM] 555 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 801 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 155 tokens used for prompt
+the answer is solution
+
+[LLM] 108 tokens used for prompt
+the answer is 轮子出现磨损或损坏。
+
+[LLM] 151 tokens used for prompt
+the answer is feature
+
+[LLM] 640 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 808 tokens used for prompt
+the answer is {"index": 16}
+
+[LLM] 152 tokens used for prompt
+the answer is solution
+
+[LLM] 184 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 86 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 105 tokens used for prompt
+the answer is 霍尔传感器读数不准确。
+
+[LLM] 151 tokens used for prompt
+the answer is feature
+
+[LLM] 640 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 808 tokens used for prompt
+the answer is {"index": 16}
+
+[LLM] 153 tokens used for prompt
+the answer is solution
+
+[LLM] 205 tokens used for prompt
+the answer is {"index": 1}
+
+[LLM] 550 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 151 tokens used for prompt
+the answer is feature
+
+[LLM] 640 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 808 tokens used for prompt
+the answer is {"index": 16}
+
+[LLM] 152 tokens used for prompt
+the answer is solution
+
+[LLM] 204 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 86 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 87 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 105 tokens used for prompt
+the answer is 轮径不准确导致测量误差。
+
+[LLM] 154 tokens used for prompt
+the answer is feature
+
+[LLM] 643 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 811 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 155 tokens used for prompt
+the answer is solution
+
+[LLM] 108 tokens used for prompt
+the answer is 万向轮因异物堵塞而无法正常转动。
+
+[LLM] 154 tokens used for prompt
+the answer is feature
+
+[LLM] 653 tokens used for prompt
+the answer is {"index": 9}
+
+[LLM] 156 tokens used for prompt
+the answer is solution
+
+[LLM] 196 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 95 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 109 tokens used for prompt
+the answer is 驱动轮出现故障或性能下降。
+
+[LLM] 154 tokens used for prompt
+the answer is feature
+
+[LLM] 653 tokens used for prompt
+the answer is {"index": 9}
+
+[LLM] 155 tokens used for prompt
+the answer is solution
+
+[LLM] 215 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 94 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 90 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 108 tokens used for prompt
+the answer is 底盘存在损坏或故障。
+
+[LLM] 154 tokens used for prompt
+the answer is feature
+
+[LLM] 653 tokens used for prompt
+the answer is {"index": 9}
+
+[LLM] 156 tokens used for prompt
+the answer is solution
+
+[LLM] 235 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 95 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 91 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 90 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 109 tokens used for prompt
+the answer is 霍尔板出现故障导致设备无法正常工作。
+
+[LLM] 151 tokens used for prompt
+the answer is feature
+
+[LLM] 650 tokens used for prompt
+the answer is {"index": 3}
+
+[LLM] 177 tokens used for prompt
+the answer is problem
+
+[LLM] 86 tokens used for prompt
+the answer is 机器人堵塞的原因是什么，如何解决？
+
+[LLM] 557 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 1131 tokens used for prompt
+the answer is {"index": 5}
+
+[LLM] 153 tokens used for prompt
+the answer is problem
+
+[LLM] 62 tokens used for prompt
+the answer is 如何解决电机无法正常注册的问题？
+
+[LLM] 591 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 1130 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 156 tokens used for prompt
+the answer is solution
+
+[LLM] 59 tokens used for prompt
+the answer is 不是
+
+[LLM] 59 tokens used for prompt
+the answer is 是
+
+[LLM] 153 tokens used for prompt
+the answer is problem
+
+[LLM] 62 tokens used for prompt
+the answer is 如何解决电机无法正常注册的问题？
+
+[LLM] 602 tokens used for prompt
+the answer is {"index": 4}
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 819 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 155 tokens used for prompt
+the answer is solution
+
+[LLM] 108 tokens used for prompt
+the answer is 电机无法正常工作。
+
+[LLM] 153 tokens used for prompt
+the answer is problem
+
+[LLM] 62 tokens used for prompt
+the answer is 如何解决电机无法正常注册的问题？
+
+[LLM] 602 tokens used for prompt
+the answer is {"index": 4}
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 549 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 154 tokens used for prompt
+the answer is solution
+
+[LLM] 183 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 555 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 153 tokens used for prompt
+the answer is problem
+
+[LLM] 62 tokens used for prompt
+the answer is 如何解决电机无法正常注册的问题？
+
+[LLM] 602 tokens used for prompt
+the answer is {"index": 4}
+
+[LLM] 158 tokens used for prompt
+the answer is solution
+
+[LLM] 61 tokens used for prompt
+the answer is 是
+
+[LLM] 559 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 159 tokens used for prompt
+the answer is solution
+
+[LLM] 62 tokens used for prompt
+the answer is 是
+
+[LLM] 574 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 154 tokens used for prompt
+the answer is feature
+
+[LLM] 653 tokens used for prompt
+the answer is {"index": 8}
+
+[LLM] 156 tokens used for prompt
+the answer is solution
+
+[LLM] 228 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 567 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 154 tokens used for prompt
+the answer is feature
+
+[LLM] 653 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 828 tokens used for prompt
+the answer is {"index": 16}
+
+[LLM] 155 tokens used for prompt
+the answer is solution
+
+[LLM] 227 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 89 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 90 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 90 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 108 tokens used for prompt
+the answer is 底盘存在故障或损坏。
+
+[LLM] 157 tokens used for prompt
+the answer is feature
+
+[LLM] 656 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 831 tokens used for prompt
+the answer is {"index": 16}
+
+[LLM] 159 tokens used for prompt
+the answer is feature
+
+[LLM] 570 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 833 tokens used for prompt
+the answer is {"index": 22}
+
+[LLM] 156 tokens used for prompt
+the answer is solution
+
+[LLM] 190 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 557 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 157 tokens used for prompt
+the answer is feature
+
+[LLM] 656 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 831 tokens used for prompt
+the answer is {"index": 16}
+
+[LLM] 159 tokens used for prompt
+the answer is feature
+
+[LLM] 570 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 833 tokens used for prompt
+the answer is {"index": 22}
+
+[LLM] 156 tokens used for prompt
+the answer is solution
+
+[LLM] 190 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 568 tokens used for prompt
+the answer is {"index": 1}
+
+[LLM] 157 tokens used for prompt
+the answer is feature
+
+[LLM] 656 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 831 tokens used for prompt
+the answer is {"index": 16}
+
+[LLM] 160 tokens used for prompt
+the answer is feature
+
+[LLM] 571 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 834 tokens used for prompt
+the answer is {"index": 21}
+
+[LLM] 156 tokens used for prompt
+the answer is solution
+
+[LLM] 185 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 86 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 109 tokens used for prompt
+the answer is 万向轮出现卡滞或损坏现象。
+
+[LLM] 156 tokens used for prompt
+the answer is feature
+
+[LLM] 655 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 830 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 156 tokens used for prompt
+the answer is feature
+
+[LLM] 842 tokens used for prompt
+the answer is {"index": 25}
+
+[LLM] 156 tokens used for prompt
+the answer is solution
+
+[LLM] 109 tokens used for prompt
+the answer is 按键板指示灯不亮。
+
+[LLM] 154 tokens used for prompt
+the answer is feature
+
+[LLM] 665 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 840 tokens used for prompt
+the answer is {"index": 25}
+
+[LLM] 161 tokens used for prompt
+the answer is problem
+
+[LLM] 70 tokens used for prompt
+the answer is 如何检查按键板和BMSP板的损坏情况？
+
+[LLM] 564 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 1194 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 158 tokens used for prompt
+the answer is solution
+
+[LLM] 67 tokens used for prompt
+the answer is 不是
+
+[LLM] 67 tokens used for prompt
+the answer is 不是
+
+[LLM] 216 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 92 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 98 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 111 tokens used for prompt
+the answer is 按键板或BMSP板出现故障导致设备无法正常操作。
+
+[LLM] 156 tokens used for prompt
+the answer is feature
+
+[LLM] 667 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 842 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 162 tokens used for prompt
+the answer is feature
+
+[LLM] 860 tokens used for prompt
+the answer is {"index": 26}
+
+[LLM] 161 tokens used for prompt
+the answer is solution
+
+[LLM] 114 tokens used for prompt
+the answer is 皮带机的卸货方向设置不正确。
+
+[LLM] 155 tokens used for prompt
+the answer is feature
+
+[LLM] 678 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 853 tokens used for prompt
+the answer is {"index": 22}
+
+[LLM] 156 tokens used for prompt
+the answer is feature
+
+[LLM] 854 tokens used for prompt
+the answer is {"index": 22}
+
+[LLM] 155 tokens used for prompt
+the answer is solution
+
+[LLM] 189 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 89 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 108 tokens used for prompt
+the answer is 螺丝松动导致设备不稳定。
+
+[LLM] 155 tokens used for prompt
+the answer is feature
+
+[LLM] 689 tokens used for prompt
+the answer is {"index": 12}
+
+[LLM] 162 tokens used for prompt
+the answer is feature
+
+[LLM] 563 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 860 tokens used for prompt
+the answer is {"index": 22}
+
+[LLM] 154 tokens used for prompt
+the answer is solution
+
+[LLM] 209 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 88 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 90 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 107 tokens used for prompt
+the answer is 抱箍安装不当导致设备不稳定。
+
+[LLM] 155 tokens used for prompt
+the answer is feature
+
+[LLM] 689 tokens used for prompt
+the answer is {"index": 12}
+
+[LLM] 153 tokens used for prompt
+the answer is solution
+
+[LLM] 228 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 87 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 89 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 89 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 106 tokens used for prompt
+the answer is 电机无法正常启动。
+
+[LLM] 155 tokens used for prompt
+the answer is feature
+
+[LLM] 689 tokens used for prompt
+the answer is {"index": 12}
+
+[LLM] 155 tokens used for prompt
+the answer is solution
+
+[LLM] 245 tokens used for prompt
+the answer is {"index": 3}
+
+[LLM] 554 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 686 tokens used for prompt
+the answer is {"index": 1}
+
+[LLM] 155 tokens used for prompt
+the answer is feature
+
+[LLM] 592 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 853 tokens used for prompt
+the answer is {"index": 22}
+
+[LLM] 155 tokens used for prompt
+the answer is solution
+
+[LLM] 245 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 567 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 686 tokens used for prompt
+the answer is {"index": 1}
+
+[LLM] 151 tokens used for prompt
+the answer is feature
+
+[LLM] 599 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 849 tokens used for prompt
+the answer is {"index": 24}
+
+[LLM] 155 tokens used for prompt
+the answer is solution
+
+[LLM] 184 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 565 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 686 tokens used for prompt
+the answer is {"index": 1}
+
+[LLM] 152 tokens used for prompt
+the answer is solution
+
+[LLM] 189 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 91 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 105 tokens used for prompt
+the answer is 霍尔传感器读数不准确。
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 686 tokens used for prompt
+the answer is {"index": 1}
+
+[LLM] 153 tokens used for prompt
+the answer is problem
+
+[LLM] 62 tokens used for prompt
+the answer is 霍尔板损坏的原因是什么？
+
+[LLM] 575 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 1286 tokens used for prompt
+the answer is {"index": 15}
+
+[LLM] 156 tokens used for prompt
+the answer is solution
+
+[LLM] 67 tokens used for prompt
+the answer is 是
+
+[LLM] 559 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 152 tokens used for prompt
+the answer is feature
+
+[LLM] 686 tokens used for prompt
+the answer is {"index": 1}
+
+[LLM] 158 tokens used for prompt
+the answer is feature
+
+[LLM] 613 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 856 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 166 tokens used for prompt
+the answer is solution
+
+[LLM] 119 tokens used for prompt
+the answer is 地毯位置的RFID值与实际位置不匹配。
+
+[LLM] 153 tokens used for prompt
+the answer is feature
+
+[LLM] 687 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 865 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 157 tokens used for prompt
+the answer is feature
+
+[LLM] 878 tokens used for prompt
+the answer is {"index": 21}
+
+[LLM] 152 tokens used for prompt
+the answer is solution
+
+[LLM] 203 tokens used for prompt
+the answer is {"index": 1}
+
+[LLM] 553 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 154 tokens used for prompt
+the answer is feature
+
+[LLM] 697 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 875 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 154 tokens used for prompt
+the answer is feature
+
+[LLM] 885 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 152 tokens used for prompt
+the answer is solution
+
+[LLM] 105 tokens used for prompt
+the answer is 电机无法正常运行。
+
+[LLM] 157 tokens used for prompt
+the answer is feature
+
+[LLM] 709 tokens used for prompt
+the answer is {"index": 6}
+
+[LLM] 157 tokens used for prompt
+the answer is solution
+
+[LLM] 214 tokens used for prompt
+the answer is {"index": 1}
+
+[LLM] 563 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 161 tokens used for prompt
+the answer is feature
+
+[LLM] 714 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 902 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 155 tokens used for prompt
+the answer is solution
+
+[LLM] 108 tokens used for prompt
+the answer is 传感器板子故障导致设备无法正常工作。
+
+[LLM] 154 tokens used for prompt
+the answer is feature
+
+[LLM] 723 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 911 tokens used for prompt
+the answer is {"index": 30}
+
+[LLM] 152 tokens used for prompt
+the answer is solution
+
+[LLM] 182 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 83 tokens used for prompt
+the answer is {"match": false}
+
+[LLM] 105 tokens used for prompt
+the answer is 翻板无法正常工作。
+
+[LLM] 154 tokens used for prompt
+the answer is feature
+
+[LLM] 733 tokens used for prompt
+the answer is {"index": 5}
+
+[LLM] 151 tokens used for prompt
+the answer is solution
+
+[LLM] 104 tokens used for prompt
+the answer is 系统时间不准确。
+
+[LLM] 153 tokens used for prompt
+the answer is feature
+
+[LLM] 732 tokens used for prompt
+the answer is {"index": 2}
+
+[LLM] 158 tokens used for prompt
+the answer is solution
+
+[LLM] 230 tokens used for prompt
+the answer is {"index": 1}
+
+[LLM] 561 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 454 tokens used for prompt
+the answer is {"index": 4}
+
+[LLM] 210 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 447 tokens used for prompt
+the answer is {"index":4}
+
+[LLM] 203 tokens used for prompt
+the answer is {"answer":"no"}
+
+[LLM] 202 tokens used for prompt
+the answer is {"answer":"no"}
+
+[LLM] 416 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 202 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 447 tokens used for prompt
+the answer is {"index":4}
+
+[LLM] 203 tokens used for prompt
+the answer is {"answer":"no"}
+
+[LLM] 202 tokens used for prompt
+the answer is {"answer":"no"}
+
+[LLM] 416 tokens used for prompt
+the answer is {"index": 1}
+
+[LLM] 201 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 478 tokens used for prompt
+the answer is {"index":0}
+
+[LLM] 233 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 447 tokens used for prompt
+the answer is {"index": 4}
+
+[LLM] 203 tokens used for prompt
+the answer is {"answer":"no"}
+
+[LLM] 202 tokens used for prompt
+the answer is {"answer":"no"}
+
+[LLM] 416 tokens used for prompt
+the answer is {"index":6}
+
+[LLM] 218 tokens used for prompt
+the answer is {"answer":"no"}
+
+[LLM] 386 tokens used for prompt
+the answer is {"index":0}
+
+[LLM] 202 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 447 tokens used for prompt
+the answer is {"index":4}
+
+[LLM] 203 tokens used for prompt
+the answer is {"answer":"no"}
+
+[LLM] 202 tokens used for prompt
+the answer is {"answer":"no"}
+
+[LLM] 416 tokens used for prompt
+the answer is {"index":6}
+
+[LLM] 218 tokens used for prompt
+the answer is {"answer":"no"}
+
+[LLM] 386 tokens used for prompt
+the answer is {"index":0}
+
+[LLM] 202 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 447 tokens used for prompt
+the answer is {"index": 4}
+
+[LLM] 203 tokens used for prompt
+the answer is {"answer":"no"}
+
+[LLM] 202 tokens used for prompt
+the answer is {"answer":"no"}
+
+[LLM] 416 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 202 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 165 tokens used for prompt
+the answer is {"decision":"yes"}
+
+[LLM] 471 tokens used for prompt
+the answer is {"index":0}
+
+[LLM] 202 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 471 tokens used for prompt
+the answer is {"index":0}
+
+[LLM] 202 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 176 tokens used for prompt
+the answer is {"decision":"no"}
+
+[LLM] 471 tokens used for prompt
+the answer is {"index":0}
+
+[LLM] 202 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 176 tokens used for prompt
+the answer is {"decision":"no"}
+
+[LLM] 158 tokens used for prompt
+the answer is {"decision":"no"}
+
+[LLM] 173 tokens used for prompt
+the answer is {"decision":"no"}
+
+[LLM] 157 tokens used for prompt
+the answer is {"decision":"yes"}
+
+[LLM] 562 tokens used for prompt
+the answer is {"answer":"no"}
+
+[LLM] 817 tokens used for prompt
+the answer is {"index": 3}
+
+[LLM] 563 tokens used for prompt
+the answer is {"answer":"no"}
+
+[LLM] 562 tokens used for prompt
+the answer is {"answer":"no"}
+
+[LLM] 786 tokens used for prompt
+the answer is {"index": 12}
+
+[LLM] 570 tokens used for prompt
+the answer is {"answer":"no"}
+
+[LLM] 762 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 561 tokens used for prompt
+the answer is {"answer":"no"}
+
+[LLM] 747 tokens used for prompt
+the answer is {"index": 4}
+
+[LLM] 578 tokens used for prompt
+the answer is {"answer":"no"}
+
+[LLM] 717 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 561 tokens used for prompt
+the answer is {"answer":"unsure"}
+
+[LLM] 471 tokens used for prompt
+the answer is {"index":0}
+
+[LLM] 202 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 176 tokens used for prompt
+the answer is {"decision":"no"}
+
+[LLM] 156 tokens used for prompt
+the answer is {"decision":"yes"}
+
+[LLM] 384 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 471 tokens used for prompt
+the answer is {"index":0}
+
+[LLM] 202 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 176 tokens used for prompt
+the answer is {"decision":"no"}
+
+[LLM] 158 tokens used for prompt
+the answer is {"decision":"no"}
+
+[LLM] 173 tokens used for prompt
+the answer is {"decision":"no"}
+
+[LLM] 158 tokens used for prompt
+the answer is {"decision":"no"}
+
+[LLM] 183 tokens used for prompt
+the answer is {"decision":"no"}
+
+[LLM] 157 tokens used for prompt
+the answer is {"decision":"no"}
+
+[LLM] 168 tokens used for prompt
+the answer is {"decision":"no"}
+
+[LLM] 157 tokens used for prompt
+the answer is {"decision":"no"}
+
+[LLM] 471 tokens used for prompt
+the answer is {"index":0}
+
+[LLM] 202 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 175 tokens used for prompt
+the answer is {"decision":"no"}
+
+[LLM] 157 tokens used for prompt
+the answer is {"decision":"no"}
+
+[LLM] 172 tokens used for prompt
+the answer is {"decision":"no"}
+
+[LLM] 157 tokens used for prompt
+the answer is {"decision":"no"}
+
+[LLM] 182 tokens used for prompt
+the answer is {"decision":"no"}
+
+[LLM] 157 tokens used for prompt
+the answer is {"decision":"no"}
+
+[LLM] 167 tokens used for prompt
+the answer is {"decision":"no"}
+
+[LLM] 157 tokens used for prompt
+the answer is {"decision":"no"}
+
+[LLM] 471 tokens used for prompt
+the answer is {"index":0}
+
+[LLM] 202 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 202 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 203 tokens used for prompt
+the answer is {"answer":"no"}
+
+[LLM] 202 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 204 tokens used for prompt
+the answer is {"answer":"no"}
+
+[LLM] 202 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 471 tokens used for prompt
+the answer is {"index":0}
+
+[LLM] 202 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 202 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 203 tokens used for prompt
+the answer is {"answer":"no"}
+
+[LLM] 202 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 204 tokens used for prompt
+the answer is {"answer":"no"}
+
+[LLM] 202 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 471 tokens used for prompt
+the answer is {"index":0}
+
+[LLM] 218 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 202 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 219 tokens used for prompt
+the answer is {"answer":"no"}
+
+[LLM] 218 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 220 tokens used for prompt
+the answer is {"answer":"no"}
+
+[LLM] 218 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 471 tokens used for prompt
+the answer is {"index":0}
+
+[LLM] 218 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 202 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 219 tokens used for prompt
+the answer is {"answer":"no"}
+
+[LLM] 218 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 220 tokens used for prompt
+the answer is {"answer":"no"}
+
+[LLM] 218 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 471 tokens used for prompt
+the answer is {"index":0}
+
+[LLM] 143 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 202 tokens used for prompt
+the answer is {"index": null}
+
+[LLM] 144 tokens used for prompt
+the answer is {"answer":"unsure"}
+
+[LLM] 157 tokens used for prompt
+the answer is {"decision":"yes"}
+
+[LLM] 471 tokens used for prompt
+the answer is {"index":0}
+
+[LLM] 143 tokens used for prompt
+the answer is {"answer":"yes"}
+
+[LLM] 202 tokens used for prompt
+the answer is {"index": 0}
+
+[LLM] 144 tokens used for prompt
+the answer is {"answer":"unsure"}
+
+[LLM] 157 tokens used for prompt
+the answer is {"decision":"yes"}
+
+[LLM] 162 tokens used for prompt
+the answer is {"decision":"yes"}
+

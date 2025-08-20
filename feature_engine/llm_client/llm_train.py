@@ -5,37 +5,8 @@ from typing import Any, Optional, Tuple, List
 import requests
 from dotenv import load_dotenv
 from traitlets import Dict
+from feature_engine.llm_client.chat import _chat
 
-# 从 .env 读取 KEY / BASE
-load_dotenv()
-
-# 环境变量：
-#   OPENAI_API_KEY          必填
-#   OPENAI_API_BASE_URL     选填，默认 https://api.openai.com/v1
-#   LLM_MODEL               选填，默认 gpt-4o-mini
-
-def _chat(messages, *, temperature: float = 0.0) -> str:
-    api_key  = os.getenv("OPENAI_API_KEY", "")
-    base_url = os.getenv("OPENAI_API_BASE_URL", "https://api.openai.com/v1").rstrip("/")
-    model    = os.getenv("LLM_MODEL", "gpt-4")
-    if not api_key:
-        raise RuntimeError("OPENAI_API_KEY 未设置")
-    url = f"{base_url}/chat/completions"
-    resp = requests.post(
-        url,
-        headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
-        json={"model": model, "messages": messages, "temperature": temperature, "n": 1, "stream": False},
-        timeout=60,
-    )
-    if resp.status_code >= 400:
-        raise RuntimeError(f"LLM HTTP {resp.status_code}: {resp.text}")
-    data = resp.json()
-    log_path = "llm.log"
-
-    with open(log_path, "a", encoding="utf-8") as f:
-        f.write(f"[LLM] {data['usage']['prompt_tokens']} tokens used for prompt\n")
-        f.write(f"the answer is {data['choices'][0]['message']['content']}\n\n")
-    return data["choices"][0]["message"]["content"]
 
 
 def classify_line(text: str) -> str:
@@ -196,7 +167,7 @@ def choose_best(text: str, candidates: List[str]) -> Optional[int]:
     """
     # 先用 LLM
     try:
-        idx = _select_index(f"请选择与“{text}”语义等价的一项。", candidates)
+        idx = _select_index(f"请选择与“{text}”语义等价的一项。如果没有返回 None", candidates)
         if idx is not None:
             return idx
         else:

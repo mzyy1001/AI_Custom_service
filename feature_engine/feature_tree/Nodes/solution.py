@@ -39,13 +39,13 @@ class SolutionNode(Node):
         self.output_callback(f"💬 {prompt}")
         return input("请输入反馈(yes/no): ").strip().lower()
 
-    def process_next_node(self) -> Any:
+    def process_next_node(self, chat_log: Any) -> Any:
         """解决方案处理逻辑（对象引用版本）"""
         self.visited = True
         self.output_callback(f"🛠 执行解决方案: {self.description}")
-
+        prompt = f"尝试 '{self.description}',尝试后,问题是否已解决？"
         # 调用交互接口获取用户回复
-        reply = self.interaction_callback(self.description)
+        reply = self.interaction_callback(prompt)
 
         # 解析用户回复
         if reply in ("yes", "y", "true", "1", True):

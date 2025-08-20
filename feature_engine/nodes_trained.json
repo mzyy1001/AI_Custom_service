@@ -16,7 +16,22 @@
       "description": "训练树入口",
       "child_features": [
         "F_e54537e4",
-        "F_2a4432f8"
+        "F_2a4432f8",
+        "F_53e4c6f0",
+        "F_c416b4a6",
+        "F_63aa0467",
+        "F_426045a9",
+        "F_8408f817",
+        "F_8d7b4415",
+        "F_956f1540",
+        "F_0d2978bb",
+        "F_db6e071a",
+        "F_67ca6400",
+        "F_0bed5536",
+        "F_bfaa1956",
+        "F_de73b9e6",
+        "F_9cbe9409",
+        "F_36ea300b"
       ]
     },
     "F_e54537e4": {
@@ -31,6 +46,18 @@
         ],
         [
           "P_d0d55eb2",
+          "soft"
+        ],
+        [
+          "P_3a6aa458",
+          "soft"
+        ],
+        [
+          "P_dcd7e5b8",
+          "soft"
+        ],
+        [
+          "P_2d14a31a",
           "soft"
         ]
       ],
@@ -74,7 +101,8 @@
       "solutions": [
         "S_26ee44e5",
         "S_8121710f",
-        "S_46bb6c6d"
+        "S_46bb6c6d",
+        "S_ab5189f1"
       ],
       "child_features": []
     },
@@ -105,6 +133,14 @@
         [
           "P_697cca6d",
           "hard"
+        ],
+        [
+          "P_b464d88b",
+          "soft"
+        ],
+        [
+          "P_652f4e45",
+          "soft"
         ]
       ],
       "child_features": []
@@ -116,7 +152,8 @@
       "solutions": [
         "S_9a852b2b",
         "S_c71041e9",
-        "S_ebcf3403"
+        "S_ebcf3403",
+        "S_dd80e0c0"
       ],
       "child_features": []
     },
@@ -162,20 +199,32 @@
         [
           "P_702270df",
           "hard"
+        ],
+        [
+          "P_ec3652b3",
+          "soft"
+        ],
+        [
+          "P_d5b8cd6b",
+          "soft"
         ]
       ],
       "child_features": [
         "F_b716e9fb",
         "F_5363378b",
         "F_a1a15e88",
-        "F_7073dc03"
+        "F_7073dc03",
+        "F_7dda6456",
+        "F_0bed5536",
+        "F_4c5595fc",
+        "F_0e44e126"
       ]
     },
     "F_b716e9fb": {
       "type": "Feature",
       "description": "RCS 有报错代码",
       "expected_state": true,
-      "parent_node": "F_2a4432f8",
+      "parent_node": "F_c416b4a6",
       "child_problems": [
         [
           "P_760c7617",
@@ -189,7 +238,8 @@
       "description": "系统出现错误代码导致功能无法正常运行。",
       "parent_feature": "F_b716e9fb",
       "solutions": [
-        "S_72760f09"
+        "S_72760f09",
+        "S_50bb284d"
       ],
       "child_features": []
     },
@@ -203,7 +253,7 @@
       "type": "Feature",
       "description": "周围存在障碍物",
       "expected_state": true,
-      "parent_node": "F_2a4432f8",
+      "parent_node": "F_c416b4a6",
       "child_problems": [
         [
           "P_46fd604b",
@@ -215,9 +265,11 @@
     "P_46fd604b": {
       "type": "Problem",
       "description": "客户的通道被障碍物阻塞。",
-      "parent_feature": "F_5363378b",
+      "parent_feature": "F_c416b4a6",
       "solutions": [
-        "S_c5aea90e"
+        "S_c5aea90e",
+        "S_d4d6312a",
+        "S_ee77a9ff"
       ],
       "child_features": []
     },
@@ -306,6 +358,1398 @@
       "type": "Solution",
       "description": "将模式改为随机跑",
       "parent_problem": "P_702270df",
+      "success_node": "SUCCESS"
+    },
+    "S_ab5189f1": {
+      "type": "Solution",
+      "description": "重新插紧或更换电池连接线",
+      "parent_problem": "P_3fde200f",
+      "success_node": "SUCCESS"
+    },
+    "P_3a6aa458": {
+      "type": "Problem",
+      "description": "电池模块无法正常供电。",
+      "parent_feature": "F_e54537e4",
+      "solutions": [
+        "S_5fc2a827",
+        "S_4950e45c",
+        "S_74435844"
+      ],
+      "child_features": []
+    },
+    "S_5fc2a827": {
+      "type": "Solution",
+      "description": "更换电池模块",
+      "parent_problem": "P_3a6aa458",
+      "success_node": "SUCCESS"
+    },
+    "S_4950e45c": {
+      "type": "Solution",
+      "description": "更换电源板和BMSP板",
+      "parent_problem": "P_3a6aa458",
+      "success_node": "SUCCESS"
+    },
+    "S_dd80e0c0": {
+      "type": "Solution",
+      "description": "重新连接AP天线柱子",
+      "parent_problem": "P_697cca6d",
+      "success_node": "SUCCESS"
+    },
+    "P_b464d88b": {
+      "type": "Problem",
+      "description": "电源板或BMSP板故障导致设备无法正常运行。",
+      "parent_feature": "F_10067773",
+      "solutions": [
+        "S_36f74235"
+      ],
+      "child_features": []
+    },
+    "S_36f74235": {
+      "type": "Solution",
+      "description": "修复或更换电源板和BMSP板",
+      "parent_problem": "P_b464d88b",
+      "success_node": "SUCCESS"
+    },
+    "P_652f4e45": {
+      "type": "Problem",
+      "description": "AP无法正常供电或网络连接不稳定。",
+      "parent_feature": "F_10067773",
+      "solutions": [
+        "S_c21fcfcd"
+      ],
+      "child_features": []
+    },
+    "S_c21fcfcd": {
+      "type": "Solution",
+      "description": "重新连接或更换AP的网线和电源",
+      "parent_problem": "P_652f4e45",
+      "success_node": "SUCCESS"
+    },
+    "S_50bb284d": {
+      "type": "Solution",
+      "description": "用户提交报错代码，然后根据“机器人报错代码排查手册”进行问题排查",
+      "parent_problem": "P_760c7617",
+      "success_node": "SUCCESS"
+    },
+    "F_53e4c6f0": {
+      "type": "Feature",
+      "description": "机器人急停",
+      "expected_state": true,
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_3d1df726",
+          "hard"
+        ],
+        [
+          "P_8ec15aeb",
+          "soft"
+        ],
+        [
+          "P_084258db",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_548a9428",
+        "F_5363378b",
+        "F_4962c4a1"
+      ]
+    },
+    "F_548a9428": {
+      "type": "Feature",
+      "description": "急停位置附近的地毯铺设不正确或有调换",
+      "expected_state": true,
+      "parent_node": "F_426045a9",
+      "child_problems": [
+        [
+          "P_f47967ae",
+          "hard"
+        ],
+        [
+          "P_16a879a2",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_f47967ae": {
+      "type": "Problem",
+      "description": "地毯铺设不平整导致安全隐患。",
+      "parent_feature": "F_548a9428",
+      "solutions": [
+        "S_d54afa55",
+        "S_2a22a01a"
+      ],
+      "child_features": []
+    },
+    "S_d54afa55": {
+      "type": "Solution",
+      "description": "调整地毯铺设",
+      "parent_problem": "P_f47967ae",
+      "success_node": "SUCCESS"
+    },
+    "S_d4d6312a": {
+      "type": "Solution",
+      "description": "清除障碍物或平整地面",
+      "parent_problem": "P_46fd604b",
+      "success_node": "SUCCESS"
+    },
+    "P_3d1df726": {
+      "type": "Problem",
+      "description": "霍尔传感器的读数不准确。",
+      "parent_feature": "F_53e4c6f0",
+      "solutions": [
+        "S_4773298d"
+      ],
+      "child_features": []
+    },
+    "S_4773298d": {
+      "type": "Solution",
+      "description": "按照视频指引校准霍尔",
+      "parent_problem": "P_3d1df726",
+      "success_node": "SUCCESS"
+    },
+    "P_8ec15aeb": {
+      "type": "Problem",
+      "description": "轮径校准不准确导致性能下降。",
+      "parent_feature": "F_53e4c6f0",
+      "solutions": [
+        "S_9b208903",
+        "S_b07da0db"
+      ],
+      "child_features": []
+    },
+    "S_9b208903": {
+      "type": "Solution",
+      "description": "按照视频指引校准轮径",
+      "parent_problem": "P_8ec15aeb",
+      "success_node": "SUCCESS"
+    },
+    "F_4962c4a1": {
+      "type": "Feature",
+      "description": "霍尔板和BMSP板损坏",
+      "expected_state": true,
+      "parent_node": "F_53e4c6f0",
+      "child_problems": [
+        [
+          "P_d5b8cd6b",
+          "hard"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_d5b8cd6b": {
+      "type": "Problem",
+      "description": "霍尔板和BMSP板出现故障导致设备无法正常运行。",
+      "parent_feature": "F_2a4432f8",
+      "solutions": [
+        "S_e88244ad",
+        "S_b4589d53"
+      ],
+      "child_features": []
+    },
+    "S_e88244ad": {
+      "type": "Solution",
+      "description": "更换霍尔板和BMSP板",
+      "parent_problem": "P_d5b8cd6b",
+      "success_node": "SUCCESS"
+    },
+    "P_084258db": {
+      "type": "Problem",
+      "description": "电机损坏的原因是什么？",
+      "parent_feature": "F_53e4c6f0",
+      "solutions": [
+        "S_698b2c9f"
+      ],
+      "child_features": []
+    },
+    "S_698b2c9f": {
+      "type": "Solution",
+      "description": "更换电机并重新注册",
+      "parent_problem": "P_084258db",
+      "success_node": "SUCCESS"
+    },
+    "F_c416b4a6": {
+      "type": "Feature",
+      "description": "机器人到达格口后不卸货、机器人一直停在格口",
+      "expected_state": true,
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_3c7de3c8",
+          "hard"
+        ],
+        [
+          "P_46fd604b",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_548a9428",
+        "F_5363378b",
+        "F_b716e9fb",
+        "F_ecdc3be4"
+      ]
+    },
+    "P_16a879a2": {
+      "type": "Problem",
+      "description": "地毯被移位导致空间布局不协调。",
+      "parent_feature": "F_548a9428",
+      "solutions": [
+        "S_86d35e79"
+      ],
+      "child_features": []
+    },
+    "S_86d35e79": {
+      "type": "Solution",
+      "description": "把地毯放回原处",
+      "parent_problem": "P_16a879a2",
+      "success_node": "SUCCESS"
+    },
+    "S_ee77a9ff": {
+      "type": "Solution",
+      "description": "清理障碍物",
+      "parent_problem": "P_46fd604b",
+      "success_node": "SUCCESS"
+    },
+    "P_3c7de3c8": {
+      "type": "Problem",
+      "description": "分拣机出现故障。",
+      "parent_feature": "F_c416b4a6",
+      "solutions": [
+        "S_586a43d9"
+      ],
+      "child_features": []
+    },
+    "S_586a43d9": {
+      "type": "Solution",
+      "description": "引导客户根据“分拣机故障排查手册”进行排查",
+      "parent_problem": "P_3c7de3c8",
+      "success_node": "SUCCESS"
+    },
+    "F_ecdc3be4": {
+      "type": "Feature",
+      "description": "是3D分拣机",
+      "expected_state": true,
+      "parent_node": "F_c416b4a6",
+      "child_problems": [
+        [
+          "P_0a6941f2",
+          "hard"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_0a6941f2": {
+      "type": "Problem",
+      "description": "分拣机出现故障。",
+      "parent_feature": "F_ecdc3be4",
+      "solutions": [
+        "S_3bf3b94d"
+      ],
+      "child_features": []
+    },
+    "S_3bf3b94d": {
+      "type": "Solution",
+      "description": "引导客户根据“分拣机故障排查手册”进行排查",
+      "parent_problem": "P_0a6941f2",
+      "success_node": "SUCCESS"
+    },
+    "F_63aa0467": {
+      "type": "Feature",
+      "description": "机器人充不进电",
+      "expected_state": true,
+      "parent_node": "F_8d7b4415",
+      "child_problems": [
+        [
+          "P_098f43e1",
+          "hard"
+        ],
+        [
+          "P_dd2206f7",
+          "soft"
+        ],
+        [
+          "P_362b90db",
+          "soft"
+        ],
+        [
+          "P_c31e22c9",
+          "soft"
+        ],
+        [
+          "P_c5de566f",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_63aa0467"
+      ]
+    },
+    "P_098f43e1": {
+      "type": "Problem",
+      "description": "机器人极板表面存在氧化层导致接触不良。",
+      "parent_feature": "F_63aa0467",
+      "solutions": [
+        "S_eed70659"
+      ],
+      "child_features": []
+    },
+    "S_eed70659": {
+      "type": "Solution",
+      "description": "使用砂纸打磨机器人极板，去除氧化层",
+      "parent_problem": "P_098f43e1",
+      "success_node": "SUCCESS"
+    },
+    "P_dd2206f7": {
+      "type": "Problem",
+      "description": "充电桩夹嘴接触不良导致无法正常充电。",
+      "parent_feature": "F_63aa0467",
+      "solutions": [
+        "S_31948d65"
+      ],
+      "child_features": []
+    },
+    "S_31948d65": {
+      "type": "Solution",
+      "description": "尝试重新插拔或更换充电桩夹嘴",
+      "parent_problem": "P_dd2206f7",
+      "success_node": "SUCCESS"
+    },
+    "P_362b90db": {
+      "type": "Problem",
+      "description": "电源板如何检测和更换？",
+      "parent_feature": "F_8d7b4415",
+      "solutions": [
+        "S_5a33d5c9"
+      ],
+      "child_features": []
+    },
+    "S_5a33d5c9": {
+      "type": "Solution",
+      "description": "尝试更换电源板",
+      "parent_problem": "P_362b90db",
+      "success_node": "SUCCESS"
+    },
+    "P_c31e22c9": {
+      "type": "Problem",
+      "description": "电池模块如何进行检测和更换？",
+      "parent_feature": "F_8d7b4415",
+      "solutions": [
+        "S_5abb6c52",
+        "S_d027a49e"
+      ],
+      "child_features": []
+    },
+    "S_5abb6c52": {
+      "type": "Solution",
+      "description": "尝试更换电池模块",
+      "parent_problem": "P_c31e22c9",
+      "success_node": "SUCCESS"
+    },
+    "F_426045a9": {
+      "type": "Feature",
+      "description": "机器人碰撞",
+      "expected_state": true,
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_37c4be3a",
+          "hard"
+        ]
+      ],
+      "child_features": [
+        "F_548a9428",
+        "F_956f1540"
+      ]
+    },
+    "S_2a22a01a": {
+      "type": "Solution",
+      "description": "调整地毯方向或顺序",
+      "parent_problem": "P_f47967ae",
+      "success_node": "SUCCESS"
+    },
+    "F_956f1540": {
+      "type": "Feature",
+      "description": "打开机器人控制系统（RCS），查看有“434：行走打滑”报错",
+      "expected_state": true,
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_d805fcc5",
+          "hard"
+        ],
+        [
+          "P_20df79a7",
+          "soft"
+        ],
+        [
+          "P_0b37ded7",
+          "soft"
+        ],
+        [
+          "P_5a312892",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_c73b783d",
+        "F_0bed5536"
+      ]
+    },
+    "P_d805fcc5": {
+      "type": "Problem",
+      "description": "行走系统出现打滑现象。",
+      "parent_feature": "F_956f1540",
+      "solutions": [
+        "S_6e6127cb",
+        "S_4e1d70d0"
+      ],
+      "child_features": []
+    },
+    "S_6e6127cb": {
+      "type": "Solution",
+      "description": "根据“错误码434：行走打滑”的排查手册进行排查",
+      "parent_problem": "P_d805fcc5",
+      "success_node": "SUCCESS"
+    },
+    "F_7dda6456": {
+      "type": "Feature",
+      "description": "无法扫码",
+      "expected_state": true,
+      "parent_node": "F_7dda6456",
+      "child_problems": [
+        [
+          "P_0d6531f3",
+          "hard"
+        ],
+        [
+          "P_c31a9f06",
+          "soft"
+        ],
+        [
+          "P_14f09b89",
+          "soft"
+        ],
+        [
+          "P_34dc2c26",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_7dda6456"
+      ]
+    },
+    "P_0d6531f3": {
+      "type": "Problem",
+      "description": "补光灯的亮度不足或过强导致照明效果不佳。",
+      "parent_feature": "F_7dda6456",
+      "solutions": [
+        "S_022648ae"
+      ],
+      "child_features": []
+    },
+    "S_022648ae": {
+      "type": "Solution",
+      "description": "适当调整补光灯的亮度",
+      "parent_problem": "P_0d6531f3",
+      "success_node": "SUCCESS"
+    },
+    "P_c31a9f06": {
+      "type": "Problem",
+      "description": "相机拍摄的照片过于明亮或过于暗淡。",
+      "parent_feature": "F_7dda6456",
+      "solutions": [
+        "S_173c9b54",
+        "S_54a327b8",
+        "S_8ffc788d"
+      ],
+      "child_features": []
+    },
+    "S_173c9b54": {
+      "type": "Solution",
+      "description": "适当调整相机的曝光度",
+      "parent_problem": "P_c31a9f06",
+      "success_node": "SUCCESS"
+    },
+    "S_54a327b8": {
+      "type": "Solution",
+      "description": "适当调整相机的焦距",
+      "parent_problem": "P_c31a9f06",
+      "success_node": "SUCCESS"
+    },
+    "P_14f09b89": {
+      "type": "Problem",
+      "description": "相机在使用过程中出现断电现象。",
+      "parent_feature": "F_7dda6456",
+      "solutions": [
+        "S_08bb63cb"
+      ],
+      "child_features": []
+    },
+    "S_08bb63cb": {
+      "type": "Solution",
+      "description": "相机断电后重新上电",
+      "parent_problem": "P_14f09b89",
+      "success_node": "SUCCESS"
+    },
+    "P_34dc2c26": {
+      "type": "Problem",
+      "description": "扫码台软件出现故障或无法正常运行。",
+      "parent_feature": "F_7dda6456",
+      "solutions": [
+        "S_b1113269"
+      ],
+      "child_features": []
+    },
+    "S_b1113269": {
+      "type": "Solution",
+      "description": "重启扫码台软件",
+      "parent_problem": "P_34dc2c26",
+      "success_node": "SUCCESS"
+    },
+    "S_8ffc788d": {
+      "type": "Solution",
+      "description": "更换新的相机",
+      "parent_problem": "P_c31a9f06",
+      "success_node": "SUCCESS"
+    },
+    "F_8408f817": {
+      "type": "Feature",
+      "description": "机器人发出异响",
+      "expected_state": true,
+      "parent_node": "F_8408f817",
+      "child_problems": [
+        [
+          "P_dfb9d7e1",
+          "hard"
+        ],
+        [
+          "P_e81f8519",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_8408f817"
+      ]
+    },
+    "P_dfb9d7e1": {
+      "type": "Problem",
+      "description": "减速机可能存在故障或性能下降。",
+      "parent_feature": "F_8408f817",
+      "solutions": [
+        "S_4f6a6eb1"
+      ],
+      "child_features": []
+    },
+    "S_4f6a6eb1": {
+      "type": "Solution",
+      "description": "尝试更换减速机",
+      "parent_problem": "P_dfb9d7e1",
+      "success_node": "SUCCESS"
+    },
+    "P_e81f8519": {
+      "type": "Problem",
+      "description": "电机可能出现故障或无法正常工作。",
+      "parent_feature": "F_8408f817",
+      "solutions": [
+        "S_6eab57b6",
+        "S_9ef84012"
+      ],
+      "child_features": []
+    },
+    "S_6eab57b6": {
+      "type": "Solution",
+      "description": "尝试更换左/右电机并重新注册",
+      "parent_problem": "P_e81f8519",
+      "success_node": "SUCCESS"
+    },
+    "F_8d7b4415": {
+      "type": "Feature",
+      "description": "机器人自动关机",
+      "expected_state": true,
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_c31e22c9",
+          "hard"
+        ],
+        [
+          "P_6ffd1dbb",
+          "soft"
+        ],
+        [
+          "P_362b90db",
+          "soft"
+        ],
+        [
+          "P_e4af8bbf",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_bb199bfc",
+        "F_63aa0467"
+      ]
+    },
+    "F_bb199bfc": {
+      "type": "Feature",
+      "description": "测量机器人充电极板电压低于4V，高于3V",
+      "expected_state": true,
+      "parent_node": "F_8d7b4415",
+      "child_problems": [
+        [
+          "P_83247708",
+          "hard"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_83247708": {
+      "type": "Problem",
+      "description": "设备无法开机。",
+      "parent_feature": "F_bb199bfc",
+      "solutions": [
+        "S_f3c111b5",
+        "S_1664eca2",
+        "S_6bc6b8d9"
+      ],
+      "child_features": []
+    },
+    "S_f3c111b5": {
+      "type": "Solution",
+      "description": "进行手动充电，5分钟后观察是否能开机",
+      "parent_problem": "P_83247708",
+      "success_node": "SUCCESS"
+    },
+    "S_1664eca2": {
+      "type": "Solution",
+      "description": "按照视频指引激活电池并充电5分钟",
+      "parent_problem": "P_83247708",
+      "success_node": "SUCCESS"
+    },
+    "P_c5de566f": {
+      "type": "Problem",
+      "description": "电池损坏的可能原因是什么？",
+      "parent_feature": "F_63aa0467",
+      "solutions": [],
+      "child_features": []
+    },
+    "S_d027a49e": {
+      "type": "Solution",
+      "description": "尝试更换电池",
+      "parent_problem": "P_c31e22c9",
+      "success_node": "SUCCESS"
+    },
+    "S_6bc6b8d9": {
+      "type": "Solution",
+      "description": "检查电池连接线松动",
+      "parent_problem": "P_83247708",
+      "success_node": "SUCCESS"
+    },
+    "S_74435844": {
+      "type": "Solution",
+      "description": "尝试重新插拔电池连接线",
+      "parent_problem": "P_3a6aa458",
+      "success_node": "SUCCESS"
+    },
+    "P_6ffd1dbb": {
+      "type": "Problem",
+      "description": "传感器板可能存在故障或不准确的读数。",
+      "parent_feature": "F_8d7b4415",
+      "solutions": [
+        "S_3ad58797",
+        "S_4c10679e"
+      ],
+      "child_features": []
+    },
+    "S_3ad58797": {
+      "type": "Solution",
+      "description": "尝试更换传感器板",
+      "parent_problem": "P_6ffd1dbb",
+      "success_node": "SUCCESS"
+    },
+    "S_4c10679e": {
+      "type": "Solution",
+      "description": "尝试更换BMSP板",
+      "parent_problem": "P_6ffd1dbb",
+      "success_node": "SUCCESS"
+    },
+    "P_e4af8bbf": {
+      "type": "Problem",
+      "description": "电池无法正常供电。",
+      "parent_feature": "F_8d7b4415",
+      "solutions": [
+        "S_d8c7788d"
+      ],
+      "child_features": []
+    },
+    "S_d8c7788d": {
+      "type": "Solution",
+      "description": "检查电池连接线松动",
+      "parent_problem": "P_e4af8bbf",
+      "success_node": "SUCCESS"
+    },
+    "P_dcd7e5b8": {
+      "type": "Problem",
+      "description": "如何解决机器人耗电过快的问题？",
+      "parent_feature": "F_e54537e4",
+      "solutions": [
+        "S_5cbed6dd",
+        "S_24f0ea9a",
+        "S_2ae34227"
+      ],
+      "child_features": []
+    },
+    "S_5cbed6dd": {
+      "type": "Solution",
+      "description": "拆机检查电池损坏",
+      "parent_problem": "P_dcd7e5b8",
+      "success_node": "SUCCESS"
+    },
+    "S_24f0ea9a": {
+      "type": "Solution",
+      "description": "尝试更换电池",
+      "parent_problem": "P_dcd7e5b8",
+      "success_node": "SUCCESS"
+    },
+    "S_2ae34227": {
+      "type": "Solution",
+      "description": "尝试更换电源板",
+      "parent_problem": "P_dcd7e5b8",
+      "success_node": "SUCCESS"
+    },
+    "F_c73b783d": {
+      "type": "Feature",
+      "description": "地毯上有异物",
+      "expected_state": true,
+      "parent_node": "F_bfaa1956",
+      "child_problems": [
+        [
+          "P_a51795a6",
+          "hard"
+        ],
+        [
+          "P_e0f78784",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_a51795a6": {
+      "type": "Problem",
+      "description": "设备运行不正常。",
+      "parent_feature": "F_c73b783d",
+      "solutions": [
+        "S_41f0404d"
+      ],
+      "child_features": []
+    },
+    "S_41f0404d": {
+      "type": "Solution",
+      "description": "清理异物",
+      "parent_problem": "P_a51795a6",
+      "success_node": "SUCCESS"
+    },
+    "F_0bed5536": {
+      "type": "Feature",
+      "description": "轮子松动或损坏",
+      "expected_state": true,
+      "parent_node": "F_2a4432f8",
+      "child_problems": [
+        [
+          "P_c5059f0e",
+          "hard"
+        ],
+        [
+          "P_9837a72a",
+          "soft"
+        ],
+        [
+          "P_4749207b",
+          "soft"
+        ],
+        [
+          "P_7588398d",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_0bed5536"
+      ]
+    },
+    "P_c5059f0e": {
+      "type": "Problem",
+      "description": "轮子出现磨损或损坏。",
+      "parent_feature": "F_0bed5536",
+      "solutions": [
+        "S_acdcfe80",
+        "S_6ae23c19"
+      ],
+      "child_features": []
+    },
+    "S_acdcfe80": {
+      "type": "Solution",
+      "description": "重新安装或更换轮子",
+      "parent_problem": "P_c5059f0e",
+      "success_node": "SUCCESS"
+    },
+    "P_20df79a7": {
+      "type": "Problem",
+      "description": "霍尔传感器读数不准确。",
+      "parent_feature": "F_956f1540",
+      "solutions": [
+        "S_3ee3ed85",
+        "S_3b73658f"
+      ],
+      "child_features": []
+    },
+    "S_3ee3ed85": {
+      "type": "Solution",
+      "description": "校准霍尔",
+      "parent_problem": "P_20df79a7",
+      "success_node": "SUCCESS"
+    },
+    "S_3b73658f": {
+      "type": "Solution",
+      "description": "更换霍尔板",
+      "parent_problem": "P_20df79a7",
+      "success_node": "SUCCESS"
+    },
+    "P_0b37ded7": {
+      "type": "Problem",
+      "description": "轮径不准确导致测量误差。",
+      "parent_feature": "F_956f1540",
+      "solutions": [
+        "S_1d364065"
+      ],
+      "child_features": []
+    },
+    "S_1d364065": {
+      "type": "Solution",
+      "description": "校准轮径",
+      "parent_problem": "P_0b37ded7",
+      "success_node": "SUCCESS"
+    },
+    "F_0d2978bb": {
+      "type": "Feature",
+      "description": "机器人转向不灵活",
+      "expected_state": true,
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_5a0414e1",
+          "hard"
+        ],
+        [
+          "P_475f0bfb",
+          "soft"
+        ],
+        [
+          "P_10ca66f5",
+          "soft"
+        ],
+        [
+          "P_5f0b63f4",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_5a0414e1": {
+      "type": "Problem",
+      "description": "万向轮因异物堵塞而无法正常转动。",
+      "parent_feature": "F_0d2978bb",
+      "solutions": [
+        "S_f432d1f8"
+      ],
+      "child_features": []
+    },
+    "S_f432d1f8": {
+      "type": "Solution",
+      "description": "清理万向轮异物",
+      "parent_problem": "P_5a0414e1",
+      "success_node": "SUCCESS"
+    },
+    "P_475f0bfb": {
+      "type": "Problem",
+      "description": "驱动轮出现故障或性能下降。",
+      "parent_feature": "F_0d2978bb",
+      "solutions": [
+        "S_8982d6e3"
+      ],
+      "child_features": []
+    },
+    "S_8982d6e3": {
+      "type": "Solution",
+      "description": "重新安装或更换驱动轮",
+      "parent_problem": "P_475f0bfb",
+      "success_node": "SUCCESS"
+    },
+    "P_10ca66f5": {
+      "type": "Problem",
+      "description": "底盘存在损坏或故障。",
+      "parent_feature": "F_0d2978bb",
+      "solutions": [
+        "S_d4b47e0a"
+      ],
+      "child_features": []
+    },
+    "S_d4b47e0a": {
+      "type": "Solution",
+      "description": "重新安装或更换底盘",
+      "parent_problem": "P_10ca66f5",
+      "success_node": "SUCCESS"
+    },
+    "P_5f0b63f4": {
+      "type": "Problem",
+      "description": "霍尔板出现故障导致设备无法正常工作。",
+      "parent_feature": "F_0d2978bb",
+      "solutions": [
+        "S_f0139000"
+      ],
+      "child_features": []
+    },
+    "S_f0139000": {
+      "type": "Solution",
+      "description": "重新安装或更换霍尔板",
+      "parent_problem": "P_5f0b63f4",
+      "success_node": "SUCCESS"
+    },
+    "P_2d14a31a": {
+      "type": "Problem",
+      "description": "如何解决电机无法正常注册的问题？",
+      "parent_feature": "F_e54537e4",
+      "solutions": [
+        "S_e13a79d3",
+        "S_26e10d5c",
+        "S_53a468c1"
+      ],
+      "child_features": [
+        "F_4c5595fc"
+      ]
+    },
+    "S_e13a79d3": {
+      "type": "Solution",
+      "description": "多尝试几次注册电机",
+      "parent_problem": "P_2d14a31a",
+      "success_node": "SUCCESS"
+    },
+    "F_4c5595fc": {
+      "type": "Feature",
+      "description": "电机不在线",
+      "expected_state": true,
+      "parent_node": "F_2a4432f8",
+      "child_problems": [
+        [
+          "P_27576fed",
+          "hard"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_27576fed": {
+      "type": "Problem",
+      "description": "电机无法正常工作。",
+      "parent_feature": "F_4c5595fc",
+      "solutions": [
+        "S_8a6a1bd0",
+        "S_cebcecc0",
+        "S_ab361fc5"
+      ],
+      "child_features": []
+    },
+    "S_8a6a1bd0": {
+      "type": "Solution",
+      "description": "重新插拔电机连接线",
+      "parent_problem": "P_27576fed",
+      "success_node": "SUCCESS"
+    },
+    "S_cebcecc0": {
+      "type": "Solution",
+      "description": "更换电机并注册",
+      "parent_problem": "P_27576fed",
+      "success_node": "SUCCESS"
+    },
+    "S_26e10d5c": {
+      "type": "Solution",
+      "description": "拆机检查BMSP板是否损坏",
+      "parent_problem": "P_2d14a31a",
+      "success_node": "SUCCESS"
+    },
+    "S_53a468c1": {
+      "type": "Solution",
+      "description": "尝试更换BMSP板并重新注册",
+      "parent_problem": "P_2d14a31a",
+      "success_node": "SUCCESS"
+    },
+    "S_4e1d70d0": {
+      "type": "Solution",
+      "description": "重新安装或更换驱动轮",
+      "parent_problem": "P_d805fcc5",
+      "success_node": "SUCCESS"
+    },
+    "P_5a312892": {
+      "type": "Problem",
+      "description": "底盘存在故障或损坏。",
+      "parent_feature": "F_956f1540",
+      "solutions": [
+        "S_98038259"
+      ],
+      "child_features": []
+    },
+    "S_98038259": {
+      "type": "Solution",
+      "description": "重新安装或更换底盘",
+      "parent_problem": "P_5a312892",
+      "success_node": "SUCCESS"
+    },
+    "S_6ae23c19": {
+      "type": "Solution",
+      "description": "清理或更换万向轮",
+      "parent_problem": "P_c5059f0e",
+      "success_node": "SUCCESS"
+    },
+    "P_e0f78784": {
+      "type": "Problem",
+      "description": "万向轮出现卡滞或损坏现象。",
+      "parent_feature": "F_c73b783d",
+      "solutions": [
+        "S_25466d71",
+        "S_2e585e73"
+      ],
+      "child_features": []
+    },
+    "S_25466d71": {
+      "type": "Solution",
+      "description": "清理或更换万向轮",
+      "parent_problem": "P_e0f78784",
+      "success_node": "SUCCESS"
+    },
+    "F_db6e071a": {
+      "type": "Feature",
+      "description": "机器人按键指示灯不亮",
+      "expected_state": true,
+      "parent_node": "F_db6e071a",
+      "child_problems": [
+        [
+          "P_9d42463a",
+          "hard"
+        ],
+        [
+          "P_e837a48f",
+          "soft"
+        ],
+        [
+          "P_9a7e6b6f",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_db6e071a"
+      ]
+    },
+    "P_9d42463a": {
+      "type": "Problem",
+      "description": "按键板指示灯不亮。",
+      "parent_feature": "F_db6e071a",
+      "solutions": [
+        "S_bba87844"
+      ],
+      "child_features": []
+    },
+    "S_bba87844": {
+      "type": "Solution",
+      "description": "更换按键板指示灯",
+      "parent_problem": "P_9d42463a",
+      "success_node": "SUCCESS"
+    },
+    "P_e837a48f": {
+      "type": "Problem",
+      "description": "如何检查按键板和BMSP板的损坏情况？",
+      "parent_feature": "F_db6e071a",
+      "solutions": [],
+      "child_features": []
+    },
+    "P_9a7e6b6f": {
+      "type": "Problem",
+      "description": "按键板或BMSP板出现故障导致设备无法正常操作。",
+      "parent_feature": "F_db6e071a",
+      "solutions": [
+        "S_54257fef"
+      ],
+      "child_features": []
+    },
+    "S_54257fef": {
+      "type": "Solution",
+      "description": "更换按键板和BMSP板",
+      "parent_problem": "P_9a7e6b6f",
+      "success_node": "SUCCESS"
+    },
+    "F_67ca6400": {
+      "type": "Feature",
+      "description": "机器人向格口反方向卸货",
+      "expected_state": true,
+      "parent_node": "F_67ca6400",
+      "child_problems": [
+        [
+          "P_db64f712",
+          "hard"
+        ]
+      ],
+      "child_features": [
+        "F_67ca6400"
+      ]
+    },
+    "P_db64f712": {
+      "type": "Problem",
+      "description": "皮带机的卸货方向设置不正确。",
+      "parent_feature": "F_67ca6400",
+      "solutions": [
+        "S_636d58e3"
+      ],
+      "child_features": []
+    },
+    "S_636d58e3": {
+      "type": "Solution",
+      "description": "修改RCS配置文件中皮带机的卸货方向",
+      "parent_problem": "P_db64f712",
+      "success_node": "SUCCESS"
+    },
+    "P_9837a72a": {
+      "type": "Problem",
+      "description": "螺丝松动导致设备不稳定。",
+      "parent_feature": "F_0bed5536",
+      "solutions": [
+        "S_f9f7e726"
+      ],
+      "child_features": []
+    },
+    "S_f9f7e726": {
+      "type": "Solution",
+      "description": "拧紧螺丝",
+      "parent_problem": "P_9837a72a",
+      "success_node": "SUCCESS"
+    },
+    "P_4749207b": {
+      "type": "Problem",
+      "description": "抱箍安装不当导致设备不稳定。",
+      "parent_feature": "F_0bed5536",
+      "solutions": [
+        "S_c3e0bec3"
+      ],
+      "child_features": []
+    },
+    "S_c3e0bec3": {
+      "type": "Solution",
+      "description": "重新拆装抱箍",
+      "parent_problem": "P_4749207b",
+      "success_node": "SUCCESS"
+    },
+    "P_7588398d": {
+      "type": "Problem",
+      "description": "电机无法正常启动。",
+      "parent_feature": "F_0bed5536",
+      "solutions": [
+        "S_f4109eb4",
+        "S_72165782"
+      ],
+      "child_features": []
+    },
+    "S_f4109eb4": {
+      "type": "Solution",
+      "description": "拔插电机线",
+      "parent_problem": "P_7588398d",
+      "success_node": "SUCCESS"
+    },
+    "S_72165782": {
+      "type": "Solution",
+      "description": "更换电机并重新注册",
+      "parent_problem": "P_7588398d",
+      "success_node": "SUCCESS"
+    },
+    "S_ab361fc5": {
+      "type": "Solution",
+      "description": "重新安装或更换电机",
+      "parent_problem": "P_27576fed",
+      "success_node": "SUCCESS"
+    },
+    "P_ec3652b3": {
+      "type": "Problem",
+      "description": "霍尔传感器读数不准确。",
+      "parent_feature": "F_2a4432f8",
+      "solutions": [
+        "S_2d92c5ec"
+      ],
+      "child_features": []
+    },
+    "S_2d92c5ec": {
+      "type": "Solution",
+      "description": "校准霍尔",
+      "parent_problem": "P_ec3652b3",
+      "success_node": "SUCCESS"
+    },
+    "S_b4589d53": {
+      "type": "Solution",
+      "description": "重新安装或更换霍尔板",
+      "parent_problem": "P_d5b8cd6b",
+      "success_node": "SUCCESS"
+    },
+    "F_0e44e126": {
+      "type": "Feature",
+      "description": "无法读取到地毯的RFID值",
+      "expected_state": true,
+      "parent_node": "F_2a4432f8",
+      "child_problems": [
+        [
+          "P_a9f4cdf2",
+          "hard"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_a9f4cdf2": {
+      "type": "Problem",
+      "description": "地毯位置的RFID值与实际位置不匹配。",
+      "parent_feature": "F_0e44e126",
+      "solutions": [
+        "S_40d35796"
+      ],
+      "child_features": []
+    },
+    "S_40d35796": {
+      "type": "Solution",
+      "description": "更换地毯并修改码文件中此坐标位置的RFID值",
+      "parent_problem": "P_a9f4cdf2",
+      "success_node": "SUCCESS"
+    },
+    "F_bfaa1956": {
+      "type": "Feature",
+      "description": "机器人原地转动",
+      "expected_state": true,
+      "parent_node": "ORIGIN",
+      "child_problems": [],
+      "child_features": [
+        "F_c73b783d"
+      ]
+    },
+    "S_2e585e73": {
+      "type": "Solution",
+      "description": "清理异物",
+      "parent_problem": "P_e0f78784",
+      "success_node": "SUCCESS"
+    },
+    "F_de73b9e6": {
+      "type": "Feature",
+      "description": "机器人卸货动作无力",
+      "expected_state": true,
+      "parent_node": "ORIGIN",
+      "child_problems": [],
+      "child_features": [
+        "F_36ea300b"
+      ]
+    },
+    "F_36ea300b": {
+      "type": "Feature",
+      "description": "翻板电机状态异常",
+      "expected_state": true,
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_ac5c90fe",
+          "hard"
+        ],
+        [
+          "P_843e9925",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_ac5c90fe": {
+      "type": "Problem",
+      "description": "电机无法正常运行。",
+      "parent_feature": "F_36ea300b",
+      "solutions": [
+        "S_b9ae7a39"
+      ],
+      "child_features": []
+    },
+    "S_b9ae7a39": {
+      "type": "Solution",
+      "description": "重新注册电机",
+      "parent_problem": "P_ac5c90fe",
+      "success_node": "SUCCESS"
+    },
+    "S_9ef84012": {
+      "type": "Solution",
+      "description": "更换翻板电机并重新注册",
+      "parent_problem": "P_e81f8519",
+      "success_node": "SUCCESS"
+    },
+    "F_9cbe9409": {
+      "type": "Feature",
+      "description": "电池传感器板子接头连接片断掉",
+      "expected_state": true,
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_fdabe83f",
+          "hard"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_fdabe83f": {
+      "type": "Problem",
+      "description": "传感器板子故障导致设备无法正常工作。",
+      "parent_feature": "F_9cbe9409",
+      "solutions": [
+        "S_25867c5f"
+      ],
+      "child_features": []
+    },
+    "S_25867c5f": {
+      "type": "Solution",
+      "description": "更换传感器板子",
+      "parent_problem": "P_fdabe83f",
+      "success_node": "SUCCESS"
+    },
+    "P_843e9925": {
+      "type": "Problem",
+      "description": "翻板无法正常工作。",
+      "parent_feature": "F_36ea300b",
+      "solutions": [
+        "S_ea3939c1"
+      ],
+      "child_features": []
+    },
+    "S_ea3939c1": {
+      "type": "Solution",
+      "description": "重新注册翻板",
+      "parent_problem": "P_843e9925",
+      "success_node": "SUCCESS"
+    },
+    "P_37c4be3a": {
+      "type": "Problem",
+      "description": "系统时间不准确。",
+      "parent_feature": "F_426045a9",
+      "solutions": [
+        "S_2056f5c2"
+      ],
+      "child_features": []
+    },
+    "S_2056f5c2": {
+      "type": "Solution",
+      "description": "关闭时间同步",
+      "parent_problem": "P_37c4be3a",
+      "success_node": "SUCCESS"
+    },
+    "S_b07da0db": {
+      "type": "Solution",
+      "description": "新加入的机器人需要先校准轮径",
+      "parent_problem": "P_8ec15aeb",
       "success_node": "SUCCESS"
     }
   }

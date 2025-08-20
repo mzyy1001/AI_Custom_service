@@ -253,6 +253,19 @@ def train_on_segment(engine: Engine, segment_lines: List[str]) -> None:
                     feature_ctx.add_node(target_problem, link_mode="soft")
                     print(f"  → 新建 Problem(挂方案): {target_problem.node_id} {q_desc}")
 
+
+            sols = getattr(target_problem, "solutions", [])
+            if sols:
+                idx = choose_best(line, [f"{s.node_id}:{s.description}" for s in sols])
+                if idx is not None:
+                    chosen_sol = sols[idx]
+                    # 确保 success_node 绑定到引擎唯一 success（以防旧数据缺失）
+                    if getattr(chosen_sol, "success_node", None) is None:
+                        chosen_sol.success_node = engine.success
+                    print(f"  → 复用已有 Solution: {chosen_sol.node_id} {chosen_sol.description}")
+                    current = chosen_sol   # 转移到已存在的 solution 节点
+                    continue
+                
             sid = _new_id("S", set(engine.registry.keys()))
             sol = SolutionNode(sid, line, success_node=engine.success, parent_problem=target_problem)
             _ensure_registered(engine, sol)
@@ -275,6 +288,7 @@ def train_from_file(tree_json_path: str, segments_path: str, save_to: Optional[s
     p = Path(tree_json_path)
     
     if p.exists():
+        print(f"[TRAIN] 读取现有树: {p}")
         engine = Engine.load_nodes(str(p))
     else:
         engine = _new_empty_engine()

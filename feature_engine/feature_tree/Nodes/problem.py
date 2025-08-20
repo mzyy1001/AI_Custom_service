@@ -1,6 +1,6 @@
 from typing import Callable, Optional, Any, List
 from ..node import Node, NodeType  # 按实际路径调整
-
+from feature_engine.llm_client.llm_produce import pick_child_feature_index
 
 class ProblemNode(Node):
     def __init__(
@@ -91,17 +91,33 @@ class ProblemNode(Node):
         self.output_callback(f"💬 {prompt}")
         return input("问题是否已解决？(yes/no): ").strip().lower()
 
-    def _select_next_feature(self) -> Optional['Node']:
-        for feature in self.child_features:
-            if not feature.visited:
-                return feature
-        return None
+    def _select_next_feature(self, chat_log: Any) -> Optional['Node']:
+        """
+        使用外部 LLM 路由器在未访问的子特征中选择一个。
+        - 候选：仅未访问
+        - LLM 返回 None 时回退到第一个未访问
+        """
+        candidates = [f for f in self.child_features if not getattr(f, "visited", False)]
+        if not candidates:
+            return None
+        if len(candidates) == 1:
+            return candidates[0]
 
-    def process_next_node(self) -> Any:
+        options = [f"{c.node_id}:{getattr(c, 'description', '')}" for c in candidates]
+        try:
+            idx = pick_child_feature_index(self.description, options, chat_log)
+            if isinstance(idx, int) and 0 <= idx < len(candidates):
+                return candidates[idx]
+        except Exception as e:
+            self.output_callback(f"⚠️ LLM 选择失败，回退默认策略：{e}")
+
+        return candidates[0]
+
+    def process_next_node(self, chat_log: Any) -> Any:
         self.output_callback(f"📌 进入问题: {self.description} (模式: {self.mode})")
 
         if self.visited:
-            if self._check_problem_resolved():
+            if self._check_problem_resolved(chat_log):
                 self.output_callback(f"🔙 问题已解决 → 回退到母特征 {self.parent_feature.node_id}")
                 return {"next_node": self.parent_feature}
             else:
@@ -110,17 +126,17 @@ class ProblemNode(Node):
         # 标记已访问
         self.visited = True
 
+        # Step 2: 未访问的 Feature
+        target_feature = self._select_next_feature(chat_log)
+        if target_feature:
+            self.output_callback(f"🔍 进入子特征: {target_feature.node_id}")
+            return {"next_node": target_feature}
+
         # Step 1: 未访问的 Solution
         for sol_node in self.solutions:
             if not getattr(sol_node, "visited", False):
                 self.output_callback(f"🛠 选择解决方案: {sol_node.node_id}")
                 return {"next_node": sol_node}
-
-        # Step 2: 未访问的 Feature
-        target_feature = self._select_next_feature()
-        if target_feature:
-            self.output_callback(f"🔍 进入子特征: {target_feature.node_id}")
-            return {"next_node": target_feature}
 
         # Step 3: 无路可走 → hard/soft
         if self.mode == "hard":
@@ -130,9 +146,11 @@ class ProblemNode(Node):
             self.output_callback(f"ℹ 软问题无路可走 → 回退到母特征 {self.parent_feature.node_id}")
             return {"next_node": self.parent_feature}
 
-    def _check_problem_resolved(self) -> bool:
+    def _check_problem_resolved(self, chat_log: Any) -> bool:
         """纯交互确认父特征是否已消失/问题可视为已解决"""
         if getattr(self.parent_feature, "resolved", False):
             return True
         reply = self.interaction_callback(f"特征《{self.parent_feature.description}》是否已经消失？")
-        return reply in ("yes", "y", "true", "1", True)
+        state = reply in ("yes", "y", "true", "1", True)
+        self.parent_feature.set_expected_state(state)
+        return state

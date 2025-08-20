@@ -1,0 +1,312 @@
+{
+  "root_id": "ORIGIN",
+  "success_id": "SUCCESS",
+  "failure_id": "FAILURE",
+  "nodes": {
+    "FAILURE": {
+      "type": "Failure",
+      "description": "失败"
+    },
+    "SUCCESS": {
+      "type": "Success",
+      "description": "完成"
+    },
+    "ORIGIN": {
+      "type": "Origin",
+      "description": "训练树入口",
+      "child_features": [
+        "F_e54537e4",
+        "F_2a4432f8"
+      ]
+    },
+    "F_e54537e4": {
+      "type": "Feature",
+      "description": "机器人开不了机",
+      "expected_state": true,
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_3fde200f",
+          "hard"
+        ],
+        [
+          "P_d0d55eb2",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_a8e14f58",
+        "F_10067773"
+      ]
+    },
+    "F_a8e14f58": {
+      "type": "Feature",
+      "description": "rcs显示电量低",
+      "expected_state": true,
+      "parent_node": "F_e54537e4",
+      "child_problems": [
+        [
+          "P_fe489f0e",
+          "hard"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_fe489f0e": {
+      "type": "Problem",
+      "description": "设备电量不足。",
+      "parent_feature": "F_a8e14f58",
+      "solutions": [
+        "S_6de9704c"
+      ],
+      "child_features": []
+    },
+    "S_6de9704c": {
+      "type": "Solution",
+      "description": "进行手动充电20分钟",
+      "parent_problem": "P_fe489f0e",
+      "success_node": "SUCCESS"
+    },
+    "P_3fde200f": {
+      "type": "Problem",
+      "description": "设备无法正常启动或运行。",
+      "parent_feature": "F_e54537e4",
+      "solutions": [
+        "S_26ee44e5",
+        "S_8121710f",
+        "S_46bb6c6d"
+      ],
+      "child_features": []
+    },
+    "S_26ee44e5": {
+      "type": "Solution",
+      "description": "检查电池连接线是否松动，尝试重新插拔电池连接线",
+      "parent_problem": "P_3fde200f",
+      "success_node": "SUCCESS"
+    },
+    "S_8121710f": {
+      "type": "Solution",
+      "description": "检查电池模块是否损坏，尝试更换电池模块",
+      "parent_problem": "P_3fde200f",
+      "success_node": "SUCCESS"
+    },
+    "S_46bb6c6d": {
+      "type": "Solution",
+      "description": "检查电源板和BMSP板是否损坏，尝试更换电源板和BMSP板",
+      "parent_problem": "P_3fde200f",
+      "success_node": "SUCCESS"
+    },
+    "F_10067773": {
+      "type": "Feature",
+      "description": "RCS上确认AP离线",
+      "expected_state": true,
+      "parent_node": "F_e54537e4",
+      "child_problems": [
+        [
+          "P_697cca6d",
+          "hard"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_697cca6d": {
+      "type": "Problem",
+      "description": "AP信号不稳定或覆盖范围不足。",
+      "parent_feature": "F_10067773",
+      "solutions": [
+        "S_9a852b2b",
+        "S_c71041e9",
+        "S_ebcf3403"
+      ],
+      "child_features": []
+    },
+    "S_9a852b2b": {
+      "type": "Solution",
+      "description": "查AP的两根天线柱子是否拧紧，尝试重新拧紧，并且避免天线底座跟金属有接触。",
+      "parent_problem": "P_697cca6d",
+      "success_node": "SUCCESS"
+    },
+    "S_c71041e9": {
+      "type": "Solution",
+      "description": "检查AP的网线和电源是否正常，尝试重新插拔网线和电源线。",
+      "parent_problem": "P_697cca6d",
+      "success_node": "SUCCESS"
+    },
+    "S_ebcf3403": {
+      "type": "Solution",
+      "description": "更换AP盒子",
+      "parent_problem": "P_697cca6d",
+      "success_node": "SUCCESS"
+    },
+    "P_d0d55eb2": {
+      "type": "Problem",
+      "description": "无线网络信号干扰导致连接不稳定。",
+      "parent_feature": "F_e54537e4",
+      "solutions": [
+        "S_f57b72bc"
+      ],
+      "child_features": []
+    },
+    "S_f57b72bc": {
+      "type": "Solution",
+      "description": "尝试更换AP信道",
+      "parent_problem": "P_d0d55eb2",
+      "success_node": "SUCCESS"
+    },
+    "F_2a4432f8": {
+      "type": "Feature",
+      "description": "机器人无法移动",
+      "expected_state": true,
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_702270df",
+          "hard"
+        ]
+      ],
+      "child_features": [
+        "F_b716e9fb",
+        "F_5363378b",
+        "F_a1a15e88",
+        "F_7073dc03"
+      ]
+    },
+    "F_b716e9fb": {
+      "type": "Feature",
+      "description": "RCS 有报错代码",
+      "expected_state": true,
+      "parent_node": "F_2a4432f8",
+      "child_problems": [
+        [
+          "P_760c7617",
+          "hard"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_760c7617": {
+      "type": "Problem",
+      "description": "系统出现错误代码导致功能无法正常运行。",
+      "parent_feature": "F_b716e9fb",
+      "solutions": [
+        "S_72760f09"
+      ],
+      "child_features": []
+    },
+    "S_72760f09": {
+      "type": "Solution",
+      "description": "根据报错代码进行排查（按《机器人报错代码排查手册》）",
+      "parent_problem": "P_760c7617",
+      "success_node": "SUCCESS"
+    },
+    "F_5363378b": {
+      "type": "Feature",
+      "description": "周围存在障碍物",
+      "expected_state": true,
+      "parent_node": "F_2a4432f8",
+      "child_problems": [
+        [
+          "P_46fd604b",
+          "hard"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_46fd604b": {
+      "type": "Problem",
+      "description": "客户的通道被障碍物阻塞。",
+      "parent_feature": "F_5363378b",
+      "solutions": [
+        "S_c5aea90e"
+      ],
+      "child_features": []
+    },
+    "S_c5aea90e": {
+      "type": "Solution",
+      "description": "引导客户清理障碍物",
+      "parent_problem": "P_46fd604b",
+      "success_node": "SUCCESS"
+    },
+    "F_a1a15e88": {
+      "type": "Feature",
+      "description": "格口或分拣机状态不正常",
+      "expected_state": true,
+      "parent_node": "F_2a4432f8",
+      "child_problems": [
+        [
+          "P_92af9c49",
+          "hard"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_92af9c49": {
+      "type": "Problem",
+      "description": "格口或分拣机状态异常。",
+      "parent_feature": "F_a1a15e88",
+      "solutions": [
+        "S_e21cb014"
+      ],
+      "child_features": []
+    },
+    "S_e21cb014": {
+      "type": "Solution",
+      "description": "恢复格口或分拣机状态",
+      "parent_problem": "P_92af9c49",
+      "success_node": "SUCCESS"
+    },
+    "F_7073dc03": {
+      "type": "Feature",
+      "description": "全场停止但没有急停",
+      "expected_state": true,
+      "parent_node": "F_2a4432f8",
+      "child_problems": [],
+      "child_features": [
+        "F_d09c9c27"
+      ]
+    },
+    "F_d09c9c27": {
+      "type": "Feature",
+      "description": "RCS 小车报错闪烁且颜色为粉色",
+      "expected_state": true,
+      "parent_node": "F_7073dc03",
+      "child_problems": [
+        [
+          "P_fa32b9c9",
+          "hard"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_fa32b9c9": {
+      "type": "Problem",
+      "description": "RFID 和 RCS 之间存在不兼容或信息孤岛问题。",
+      "parent_feature": "F_d09c9c27",
+      "solutions": [
+        "S_bae26c1b"
+      ],
+      "child_features": []
+    },
+    "S_bae26c1b": {
+      "type": "Solution",
+      "description": "将RFID 和 RCS 统一",
+      "parent_problem": "P_fa32b9c9",
+      "success_node": "SUCCESS"
+    },
+    "P_702270df": {
+      "type": "Problem",
+      "description": "系统在运行时出现了固定模式导致的效率低下。",
+      "parent_feature": "F_2a4432f8",
+      "solutions": [
+        "S_241684ab"
+      ],
+      "child_features": []
+    },
+    "S_241684ab": {
+      "type": "Solution",
+      "description": "将模式改为随机跑",
+      "parent_problem": "P_702270df",
+      "success_node": "SUCCESS"
+    }
+  }
+}

@@ -1,6 +1,7 @@
 from typing import Callable, Optional, Any, List
 from ..node import Node, NodeType
 
+from feature_engine.llm_client.llm_produce import pick_child_feature_index
 
 class OriginNode(Node):
     def __init__(
@@ -49,23 +50,35 @@ class OriginNode(Node):
         self.output_callback(f"💬 {prompt}")
         return input("请输入反馈(yes/no): ").strip().lower()
 
-    def _select_next_feature(self) -> Optional['Node']:
+    def _select_next_feature(self, chat_log: Any) -> Optional['Node']:
         """
-        选择下一个要访问的子特征。
-        - 默认规则：选择第一个未访问的
-        - 未来可替换成 LLM 或更复杂的策略
+        使用外部 LLM 路由器在未访问的子特征中选择一个。
+        - 候选：仅未访问
+        - LLM 返回 None 时回退到第一个未访问
         """
-        for feature in self.child_features:
-            if not feature.visited:
-                return feature
-        return None
+        candidates = [f for f in self.child_features if not getattr(f, "visited", False)]
+        if not candidates:
+            return None
+        if len(candidates) == 1:
+            return candidates[0]
 
-    def process_next_node(self, node: 'Node', chat_log: Any) -> Any:
+        options = [f"{c.node_id}:{getattr(c, 'description', '')}" for c in candidates]
+        try:
+            idx = pick_child_feature_index(self.description, options, chat_log)
+            if isinstance(idx, int) and 0 <= idx < len(candidates):
+                return candidates[idx]
+        except Exception as e:
+            self.output_callback(f"⚠️ LLM 选择失败，回退默认策略：{e}")
+
+        return candidates[0]
+
+
+    def process_next_node(self, chat_log: Any) -> Any:
         """Origin 节点处理逻辑"""
         self.visited = True
         self.output_callback(f"🚀 从 Origin 节点开始: {self.description}")
 
-        target_feature = self._select_next_feature()
+        target_feature = self._select_next_feature(chat_log)
         if target_feature:
             self.output_callback(f"🔍 进入子特征: {target_feature.node_id}")
             return {"next_node": target_feature}

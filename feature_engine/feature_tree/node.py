@@ -34,7 +34,7 @@ class Node:
         self.description = description
         self.handler = handler or self.default_handler
         self.output_callback = output_callback or print
-
+        self.counts = 0
 
         self.interaction_callback: Optional[Callable[[str], Any]] = None
         # 占位：后续把“连边”放进节点内（对象引用）
@@ -44,6 +44,9 @@ class Node:
 
         self.visited = False
 
+    def increment_counts(self) -> None:
+        """增加节点计数器"""
+        self.counts += 1
 
     def set_interaction_callback(self, fn: Optional[Callable[[str], Any]]) -> None:
         """
@@ -65,7 +68,7 @@ class Node:
 
     # =====================================
 
-    def process_next_node(self) -> Any:
+    def process_next_node(self, chat_log: List[Dict[str, str]]) -> Any:
         """默认处理逻辑（子类通常会覆写）"""
         self.output_callback(f"[{self.node_type.value}] {self.description}")
         return None

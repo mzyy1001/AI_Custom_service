@@ -17,7 +17,7 @@ class FailureNode(Node):
             output_callback=output_callback
         )
 
-    def process_next_node(self, node: 'Node', input_data: Any) -> Any:
+    def process_next_node(self, input_data: Any) -> Any:
         """失败节点默认逻辑"""
         self.output_callback(f"❌ 失败: {self.description}")
         return {"status": "failure", "node_id": self.node_id}

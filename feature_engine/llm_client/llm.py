@@ -4,38 +4,7 @@ import os, re, json
 from typing import Optional, Tuple, List
 import requests
 from dotenv import load_dotenv
-
-# 默认从 .env 读取环境变量
-load_dotenv()
-
-# 期望的环境变量：
-#   OPENAI_API_KEY
-#   OPENAI_API_BASE_URL   例： http://10.1.103.13:3001/v1
-# 可选：
-#   LLM_MODEL             例： gpt-4o-mini
-#
-# 仅提供两个函数：
-#   llm_yes_no(prompt)         -> (Optional[bool], raw_text)
-#   llm_select(prompt, options)-> (Optional[int],  raw_text)
-
-def _chat(messages, *, temperature: float = 0.0) -> str:
-    """最小化的 /v1/chat/completions 调用，返回文本内容。"""
-    api_key   = os.getenv("OPENAI_API_KEY", "")
-    base_url  = os.getenv("OPENAI_API_BASE_URL", "https://api.openai.com/v1").rstrip("/")
-    model     = os.getenv("LLM_MODEL", "gpt-4o-mini")
-    if not api_key:
-        raise RuntimeError("OPENAI_API_KEY 未设置")
-    url = f"{base_url}/chat/completions"
-    resp = requests.post(
-        url,
-        headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
-        json={"model": model, "messages": messages, "temperature": temperature, "n": 1, "stream": False},
-        timeout=60,
-    )
-    if resp.status_code >= 400:
-        raise RuntimeError(f"LLM HTTP {resp.status_code}: {resp.text}")
-    data = resp.json()
-    return data["choices"][0]["message"]["content"]
+from feature_engine.llm_client.chat import _chat
 
 def _normalize_yes_no(text: str) -> Optional[bool]:
     """把输出规整成 True/False/None（支持中英常见回答）。"""

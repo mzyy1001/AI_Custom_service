@@ -1,13 +1,13 @@
 from typing import Callable, Optional, Any, List, Tuple
 from ..node import Node, NodeType
 from feature_engine.llm_client.llm import llm_select
+from feature_engine.llm_client.llm_produce import pick_child_feature_index, llm_yes_no
 
 class FeatureNode(Node):
     def __init__(
         self,
         node_id: str,
         description: str,
-        expected_state: bool,  # True / False
         parent_node: Node,
         child_problems: Optional[List[Tuple[Node, str]]] = None,
         child_features: Optional[List['Node']] = None,
@@ -22,7 +22,7 @@ class FeatureNode(Node):
             handler=handler,
             output_callback=output_callback
         )
-        self.expected_state = expected_state
+        self.expected_state = None
         self.parent_node = parent_node
         self.child_problems = child_problems or []               # List[Tuple[ProblemNode, "hard"/"soft"]]
         self.child_features = child_features or []               # List[FeatureNode]
@@ -55,7 +55,7 @@ class FeatureNode(Node):
                 self.output_callback(f"⚠️ Problem {node.node_id} 已存在于子问题列表，跳过")
                 return
             # 写死逻辑：本 Feature 下第一个 Problem 为 hard，其余为 soft
-            effective_mode = "hard" if len(self.child_problems) == 0 else "soft"
+            effective_mode = "soft"
             self.child_problems.append((node, effective_mode))
             try:
                 setattr(node, "parent_feature", self)
@@ -87,21 +87,20 @@ class FeatureNode(Node):
         return input("该特征是否为正？(yes/no): ").strip().lower()
 
     def _auto_judge_from_chatlog(self, chat_log: Any) -> Optional[bool]:
-        """
-        尝试从 chat_log 自动判断特征是否为正
-        - 返回 True 表示正
-        - 返回 False 表示负
-        - 返回 None 表示无法判断
-        """
-        # TODO: 在这里实现你的自动判断逻辑
-        return None
+        return llm_yes_no(self.description, chat_log)
 
-    def process_next_node(self, node: 'Node', chat_log: Any) -> Any:
+    def set_expected_state(self, state: bool) -> None:
+        self.expected_state = state
+
+    def process_next_node(self, chat_log: Any) -> Any:
         self.visited = True
         self.output_callback(f"📌 进入特征: {self.description} (期望状态: {self.expected_state})")
 
         # Step 1: 自动判断
-        auto_result = self._auto_judge_from_chatlog(chat_log)
+        if self.expected_state is None:
+            auto_result = self._auto_judge_from_chatlog(chat_log)
+            self.expected_state = auto_result
+
         if auto_result is not None:
             if auto_result:
                 self.confirmed_positive = True
@@ -123,9 +122,9 @@ class FeatureNode(Node):
 
     def _select_next_feature(self, chat_log: Any) -> Optional['Node']:
         """
-        使用 LLM 在未访问的子特征中选择一个。
-        - 优先：llm_select 依据描述挑选
-        - 回退：若 LLM 不可用/解析失败，选择第一个未访问的
+        使用外部 LLM 路由器在未访问的子特征中选择一个。
+        - 候选：仅未访问
+        - LLM 返回 None 时回退到第一个未访问
         """
         candidates = [f for f in self.child_features if not getattr(f, "visited", False)]
         if not candidates:
@@ -133,22 +132,9 @@ class FeatureNode(Node):
         if len(candidates) == 1:
             return candidates[0]
 
-        options = [f"{c.node_id}：{getattr(c, 'description', '')}" for c in candidates]
-
-        if llm_select is None:
-            self.output_callback("ℹ️ LLM 不可用，采用默认顺序选择子特征")
-            return candidates[0]
-
-        prompt = (
-            f"当前位于特征《{self.description}》。请从候选子特征中选出最优先检查的一项。"
-            "如果我现有的聊天记录已经可以判断该子特征是否为正，则选择这个子特征。"
-            "仅输出一个数字序号（从 0 开始）。"
-            f"我现有的聊天记录是：{chat_log}\n\n"
-        )
-
+        options = [f"{c.node_id}:{getattr(c, 'description', '')}" for c in candidates]
         try:
-            idx, raw = llm_select(prompt, options)
-            self.output_callback(f"🤖 LLM 选择结果：{idx} | 原始: {raw!r}")
+            idx = pick_child_feature_index(self.description, options, chat_log)
             if isinstance(idx, int) and 0 <= idx < len(candidates):
                 return candidates[idx]
         except Exception as e:
@@ -158,6 +144,14 @@ class FeatureNode(Node):
 
     def _next_child_node(self, chat_log: Any) -> Any:
         """优先访问子问题，然后子特征"""
+
+
+        target_feature = self._select_next_feature(chat_log) 
+        if target_feature:
+            self.output_callback(f"🔍 进入子特征: {target_feature.node_id}")
+            return {"next_node": target_feature}
+
+
         # 先找未访问的问题
         for problem, link_mode in self.child_problems:
             if not getattr(problem, "visited", False):
@@ -169,15 +163,16 @@ class FeatureNode(Node):
                 return {"next_node": problem}
 
         # 再找要访问的特征（由选择函数决定）
-        target_feature = self._select_next_feature(chat_log)  # ✅ 传入 chat_log
-        if target_feature:
-            self.output_callback(f"🔍 进入子特征: {target_feature.node_id}")
-            return {"next_node": target_feature}
-
+        
         # 如果都访问过
         if self.parent_node.node_type == NodeType.ORIGIN:
             self.output_callback("❌ 父节点是 Origin → 跳转到 Failure")
             return {"next_node": "FAILURE"}
         else:
-            self.output_callback(f"↩ 所有子节点已访问，返回父节点 {self.parent_node.node_id}")
-            return {"next_node": self.parent_node}
+            if self.expected_state == True:
+                self.output_callback("✅ 特征仍为正 → 跳转到失败节点")
+                return {"next_node": "FAILURE"}
+            else:
+                self.output_callback("❌ 特征不再为正 → 返回父节点")
+                self.expected_state = False
+                return {"next_node": self.parent_node}

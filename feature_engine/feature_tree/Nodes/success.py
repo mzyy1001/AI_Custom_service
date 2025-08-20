@@ -20,7 +20,7 @@ class SuccessNode(Node):
         )
         self.output_callback = output_callback or print  # 默认用 print
 
-    def process_next_node(self, node: 'Node', input_data: Any) -> Any:
+    def process_next_node(self, chat_log: Any) -> Any:
         """成功节点默认逻辑"""
         message = f"✅ 成功: {self.description}"
         self.output_callback(message)

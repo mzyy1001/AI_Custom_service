@@ -56,7 +56,8 @@ class Engine:
             setattr(node, "interaction_callback", self.interaction_callback)
 
         if hasattr(node, "process_next_node"):
-            res = node.process_next_node(node, new_input)
+            # print(f"🔄 处理节点: {node.node_id} ({new_input})")
+            res = node.process_next_node(new_input)
         else:
             res = node.execute(new_input)
 
@@ -157,7 +158,6 @@ class Engine:
                     if isinstance(item, tuple) and len(item) == 2:
                         cps.append([item[0].node_id, str(item[1]).lower()])
                 meta.update({
-                    "expected_state": getattr(n, "expected_state", True),
                     "parent_node": getattr(getattr(n, "parent_node", None), "node_id", None),
                     "child_problems": cps,
                     "child_features": [c.node_id for c in getattr(n, "child_features", [])],
@@ -200,7 +200,7 @@ class Engine:
                 node = OriginNode(nid, desc, child_features=[], output_callback=output_callback,
                                   interaction_callback=interaction_callback)
             elif ntype == NodeType.FEATURE:
-                node = FeatureNode(nid, desc, expected_state=bool(meta.get("expected_state", True)),
+                node = FeatureNode(nid, desc,
                                    parent_node=None, child_problems=[], child_features=[],
                                    output_callback=output_callback, interaction_callback=interaction_callback)
             elif ntype == NodeType.PROBLEM:
