@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import List, Optional, Callable
 import uuid
 from pathlib import Path
+import math
 
 # 你的引擎 & 各节点
 from feature_engine.engine import Engine  # 你的极简版 Engine（使用 node.add_node）
@@ -21,7 +22,8 @@ from feature_engine.llm_client.llm_train import (
     choose_best,
     solution_matches_problem,
     infer_problem_from_solution,
-    pick_problem_index_for_solution
+    pick_problem_index_for_solution,
+    is_feature_same
 )
 
 # ---------------- 工具 ----------------
@@ -83,12 +85,19 @@ def train_on_segment(engine: Engine, segment_lines: List[str]) -> None:
     for n in list(engine.registry.values()):
         _bind_training_callbacks(n)
 
+    is_first_nonempty = True
     for raw in segment_lines:
         line = str(raw).strip()
         if not line:
             continue
 
-        tag = classify_line(line)
+        if is_first_nonempty:
+            tag = "feature"
+
+            is_first_nonempty = False
+        else:
+            tag = classify_line(line)
+
         print(f"[TRAIN] line='{line}' → tag={tag} | current={current.node_id}:{current.description}")
 
         # ---------- FEATURE ----------
@@ -114,21 +123,21 @@ def train_on_segment(engine: Engine, segment_lines: List[str]) -> None:
                 idx = choose_best(line, [f"{f.node_id}:{f.description}" for f in all_feats])
                 if idx is not None:
                     chosen = all_feats[idx]
-                    try:
-                        current.add_node(chosen)
-                        print(f"  → 连接到全局已有 Feature: {chosen.node_id} {chosen.description}")
-                    except Exception:
-                        print(f"  → 连接失败，保持原有结构")
-                    current = chosen
-                    _bind_training_callbacks(current)
-                    last_problem_under_feature = None
-                    continue
+                    if is_feature_same(chosen.description, line):
+                        try:
+                            current.add_node(chosen)
+                            print(f"  → 连接到全局已有 Feature: {chosen.node_id} {chosen.description} current: {current.node_id}:{current.description}")
+                        except Exception:
+                            print(f"  → 连接失败，保持原有结构")
+                        current = chosen
+                        _bind_training_callbacks(current)
+                        last_problem_under_feature = None
+                        continue
 
             fid = _new_id("F", set(engine.registry.keys()))
             feat = FeatureNode(
                 node_id=fid,
                 description=line,
-                expected_state=True,
                 parent_node=current if current.node_type in (NodeType.ORIGIN, NodeType.FEATURE, NodeType.PROBLEM) else engine.root,
             )
             _ensure_registered(engine, feat)
@@ -156,7 +165,7 @@ def train_on_segment(engine: Engine, segment_lines: List[str]) -> None:
                     current = feats[0]
                 else:
                     fid = _new_id("F", set(engine.registry.keys()))
-                    feat = FeatureNode(fid, "训练生成的特征（聚合）", True, parent_node=current)
+                    feat = FeatureNode(fid, "训练生成的特征（聚合）", parent_node=current)
                     _ensure_registered(engine, feat)
                     try:
                         current.add_node(feat)
@@ -184,15 +193,16 @@ def train_on_segment(engine: Engine, segment_lines: List[str]) -> None:
                 idx = choose_best(q_desc, [f"{p.node_id}:{p.description}" for p in all_probs])
                 if idx is not None:
                     chosen = all_probs[idx]
-                    try:
-                        current.add_node(chosen, link_mode="soft")
-                        print(f"  → 连接到全局已有 Problem: {chosen.node_id} {chosen.description}")
-                    except Exception:
-                        pass
-                    current = chosen
-                    _bind_training_callbacks(current)
-                    last_problem_under_feature = current
-                    continue
+                    if is_feature_same(chosen.description, q_desc):
+                        try:
+                            current.add_node(chosen, link_mode="soft")
+                            print(f"  → 连接到全局已有 Problem: {chosen.node_id} {chosen.description}")
+                        except Exception:
+                            pass
+                        current = chosen
+                        _bind_training_callbacks(current)
+                        last_problem_under_feature = current
+                        continue
 
             pid = _new_id("P", set(engine.registry.keys()))
             prob = ProblemNode(pid, q_desc, parent_feature=current, mode="soft")
@@ -230,7 +240,7 @@ def train_on_segment(engine: Engine, segment_lines: List[str]) -> None:
                     feature_ctx = feats[0] if feats else None
                     if feature_ctx is None:
                         fid = _new_id("F", set(engine.registry.keys()))
-                        feature_ctx = FeatureNode(fid, "训练生成的特征（挂方案）", True, parent_node=engine.root)
+                        feature_ctx = FeatureNode(fid, "训练生成的特征（挂方案）", parent_node=engine.root)
                         _ensure_registered(engine, feature_ctx)
                         engine.root.add_node(feature_ctx)
                         print(f"  → 新建挂方案 Feature: {feature_ctx.node_id}")
@@ -300,15 +310,20 @@ def train_from_file(tree_json_path: str, segments_path: str, save_to: Optional[s
     text = Path(segments_path).read_text(encoding="utf-8")
     blocks = [b.strip() for b in (text.split("###") if "###" in text else text.split("\n\n")) if b.strip()]
     print(f"[TRAIN] 读取分段数: {len(blocks)} from {segments_path}")
-
-    for block in blocks:
-        print(f"[TRAIN] 处理分段: {block[:20]}..., retrun {engine.current.description} to {engine.root.description}")
+    n_blocks = len(blocks)
+    checkpoint = max(1, math.floor(n_blocks * 0.05))  # 每 5% 存一次，至少每 1 个存一次
+    for i, block in enumerate(blocks, 1):
+        print(f"[TRAIN] 处理分段 {i}/{n_blocks}: {block[:20]}..., return {engine.current.description} → {engine.root.description}")
         engine.current = engine.root
         lines = [ln for ln in block.splitlines() if ln.strip()]
         train_on_segment(engine, lines)
 
-    print(f"[TRAIN] 保存结果到 {save_to or tree_json_path}")
-    engine.save_nodes(str(save_to or p))
+        # 每 5% 存储一次
+        if i % checkpoint == 0 or i == n_blocks:
+            print(f"[TRAIN] 进度 {i}/{n_blocks} ({i/n_blocks:.1%}) → 临时保存")
+            engine.save_nodes(str(save_to or p))
+
+    print(f"[TRAIN] 完成全部，结果保存到 {save_to or tree_json_path}")
 
 
 # 可选：命令行入口

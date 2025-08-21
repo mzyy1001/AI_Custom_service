@@ -1,0 +1,16 @@
+[2025-08-21 17:59:09] [USER] 我的机器人没法动
+[2025-08-21 17:59:09] [DEBUG] 请求 LLM: [{"role": "system", "content": "抽取与设备故障相关的事实，输出 JSON：{\"features\": [\"提到的关键现象或特征(如RCS显示电量低, AP离线, 防火墙未开等)\"], \"resolved\": \"yes|no|unsure\"}"}, {"role": "user", "content": "我的机器人没法动"}]
+[2025-08-21 17:59:11] [LLM] {"features": ["机器人没法动"], "resolved": "no"}
+[2025-08-21 17:59:11] [DEBUG] 请求 LLM: [{"role": "system", "content": "你是一个严格的信息抽取器。根据最近的对话历史，判断用户是否已经明确说出了主要问题。输出 JSON：{\"has_issue\": true|false, \"issue_text\": \"简短问题短语或空\"}。主要问题例：机器人开不了机/无法移动/无法充电/RCS显示电量低/所有小车无法开机 等。若表述分散请归纳为最接近的一条。"}, {"role": "user", "content": "我的机器人没法动"}]
+[2025-08-21 17:59:12] [LLM] {"has_issue": true, "issue_text": "机器人没法动"}
+[2025-08-21 17:59:12] [ASSIST] 识别主要问题：机器人没法动
+[2025-08-21 17:59:12] [SYS] 启动 produce: /Users/henrychen/AI_Custom_service/venv/bin/python -m feature_engine.produce --tree feature_engine/nodes_trained_v2.json
+[2025-08-21 17:59:12] [PRODUCE] [RUN] 加载节点集: feature_engine/nodes_trained_v2.json
+[2025-08-21 17:59:12] [PRODUCE] 🟢 欢迎使用诊断助手。
+[2025-08-21 17:59:12] [PRODUCE] 请描述主要问题（如：机器人开不了机 / 机器人无法移动 ...）:
+[2025-08-21 17:59:13] [TO_PRODUCE] 机器人没法动
+[2025-08-21 17:59:13] [DEBUG] 进入 produce_step 循环
+[2025-08-21 17:59:13] [PRODUCE] 机器人没法动
+[2025-08-21 17:59:13] [PRODUCE] 🚀 从 Origin 节点开始: 训练树入口
+[2025-08-21 17:59:14] [DEBUG] produce_step: 读取 2 行, saw_prompt=False
+[2025-08-21 17:59:14] [DEBUG] 本轮无输入提示，返回

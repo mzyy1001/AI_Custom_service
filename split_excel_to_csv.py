@@ -3,8 +3,8 @@ import re
 import pandas as pd
 
 # ====== 配置区 ======
-excel_path   = "raw_data.xlsx"   # Excel 文件路径
-outdir       = "./csv_out"            # 输出文件夹
+excel_path   = "raw_data_2.xlsx"   # Excel 文件路径
+outdir       = "./csv_out_2"            # 输出文件夹
 skip_sheets  = 2                      # 跳过前两个工作表
 encoding     = "utf-8-sig"            # CSV 编码（Excel 友好）
 keep_index   = False                  # 导出时是否保留索引

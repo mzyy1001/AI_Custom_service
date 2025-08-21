@@ -1,0 +1,85 @@
+[2025-08-21 18:15:40] [USER] 我的机器人没法移动
+[2025-08-21 18:15:40] [DEBUG] 请求 LLM: [{"role": "system", "content": "抽取与设备故障相关的事实，输出 JSON：{\"features\": [\"提到的关键现象或特征(如RCS显示电量低, AP离线, 防火墙未开等)\"], \"resolved\": \"yes|no|unsure\"}"}, {"role": "user", "content": "我的机器人没法移动"}]
+[2025-08-21 18:15:42] [LLM] {
+  "features": ["机器人没法移动"],
+  "resolved": "no"
+}
+[2025-08-21 18:15:42] [DEBUG] 请求 LLM: [{"role": "system", "content": "你是一个严格的信息抽取器。根据最近的对话历史，判断用户是否已经明确说出了主要问题。输出 JSON：{\"has_issue\": true|false, \"issue_text\": \"简短问题短语或空\"}。主要问题例：机器人开不了机/无法移动/无法充电/RCS显示电量低/所有小车无法开机 等。若表述分散请归纳为最接近的一条。"}, {"role": "user", "content": "我的机器人没法移动"}]
+[2025-08-21 18:15:43] [LLM] {"has_issue": true, "issue_text": "机器人没法移动"}
+[2025-08-21 18:15:43] [ASSIST] 识别主要问题：机器人没法移动
+[2025-08-21 18:15:43] [SYS] 启动 produce: /Users/henrychen/AI_Custom_service/venv/bin/python -m feature_engine.produce --tree feature_engine/nodes_trained_v2.json
+[2025-08-21 18:15:43] [PRODUCE] [RUN] 加载节点集: feature_engine/nodes_trained_v2.json
+[2025-08-21 18:15:43] [PRODUCE] 🟢 欢迎使用诊断助手。
+[2025-08-21 18:15:43] [PRODUCE] 请描述主要问题（如：机器人开不了机 / 机器人无法移动 ...）:
+[2025-08-21 18:15:44] [TO_PRODUCE] 机器人没法移动
+[2025-08-21 18:15:44] [DEBUG] 进入 produce_step 循环
+[2025-08-21 18:15:44] [PRODUCE] 机器人没法移动
+[2025-08-21 18:15:44] [PRODUCE] 🚀 从 Origin 节点开始: 训练树入口
+[2025-08-21 18:15:45] [DEBUG] produce_step: 读取 2 行, saw_prompt=False
+[2025-08-21 18:15:46] [PRODUCE] 检测到多个可能的子特征，请选择其一：
+[2025-08-21 18:15:46] [PRODUCE] 0. F_2a4432f8:机器人无法移动
+[2025-08-21 18:15:46] [PRODUCE] 1. F_53e4c6f0:机器人急停
+[2025-08-21 18:15:46] [PRODUCE] 2. F_c416b4a6:机器人到达格口后不卸货、机器人一直停在格口
+[2025-08-21 18:15:46] [PRODUCE] 3. F_63aa0467:机器人充不进电
+[2025-08-21 18:15:46] [PRODUCE] 4. F_426045a9:机器人碰撞
+[2025-08-21 18:15:46] [PRODUCE] 5. F_8408f817:机器人发出异响
+[2025-08-21 18:15:46] [PRODUCE] 6. F_956f1540:打开机器人控制系统（RCS），查看有“434：行走打滑”报错
+[2025-08-21 18:15:46] [PRODUCE] 7. F_0d2978bb:机器人转向不灵活
+[2025-08-21 18:15:46] [PRODUCE] 8. F_0bed5536:轮子松动或损坏
+[2025-08-21 18:15:46] [PRODUCE] 9. F_4a7a784e:机器人打滑导致跑偏
+[2025-08-21 18:15:46] [PRODUCE] 请输入序号（支持 0/1-based）或关键词；输空行/none 表示都不是：
+[2025-08-21 18:15:46] [DEBUG] produce_step: 读取 12 行, saw_prompt=True
+[2025-08-21 18:15:46] [DEBUG] 请求 LLM: [{"role": "system", "content": "\n            你是一个严格的判断器。\n            - 仅当用户历史文本里**直接出现**某个选项里的关键词时，才输出 {\"can_answer\": true, \"answer\": \"<该选项文本或序号>\"}。\n            - 如果没有出现，必须输出 {\"can_answer\": false, \"answer\": \"\"}。\n            - 不要推理，不要联想，不要解释。\n            "}, {"role": "user", "content": "{\"raw_prompt\": \"如果你能选择子特征，请选择, 不要推测，回答必须严谨\", \"options\": [\"机器人无法移动\", \"机器人急停\", \"机器人到达格口后不卸货、机器人一直停在格口\", \"机器人充不进电\", \"机器人碰撞\", \"机器人发出异响\", \"打开机器人控制系统（RCS），查看有“434：行走打滑”报错\", \"机器人转向不灵活\", \"轮子松动或损坏\", \"机器人打滑导致跑偏\"], \"history\": [{\"role\": \"user\", \"content\": \"我的机器人没法移动\"}]}"}]
+[2025-08-21 18:15:47] [ERR] LLM 调用失败: Error code: 400 - {'error': {'message': "'messages' must contain the word 'json' in some form, to use 'response_format' of type 'json_object'. (request id: 2025082110154662724782682813403)", 'type': 'invalid_request_error', 'param': 'messages', 'code': None}}
+[2025-08-21 18:15:47] [DEBUG] infer_answer_from_context:
+[2025-08-21 18:15:47] [DEBUG] 请求 LLM: [{"role": "system", "content": "你是交互规划器。根据对话历史与候选项（<=20条），决定下一步如何提问以最快三步内确定答案。\n优先级：若把握足够→直接决定(decide)；否则选一条最区分的信息做是/否确认(ask_yn)；若用户描述过少→ask_open；若选项很少(≤4)→ask_select。\n输出JSON：{\"action\":\"decide|ask_yn|ask_open|ask_select\",\"idx\":int可选,\"option_idx\":int可选,\"question\":\"自然中文，一句\"}"}, {"role": "user", "content": "{\"history\": [{\"role\": \"user\", \"content\": \"我的机器人没法移动\"}], \"options\": [\"机器人无法移动\", \"机器人急停\", \"机器人到达格口后不卸货、机器人一直停在格口\", \"机器人充不进电\", \"机器人碰撞\", \"机器人发出异响\", \"打开机器人控制系统（RCS），查看有“434：行走打滑”报错\", \"机器人转向不灵活\", \"轮子松动或损坏\", \"机器人打滑导致跑偏\"]}"}]
+[2025-08-21 18:15:49] [LLM] {"action":"ask_yn","question":"你的机器人是否显示有“434：行走打滑”的报错？"}
+[2025-08-21 18:15:49] [DEBUG] probe plan: {'action': 'ask_yn', 'question': '你的机器人是否显示有“434：行走打滑”的报错？'}
+[2025-08-21 18:15:49] [ASSIST] 提问（单选/短清单）：
+为确保准确定位，我想确认一下：以下哪一项最符合？
+0. 机器人无法移动
+1. 机器人急停
+2. 机器人到达格口后不卸货、机器人一直停在格口
+3. 机器人充不进电
+（可回复编号或关键字；若都不符合直接说出来）
+[2025-08-21 18:16:02] [USER] 机器人没法动
+[2025-08-21 18:16:02] [DEBUG] 请求 LLM: [{"role": "system", "content": "抽取与设备故障相关的事实，输出 JSON：{\"features\": [\"提到的关键现象或特征(如RCS显示电量低, AP离线, 防火墙未开等)\"], \"resolved\": \"yes|no|unsure\"}"}, {"role": "user", "content": "我的机器人没法移动"}, {"role": "user", "content": "机器人没法动"}]
+[2025-08-21 18:16:04] [LLM] {"features": ["机器人没法移动"], "resolved": "no"}
+[2025-08-21 18:16:49] [USER] 机器人无法移动
+[2025-08-21 18:16:49] [DEBUG] 请求 LLM: [{"role": "system", "content": "抽取与设备故障相关的事实，输出 JSON：{\"features\": [\"提到的关键现象或特征(如RCS显示电量低, AP离线, 防火墙未开等)\"], \"resolved\": \"yes|no|unsure\"}"}, {"role": "user", "content": "我的机器人没法移动"}, {"role": "user", "content": "机器人没法动"}, {"role": "user", "content": "机器人无法移动"}]
+[2025-08-21 18:16:50] [LLM] {
+  "features": ["机器人无法移动"],
+  "resolved": "unsure"
+}
+[2025-08-21 18:16:50] [DEBUG] user 关键字匹配 -> idx=0
+[2025-08-21 18:16:50] [TO_PRODUCE] 0
+[2025-08-21 18:16:50] [DEBUG] 进入 produce_step 循环
+[2025-08-21 18:16:50] [PRODUCE] 0
+[2025-08-21 18:16:50] [PRODUCE] 🔍 进入子特征: F_2a4432f8
+[2025-08-21 18:16:50] [PRODUCE] ➡️ 下一节点：F_2a4432f8 [Feature] - 机器人无法移动
+[2025-08-21 18:16:50] [PRODUCE] 📌 进入特征: 机器人无法移动 (期望状态: None)
+[2025-08-21 18:16:50] [DEBUG] produce_step: 读取 4 行, saw_prompt=False
+[2025-08-21 18:16:51] [PRODUCE] ✅ 自动判断为正 → 进入子节点
+[2025-08-21 18:16:52] [DEBUG] produce_step: 读取 1 行, saw_prompt=False
+[2025-08-21 18:16:52] [PRODUCE] 检测到多个可能的子特征，请选择其一：
+[2025-08-21 18:16:52] [PRODUCE] 0. F_b716e9fb:RCS 有报错代码
+[2025-08-21 18:16:52] [PRODUCE] 1. F_5363378b:周围存在障碍物
+[2025-08-21 18:16:52] [PRODUCE] 2. F_a1a15e88:格口或分拣机状态不正常
+[2025-08-21 18:16:52] [PRODUCE] 3. F_7dda6456:无法扫码
+[2025-08-21 18:16:52] [PRODUCE] 4. F_0bed5536:轮子松动或损坏
+[2025-08-21 18:16:52] [PRODUCE] 5. F_4c5595fc:电机不在线
+[2025-08-21 18:16:52] [PRODUCE] 请输入序号（支持 0/1-based）或关键词；输空行/none 表示都不是：
+[2025-08-21 18:16:52] [DEBUG] produce_step: 读取 8 行, saw_prompt=True
+[2025-08-21 18:16:52] [DEBUG] 请求 LLM: [{"role": "system", "content": "\n            你是一个严格的判断器。\n            - 仅当用户历史文本里**直接出现**某个选项里的关键词时，才输出 {\"can_answer\": true, \"answer\": \"<该选项文本或序号>\"}。\n            - 如果没有出现，必须输出 {\"can_answer\": false, \"answer\": \"\"}。\n            - 不要推理，不要联想，不要解释。\n            "}, {"role": "user", "content": "{\"raw_prompt\": \"如果你能选择子特征，请选择, 不要推测，回答必须严谨\", \"options\": [\"RCS 有报错代码\", \"周围存在障碍物\", \"格口或分拣机状态不正常\", \"无法扫码\", \"轮子松动或损坏\", \"电机不在线\"], \"history\": [{\"role\": \"user\", \"content\": \"我的机器人没法移动\"}, {\"role\": \"user\", \"content\": \"机器人没法动\"}, {\"role\": \"user\", \"content\": \"机器人无法移动\"}]}"}]
+[2025-08-21 18:16:52] [ERR] LLM 调用失败: Error code: 400 - {'error': {'message': "'messages' must contain the word 'json' in some form, to use 'response_format' of type 'json_object'. (request id: 2025082110165252073914020070767)", 'type': 'invalid_request_error', 'param': 'messages', 'code': None}}
+[2025-08-21 18:16:52] [DEBUG] infer_answer_from_context:
+[2025-08-21 18:16:52] [DEBUG] 请求 LLM: [{"role": "system", "content": "你是交互规划器。根据对话历史与候选项（<=20条），决定下一步如何提问以最快三步内确定答案。\n优先级：若把握足够→直接决定(decide)；否则选一条最区分的信息做是/否确认(ask_yn)；若用户描述过少→ask_open；若选项很少(≤4)→ask_select。\n输出JSON：{\"action\":\"decide|ask_yn|ask_open|ask_select\",\"idx\":int可选,\"option_idx\":int可选,\"question\":\"自然中文，一句\"}"}, {"role": "user", "content": "{\"history\": [{\"role\": \"user\", \"content\": \"我的机器人没法移动\"}, {\"role\": \"user\", \"content\": \"机器人没法动\"}, {\"role\": \"user\", \"content\": \"机器人无法移动\"}], \"options\": [\"RCS 有报错代码\", \"周围存在障碍物\", \"格口或分拣机状态不正常\", \"无法扫码\", \"轮子松动或损坏\", \"电机不在线\"]}"}]
+[2025-08-21 18:16:54] [LLM] {"action":"ask_select","options":[0,1,2,4],"question":"请问你的机器人是否显示了报错代码？"}
+[2025-08-21 18:16:54] [DEBUG] probe plan: {'action': 'ask_select', 'options': [0, 1, 2, 4], 'question': '请问你的机器人是否显示了报错代码？'}
+[2025-08-21 18:16:54] [ASSIST] 提问（单选/短清单）：
+为确保准确定位，我想确认一下：以下哪一项最符合？
+0. RCS 有报错代码
+1. 周围存在障碍物
+2. 格口或分拣机状态不正常
+3. 无法扫码
+（可回复编号或关键字；若都不符合直接说出来）

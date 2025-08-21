@@ -1,4 +1,6 @@
 from typing import Callable, Optional, Any, List, Tuple
+
+from feature_engine.feature_tree.Nodes.log import _log_dup
 from ..node import Node, NodeType
 from feature_engine.llm_client.llm import llm_select
 from feature_engine.llm_client.llm_produce import pick_child_feature_index, llm_yes_no
@@ -52,6 +54,7 @@ class FeatureNode(Node):
 
         if node.node_type == NodeType.PROBLEM:
             if _exists_in_problems(node):
+                _log_dup(self, node, reason="FEATURE->PROBLEM")
                 self.output_callback(f"⚠️ Problem {node.node_id} 已存在于子问题列表，跳过")
                 return
             # 写死逻辑：本 Feature 下第一个 Problem 为 hard，其余为 soft
@@ -66,6 +69,7 @@ class FeatureNode(Node):
 
         elif node.node_type == NodeType.FEATURE:
             if _exists_in_features(node):
+                _log_dup(self, node, reason="FEATURE->FEATURE")
                 self.output_callback(f"⚠️ Feature {node.node_id} 已存在于子特征列表，跳过")
                 return
             self.child_features.append(node)
@@ -84,7 +88,7 @@ class FeatureNode(Node):
     def default_interaction(self, prompt: str) -> Any:
         """默认交互"""
         self.output_callback(f"💬 {prompt}")
-        return input("该特征是否为正？(yes/no): ").strip().lower()
+        return input("该特征是否为真？(yes/no): ").strip().lower()
 
     def _auto_judge_from_chatlog(self, chat_log: Any) -> Optional[bool]:
         return llm_yes_no(self.description, chat_log)
@@ -101,8 +105,8 @@ class FeatureNode(Node):
             auto_result = self._auto_judge_from_chatlog(chat_log)
             self.expected_state = auto_result
 
-        if auto_result is not None:
-            if auto_result:
+        if self.expected_state is not None:
+            if self.expected_state:
                 self.confirmed_positive = True
                 self.output_callback("✅ 自动判断为正 → 进入子节点")
                 return self._next_child_node(chat_log)  # ✅ 传入 chat_log

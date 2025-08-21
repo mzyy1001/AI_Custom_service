@@ -251,6 +251,34 @@ def solution_solves_problem(solution_text: str, problem_text: str) -> Optional[b
         if s in {"不是","否","no","n","false","0"}: return False
         return None
 
+def is_feature_same(feature_1: str, feature_2: str) -> Optional[bool]:
+    """
+    判断两个特征描述是否相同。True/False/None
+    """
+    sys = (
+        "判断给定特征描述是否相同。\n"
+        "严格：只有当两个feature 严格语义相同时才判断两者为同一个feature，包含关系或者相关关系都不行\n"
+        "当两者是相反关系的时候，false\n"
+        "只输出 JSON：{\"match\": true|false|null}"
+    )
+    usr = f"特征1：{feature_1}\n特征2：{feature_2}\n请判断并只输出 JSON。"
+    raw = _chat(
+        [{"role": "system", "content": sys},
+         {"role": "user",   "content": usr}],
+        temperature=0.0,
+    )
+    try:
+        obj: Dict[str, Any] = json.loads(raw.strip())
+        v = obj.get("match", None)
+        if isinstance(v, bool):
+            return v
+        return None
+    except Exception:
+        s = raw.strip().splitlines()[0].strip(" \t'\"。，.!?").lower()
+        if s in {"是","对","yes","y","true","1"}: return True
+        if s in {"不是","否","no","n","false","0"}: return False
+        return None
+
 def _extract_json(s: str) -> str:
     """
     尝试从模型输出里提取一段 JSON（容错）。

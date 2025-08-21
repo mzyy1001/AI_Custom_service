@@ -1,4 +1,6 @@
 from typing import Callable, Optional, Any, List
+
+from feature_engine.feature_tree.Nodes.log import _log_dup
 from ..node import Node, NodeType
 
 from feature_engine.llm_client.llm_produce import pick_child_feature_index
@@ -34,6 +36,7 @@ class OriginNode(Node):
 
         # 去重
         if any(n.node_id == node.node_id for n in self.child_features):
+            _log_dup(self, node, reason="ORIGIN->FEATURE")
             self.output_callback(f"⚠️ 节点 {node.node_id} 已存在于 ORIGIN 的子特征中，已跳过")
             return
 

@@ -1,0 +1,7723 @@
+{
+  "root_id": "ORIGIN",
+  "success_id": "SUCCESS",
+  "failure_id": "FAILURE",
+  "nodes": {
+    "FAILURE": {
+      "type": "Failure",
+      "description": "失败"
+    },
+    "SUCCESS": {
+      "type": "Success",
+      "description": "完成"
+    },
+    "ORIGIN": {
+      "type": "Origin",
+      "description": "训练树入口",
+      "child_features": [
+        "F_e54537e4",
+        "F_2a4432f8",
+        "F_53e4c6f0",
+        "F_c416b4a6",
+        "F_63aa0467",
+        "F_426045a9",
+        "F_8408f817",
+        "F_8d7b4415",
+        "F_956f1540",
+        "F_0d2978bb",
+        "F_db6e071a",
+        "F_67ca6400",
+        "F_0bed5536",
+        "F_bfaa1956",
+        "F_de73b9e6",
+        "F_9cbe9409",
+        "F_36ea300b",
+        "F_24c1b23b",
+        "F_1c4fee08",
+        "F_0c2176fc",
+        "F_dc96fcaf",
+        "F_36774cd9",
+        "F_ee65ad15",
+        "F_a548ff8b",
+        "F_d153de33",
+        "F_b652d489",
+        "F_1dd0dfaa",
+        "F_666f8bf8",
+        "F_c3a41f5e",
+        "F_f58fdf3d",
+        "F_a9c41567",
+        "F_f788eb5c",
+        "F_48fcc247",
+        "F_874ec16f",
+        "F_34cabb1e",
+        "F_b589060c",
+        "F_f21554e0",
+        "F_ebc01177",
+        "F_0e44e126",
+        "F_0f0f5a1e",
+        "F_141634d8",
+        "F_8fe2f93d",
+        "F_770a5253",
+        "F_f1afbd57",
+        "F_9505bd19",
+        "F_2d8cfe7e",
+        "F_17c75fef",
+        "F_81c93edb",
+        "F_4a7a784e",
+        "F_1c937081",
+        "F_684107a5",
+        "F_93f014f9",
+        "F_f466c660",
+        "F_8b4c7286",
+        "F_afbc3492",
+        "F_a2800fb5",
+        "F_60c7d533",
+        "F_f49272f5",
+        "F_1569a21f",
+        "F_50861fe0",
+        "F_df060e15",
+        "F_cfe7bbfa",
+        "F_da263b14",
+        "F_74bbd9ac",
+        "F_9cf9d54a",
+        "F_11274b2f",
+        "F_d1f96780",
+        "F_51d40833",
+        "F_52e19223",
+        "F_e14a65ce",
+        "F_8a68fc5b",
+        "F_b1dd404d",
+        "F_75434b47",
+        "F_02d2c0dd",
+        "F_934cd884",
+        "F_744a040c",
+        "F_1bd7d569",
+        "F_d5275f58",
+        "F_5f8b04f1",
+        "F_d2b7bafc",
+        "F_e59f7461",
+        "F_c8a21fad"
+      ]
+    },
+    "F_e54537e4": {
+      "type": "Feature",
+      "description": "机器人开不了机",
+      "parent_node": "F_1569a21f",
+      "child_problems": [
+        [
+          "P_3fde200f",
+          "hard"
+        ],
+        [
+          "P_d0d55eb2",
+          "soft"
+        ],
+        [
+          "P_3a6aa458",
+          "soft"
+        ],
+        [
+          "P_dcd7e5b8",
+          "soft"
+        ],
+        [
+          "P_2d14a31a",
+          "soft"
+        ],
+        [
+          "P_e2d3c980",
+          "soft"
+        ],
+        [
+          "P_d5d68ee9",
+          "soft"
+        ],
+        [
+          "P_e2b34e50",
+          "soft"
+        ],
+        [
+          "P_5ff18534",
+          "soft"
+        ],
+        [
+          "P_134890d7",
+          "soft"
+        ],
+        [
+          "P_a01959eb",
+          "soft"
+        ],
+        [
+          "P_1d1b1d47",
+          "soft"
+        ],
+        [
+          "P_321272ed",
+          "soft"
+        ],
+        [
+          "P_c0982c92",
+          "soft"
+        ],
+        [
+          "P_524324cb",
+          "soft"
+        ],
+        [
+          "P_8a3c3dd3",
+          "soft"
+        ],
+        [
+          "P_39876f02",
+          "soft"
+        ],
+        [
+          "P_650ddb1f",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_a8e14f58",
+        "F_10067773",
+        "F_46b51cfe",
+        "F_8744ca95"     
+      ]
+    },
+    "F_a8e14f58": {
+      "type": "Feature",
+      "description": "rcs显示电量低",
+      "parent_node": "F_e54537e4",
+      "child_problems": [
+        [
+          "P_fe489f0e",
+          "hard"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_fe489f0e": {
+      "type": "Problem",
+      "description": "设备电量不足。",
+      "parent_feature": "F_a8e14f58",
+      "solutions": [
+        "S_6de9704c"
+      ],
+      "child_features": []
+    },
+    "S_6de9704c": {
+      "type": "Solution",
+      "description": "进行手动充电20分钟",
+      "parent_problem": "P_fe489f0e",
+      "success_node": "SUCCESS"
+    },
+    "P_3fde200f": {
+      "type": "Problem",
+      "description": "设备无法正常启动或运行。",
+      "parent_feature": "F_e54537e4",
+      "solutions": [
+        "S_26ee44e5",
+        "S_8121710f",
+        "S_46bb6c6d",
+        "S_ab5189f1",
+        "S_6c241ac2"
+      ],
+      "child_features": []
+    },
+    "S_26ee44e5": {
+      "type": "Solution",
+      "description": "检查电池连接线是否松动，尝试重新插拔电池连接线",
+      "parent_problem": "P_3fde200f",
+      "success_node": "SUCCESS"
+    },
+    "S_8121710f": {
+      "type": "Solution",
+      "description": "检查电池模块是否损坏，尝试更换电池模块",
+      "parent_problem": "P_3fde200f",
+      "success_node": "SUCCESS"
+    },
+    "S_46bb6c6d": {
+      "type": "Solution",
+      "description": "检查电源板和BMSP板是否损坏，尝试更换电源板和BMSP板",
+      "parent_problem": "P_3fde200f",
+      "success_node": "SUCCESS"
+    },
+    "F_10067773": {
+      "type": "Feature",
+      "description": "RCS上确认AP离线",
+      "parent_node": "F_e54537e4",
+      "child_problems": [
+        [
+          "P_697cca6d",
+          "hard"
+        ],
+        [
+          "P_b464d88b",
+          "soft"
+        ],
+        [
+          "P_652f4e45",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_697cca6d": {
+      "type": "Problem",
+      "description": "AP信号不稳定或覆盖范围不足。",
+      "parent_feature": "F_10067773",
+      "solutions": [
+        "S_9a852b2b",
+        "S_c71041e9",
+        "S_ebcf3403",
+        "S_dd80e0c0"
+      ],
+      "child_features": []
+    },
+    "S_9a852b2b": {
+      "type": "Solution",
+      "description": "查AP的两根天线柱子是否拧紧，尝试重新拧紧，并且避免天线底座跟金属有接触。",
+      "parent_problem": "P_697cca6d",
+      "success_node": "SUCCESS"
+    },
+    "S_c71041e9": {
+      "type": "Solution",
+      "description": "检查AP的网线和电源是否正常，尝试重新插拔网线和电源线。",
+      "parent_problem": "P_697cca6d",
+      "success_node": "SUCCESS"
+    },
+    "S_ebcf3403": {
+      "type": "Solution",
+      "description": "更换AP盒子",
+      "parent_problem": "P_697cca6d",
+      "success_node": "SUCCESS"
+    },
+    "P_d0d55eb2": {
+      "type": "Problem",
+      "description": "无线网络信号干扰导致连接不稳定。",
+      "parent_feature": "F_e54537e4",
+      "solutions": [
+        "S_f57b72bc"
+      ],
+      "child_features": []
+    },
+    "S_f57b72bc": {
+      "type": "Solution",
+      "description": "尝试更换AP信道",
+      "parent_problem": "P_d0d55eb2",
+      "success_node": "SUCCESS"
+    },
+    "F_2a4432f8": {
+      "type": "Feature",
+      "description": "机器人无法移动",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_702270df",
+          "hard"
+        ],
+        [
+          "P_ec3652b3",
+          "soft"
+        ],
+        [
+          "P_d5b8cd6b",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_b716e9fb",
+        "F_5363378b",
+        "F_a1a15e88",
+        "F_7073dc03",
+        "F_7dda6456",
+        "F_0bed5536",
+        "F_4c5595fc",
+        "F_0e44e126",
+        "F_3a01b394",
+        "F_ce4c2b67",
+        "F_cf65444b"
+      ]
+    },
+    "F_b716e9fb": {
+      "type": "Feature",
+      "description": "RCS 有报错代码",
+      "parent_node": "F_c416b4a6",
+      "child_problems": [
+        [
+          "P_760c7617",
+          "hard"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_760c7617": {
+      "type": "Problem",
+      "description": "系统出现错误代码导致功能无法正常运行。",
+      "parent_feature": "F_b716e9fb",
+      "solutions": [
+        "S_72760f09",
+        "S_50bb284d"
+      ],
+      "child_features": []
+    },
+    "S_72760f09": {
+      "type": "Solution",
+      "description": "根据报错代码进行排查（按《机器人报错代码排查手册》）",
+      "parent_problem": "P_760c7617",
+      "success_node": "SUCCESS"
+    },
+    "F_5363378b": {
+      "type": "Feature",
+      "description": "周围存在障碍物",
+      "parent_node": "F_c416b4a6",
+      "child_problems": [
+        [
+          "P_46fd604b",
+          "hard"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_46fd604b": {
+      "type": "Problem",
+      "description": "客户的通道被障碍物阻塞。",
+      "parent_feature": "F_c416b4a6",
+      "solutions": [
+        "S_c5aea90e",
+        "S_d4d6312a",
+        "S_ee77a9ff"
+      ],
+      "child_features": []
+    },
+    "S_c5aea90e": {
+      "type": "Solution",
+      "description": "引导客户清理障碍物",
+      "parent_problem": "P_46fd604b",
+      "success_node": "SUCCESS"
+    },
+    "F_a1a15e88": {
+      "type": "Feature",
+      "description": "格口或分拣机状态不正常",
+      "parent_node": "F_2a4432f8",
+      "child_problems": [
+        [
+          "P_92af9c49",
+          "hard"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_92af9c49": {
+      "type": "Problem",
+      "description": "格口或分拣机状态异常。",
+      "parent_feature": "F_a1a15e88",
+      "solutions": [
+        "S_e21cb014"
+      ],
+      "child_features": []
+    },
+    "S_e21cb014": {
+      "type": "Solution",
+      "description": "恢复格口或分拣机状态",
+      "parent_problem": "P_92af9c49",
+      "success_node": "SUCCESS"
+    },
+    "F_7073dc03": {
+      "type": "Feature",
+      "description": "全场停止但没有急停",
+      "parent_node": "F_2a4432f8",
+      "child_problems": [],
+      "child_features": [
+        "F_d09c9c27"
+      ]
+    },
+    "F_d09c9c27": {
+      "type": "Feature",
+      "description": "RCS 小车报错闪烁且颜色为粉色",
+      "parent_node": "F_7073dc03",
+      "child_problems": [
+        [
+          "P_fa32b9c9",
+          "hard"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_fa32b9c9": {
+      "type": "Problem",
+      "description": "RFID 和 RCS 之间存在不兼容或信息孤岛问题。",
+      "parent_feature": "F_d09c9c27",
+      "solutions": [
+        "S_bae26c1b"
+      ],
+      "child_features": []
+    },
+    "S_bae26c1b": {
+      "type": "Solution",
+      "description": "将RFID 和 RCS 统一",
+      "parent_problem": "P_fa32b9c9",
+      "success_node": "SUCCESS"
+    },
+    "P_702270df": {
+      "type": "Problem",
+      "description": "系统在运行时出现了固定模式导致的效率低下。",
+      "parent_feature": "F_2a4432f8",
+      "solutions": [
+        "S_241684ab"
+      ],
+      "child_features": []
+    },
+    "S_241684ab": {
+      "type": "Solution",
+      "description": "将模式改为随机跑",
+      "parent_problem": "P_702270df",
+      "success_node": "SUCCESS"
+    },
+    "S_ab5189f1": {
+      "type": "Solution",
+      "description": "重新插紧或更换电池连接线",
+      "parent_problem": "P_3fde200f",
+      "success_node": "SUCCESS"
+    },
+    "P_3a6aa458": {
+      "type": "Problem",
+      "description": "电池模块无法正常供电。",
+      "parent_feature": "F_e54537e4",
+      "solutions": [
+        "S_5fc2a827",
+        "S_4950e45c",
+        "S_74435844",
+        "S_931de4d1"
+      ],
+      "child_features": []
+    },
+    "S_5fc2a827": {
+      "type": "Solution",
+      "description": "更换电池模块",
+      "parent_problem": "P_3a6aa458",
+      "success_node": "SUCCESS"
+    },
+    "S_4950e45c": {
+      "type": "Solution",
+      "description": "更换电源板和BMSP板",
+      "parent_problem": "P_3a6aa458",
+      "success_node": "SUCCESS"
+    },
+    "S_dd80e0c0": {
+      "type": "Solution",
+      "description": "重新连接AP天线柱子",
+      "parent_problem": "P_697cca6d",
+      "success_node": "SUCCESS"
+    },
+    "P_b464d88b": {
+      "type": "Problem",
+      "description": "电源板或BMSP板故障导致设备无法正常运行。",
+      "parent_feature": "F_10067773",
+      "solutions": [
+        "S_36f74235"
+      ],
+      "child_features": []
+    },
+    "S_36f74235": {
+      "type": "Solution",
+      "description": "修复或更换电源板和BMSP板",
+      "parent_problem": "P_b464d88b",
+      "success_node": "SUCCESS"
+    },
+    "P_652f4e45": {
+      "type": "Problem",
+      "description": "AP无法正常供电或网络连接不稳定。",
+      "parent_feature": "F_10067773",
+      "solutions": [
+        "S_c21fcfcd"
+      ],
+      "child_features": []
+    },
+    "S_c21fcfcd": {
+      "type": "Solution",
+      "description": "重新连接或更换AP的网线和电源",
+      "parent_problem": "P_652f4e45",
+      "success_node": "SUCCESS"
+    },
+    "S_50bb284d": {
+      "type": "Solution",
+      "description": "用户提交报错代码，然后根据“机器人报错代码排查手册”进行问题排查",
+      "parent_problem": "P_760c7617",
+      "success_node": "SUCCESS"
+    },
+    "F_53e4c6f0": {
+      "type": "Feature",
+      "description": "机器人急停",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_3d1df726",
+          "hard"
+        ],
+        [
+          "P_8ec15aeb",
+          "soft"
+        ],
+        [
+          "P_084258db",
+          "soft"
+        ],
+        [
+          "P_c73f671d",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_548a9428",
+        "F_5363378b",
+        "F_4962c4a1",
+        "F_11c16e0e"
+      ]
+    },
+    "F_548a9428": {
+      "type": "Feature",
+      "description": "急停位置附近的地毯铺设不正确或有调换",
+      "parent_node": "F_426045a9",
+      "child_problems": [
+        [
+          "P_f47967ae",
+          "hard"
+        ],
+        [
+          "P_16a879a2",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_f47967ae": {
+      "type": "Problem",
+      "description": "地毯铺设不平整导致安全隐患。",
+      "parent_feature": "F_548a9428",
+      "solutions": [
+        "S_d54afa55",
+        "S_2a22a01a"
+      ],
+      "child_features": []
+    },
+    "S_d54afa55": {
+      "type": "Solution",
+      "description": "调整地毯铺设",
+      "parent_problem": "P_f47967ae",
+      "success_node": "SUCCESS"
+    },
+    "S_d4d6312a": {
+      "type": "Solution",
+      "description": "清除障碍物或平整地面",
+      "parent_problem": "P_46fd604b",
+      "success_node": "SUCCESS"
+    },
+    "P_3d1df726": {
+      "type": "Problem",
+      "description": "霍尔传感器的读数不准确。",
+      "parent_feature": "F_53e4c6f0",
+      "solutions": [
+        "S_4773298d"
+      ],
+      "child_features": []
+    },
+    "S_4773298d": {
+      "type": "Solution",
+      "description": "按照视频指引校准霍尔",
+      "parent_problem": "P_3d1df726",
+      "success_node": "SUCCESS"
+    },
+    "P_8ec15aeb": {
+      "type": "Problem",
+      "description": "轮径校准不准确导致性能下降。",
+      "parent_feature": "F_53e4c6f0",
+      "solutions": [
+        "S_9b208903",
+        "S_b07da0db"
+      ],
+      "child_features": []
+    },
+    "S_9b208903": {
+      "type": "Solution",
+      "description": "按照视频指引校准轮径",
+      "parent_problem": "P_8ec15aeb",
+      "success_node": "SUCCESS"
+    },
+    "F_4962c4a1": {
+      "type": "Feature",
+      "description": "霍尔板和BMSP板损坏",
+      "parent_node": "F_53e4c6f0",
+      "child_problems": [
+        [
+          "P_d5b8cd6b",
+          "hard"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_d5b8cd6b": {
+      "type": "Problem",
+      "description": "霍尔板和BMSP板出现故障导致设备无法正常运行。",
+      "parent_feature": "F_2a4432f8",
+      "solutions": [
+        "S_e88244ad",
+        "S_b4589d53"
+      ],
+      "child_features": []
+    },
+    "S_e88244ad": {
+      "type": "Solution",
+      "description": "更换霍尔板和BMSP板",
+      "parent_problem": "P_d5b8cd6b",
+      "success_node": "SUCCESS"
+    },
+    "P_084258db": {
+      "type": "Problem",
+      "description": "电机损坏的原因是什么？",
+      "parent_feature": "F_53e4c6f0",
+      "solutions": [
+        "S_698b2c9f"
+      ],
+      "child_features": []
+    },
+    "S_698b2c9f": {
+      "type": "Solution",
+      "description": "更换电机并重新注册",
+      "parent_problem": "P_084258db",
+      "success_node": "SUCCESS"
+    },
+    "F_c416b4a6": {
+      "type": "Feature",
+      "description": "机器人到达格口后不卸货、机器人一直停在格口",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_3c7de3c8",
+          "hard"
+        ],
+        [
+          "P_46fd604b",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_548a9428",
+        "F_5363378b",
+        "F_b716e9fb",
+        "F_ecdc3be4",
+        "F_4c6b8b1f",
+        "F_ee479abc",
+        "F_e2429719",
+        "F_0bc20e75",
+        "F_66bf4863",
+        "F_4af61e25",
+        "F_38e4087b"
+      ]
+    },
+    "P_16a879a2": {
+      "type": "Problem",
+      "description": "地毯被移位导致空间布局不协调。",
+      "parent_feature": "F_548a9428",
+      "solutions": [
+        "S_86d35e79"
+      ],
+      "child_features": []
+    },
+    "S_86d35e79": {
+      "type": "Solution",
+      "description": "把地毯放回原处",
+      "parent_problem": "P_16a879a2",
+      "success_node": "SUCCESS"
+    },
+    "S_ee77a9ff": {
+      "type": "Solution",
+      "description": "清理障碍物",
+      "parent_problem": "P_46fd604b",
+      "success_node": "SUCCESS"
+    },
+    "P_3c7de3c8": {
+      "type": "Problem",
+      "description": "分拣机出现故障。",
+      "parent_feature": "F_c416b4a6",
+      "solutions": [
+        "S_586a43d9"
+      ],
+      "child_features": []
+    },
+    "S_586a43d9": {
+      "type": "Solution",
+      "description": "引导客户根据“分拣机故障排查手册”进行排查",
+      "parent_problem": "P_3c7de3c8",
+      "success_node": "SUCCESS"
+    },
+    "F_ecdc3be4": {
+      "type": "Feature",
+      "description": "是3D分拣机",
+      "parent_node": "F_c416b4a6",
+      "child_problems": [
+        [
+          "P_0a6941f2",
+          "hard"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_0a6941f2": {
+      "type": "Problem",
+      "description": "分拣机出现故障。",
+      "parent_feature": "F_ecdc3be4",
+      "solutions": [
+        "S_3bf3b94d"
+      ],
+      "child_features": []
+    },
+    "S_3bf3b94d": {
+      "type": "Solution",
+      "description": "引导客户根据“分拣机故障排查手册”进行排查",
+      "parent_problem": "P_0a6941f2",
+      "success_node": "SUCCESS"
+    },
+    "F_63aa0467": {
+      "type": "Feature",
+      "description": "机器人充不进电",
+      "parent_node": "F_8d7b4415",
+      "child_problems": [
+        [
+          "P_098f43e1",
+          "hard"
+        ],
+        [
+          "P_dd2206f7",
+          "soft"
+        ],
+        [
+          "P_362b90db",
+          "soft"
+        ],
+        [
+          "P_c31e22c9",
+          "soft"
+        ],
+        [
+          "P_c5de566f",
+          "soft"
+        ],
+        [
+          "P_b5cdcd73",
+          "soft"
+        ],
+        [
+          "P_771c9c03",
+          "soft"
+        ],
+        [
+          "P_a1bc110f",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_63aa0467"
+      ]
+    },
+    "P_098f43e1": {
+      "type": "Problem",
+      "description": "机器人极板表面存在氧化层导致接触不良。",
+      "parent_feature": "F_63aa0467",
+      "solutions": [
+        "S_eed70659"
+      ],
+      "child_features": []
+    },
+    "S_eed70659": {
+      "type": "Solution",
+      "description": "使用砂纸打磨机器人极板，去除氧化层",
+      "parent_problem": "P_098f43e1",
+      "success_node": "SUCCESS"
+    },
+    "P_dd2206f7": {
+      "type": "Problem",
+      "description": "充电桩夹嘴接触不良导致无法正常充电。",
+      "parent_feature": "F_63aa0467",
+      "solutions": [
+        "S_31948d65",
+        "S_f31240c2"
+      ],
+      "child_features": []
+    },
+    "S_31948d65": {
+      "type": "Solution",
+      "description": "尝试重新插拔或更换充电桩夹嘴",
+      "parent_problem": "P_dd2206f7",
+      "success_node": "SUCCESS"
+    },
+    "P_362b90db": {
+      "type": "Problem",
+      "description": "电源板如何检测和更换？",
+      "parent_feature": "F_8d7b4415",
+      "solutions": [
+        "S_5a33d5c9"
+      ],
+      "child_features": []
+    },
+    "S_5a33d5c9": {
+      "type": "Solution",
+      "description": "尝试更换电源板",
+      "parent_problem": "P_362b90db",
+      "success_node": "SUCCESS"
+    },
+    "P_c31e22c9": {
+      "type": "Problem",
+      "description": "电池模块如何进行检测和更换？",
+      "parent_feature": "F_8d7b4415",
+      "solutions": [
+        "S_5abb6c52",
+        "S_d027a49e"
+      ],
+      "child_features": []
+    },
+    "S_5abb6c52": {
+      "type": "Solution",
+      "description": "尝试更换电池模块",
+      "parent_problem": "P_c31e22c9",
+      "success_node": "SUCCESS"
+    },
+    "F_426045a9": {
+      "type": "Feature",
+      "description": "机器人碰撞",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_37c4be3a",
+          "hard"
+        ]
+      ],
+      "child_features": [
+        "F_548a9428",
+        "F_956f1540"
+      ]
+    },
+    "S_2a22a01a": {
+      "type": "Solution",
+      "description": "调整地毯方向或顺序",
+      "parent_problem": "P_f47967ae",
+      "success_node": "SUCCESS"
+    },
+    "F_956f1540": {
+      "type": "Feature",
+      "description": "打开机器人控制系统（RCS），查看有“434：行走打滑”报错",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_d805fcc5",
+          "hard"
+        ],
+        [
+          "P_20df79a7",
+          "soft"
+        ],
+        [
+          "P_0b37ded7",
+          "soft"
+        ],
+        [
+          "P_5a312892",
+          "soft"
+        ],
+        [
+          "P_b86e2fcb",
+          "soft"
+        ],
+        [
+          "P_1e75d9c6",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_c73b783d",
+        "F_0bed5536"
+      ]
+    },
+    "P_d805fcc5": {
+      "type": "Problem",
+      "description": "行走系统出现打滑现象。",
+      "parent_feature": "F_956f1540",
+      "solutions": [
+        "S_6e6127cb",
+        "S_4e1d70d0"
+      ],
+      "child_features": []
+    },
+    "S_6e6127cb": {
+      "type": "Solution",
+      "description": "根据“错误码434：行走打滑”的排查手册进行排查",
+      "parent_problem": "P_d805fcc5",
+      "success_node": "SUCCESS"
+    },
+    "F_7dda6456": {
+      "type": "Feature",
+      "description": "无法扫码",
+      "parent_node": "F_7dda6456",
+      "child_problems": [
+        [
+          "P_0d6531f3",
+          "hard"
+        ],
+        [
+          "P_c31a9f06",
+          "soft"
+        ],
+        [
+          "P_14f09b89",
+          "soft"
+        ],
+        [
+          "P_34dc2c26",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_7dda6456",
+        "F_9d275dd0"
+      ]
+    },
+    "P_0d6531f3": {
+      "type": "Problem",
+      "description": "补光灯的亮度不足或过强导致照明效果不佳。",
+      "parent_feature": "F_7dda6456",
+      "solutions": [
+        "S_022648ae"
+      ],
+      "child_features": []
+    },
+    "S_022648ae": {
+      "type": "Solution",
+      "description": "适当调整补光灯的亮度",
+      "parent_problem": "P_0d6531f3",
+      "success_node": "SUCCESS"
+    },
+    "P_c31a9f06": {
+      "type": "Problem",
+      "description": "相机拍摄的照片过于明亮或过于暗淡。",
+      "parent_feature": "F_7dda6456",
+      "solutions": [
+        "S_173c9b54",
+        "S_54a327b8",
+        "S_8ffc788d"
+      ],
+      "child_features": []
+    },
+    "S_173c9b54": {
+      "type": "Solution",
+      "description": "适当调整相机的曝光度",
+      "parent_problem": "P_c31a9f06",
+      "success_node": "SUCCESS"
+    },
+    "S_54a327b8": {
+      "type": "Solution",
+      "description": "适当调整相机的焦距",
+      "parent_problem": "P_c31a9f06",
+      "success_node": "SUCCESS"
+    },
+    "P_14f09b89": {
+      "type": "Problem",
+      "description": "相机在使用过程中出现断电现象。",
+      "parent_feature": "F_7dda6456",
+      "solutions": [
+        "S_08bb63cb"
+      ],
+      "child_features": []
+    },
+    "S_08bb63cb": {
+      "type": "Solution",
+      "description": "相机断电后重新上电",
+      "parent_problem": "P_14f09b89",
+      "success_node": "SUCCESS"
+    },
+    "P_34dc2c26": {
+      "type": "Problem",
+      "description": "扫码台软件出现故障或无法正常运行。",
+      "parent_feature": "F_7dda6456",
+      "solutions": [
+        "S_b1113269"
+      ],
+      "child_features": []
+    },
+    "S_b1113269": {
+      "type": "Solution",
+      "description": "重启扫码台软件",
+      "parent_problem": "P_34dc2c26",
+      "success_node": "SUCCESS"
+    },
+    "S_8ffc788d": {
+      "type": "Solution",
+      "description": "更换新的相机",
+      "parent_problem": "P_c31a9f06",
+      "success_node": "SUCCESS"
+    },
+    "F_8408f817": {
+      "type": "Feature",
+      "description": "机器人发出异响",
+      "parent_node": "F_8408f817",
+      "child_problems": [
+        [
+          "P_dfb9d7e1",
+          "hard"
+        ],
+        [
+          "P_e81f8519",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_8408f817"
+      ]
+    },
+    "P_dfb9d7e1": {
+      "type": "Problem",
+      "description": "减速机可能存在故障或性能下降。",
+      "parent_feature": "F_8408f817",
+      "solutions": [
+        "S_4f6a6eb1"
+      ],
+      "child_features": []
+    },
+    "S_4f6a6eb1": {
+      "type": "Solution",
+      "description": "尝试更换减速机",
+      "parent_problem": "P_dfb9d7e1",
+      "success_node": "SUCCESS"
+    },
+    "P_e81f8519": {
+      "type": "Problem",
+      "description": "电机可能出现故障或无法正常工作。",
+      "parent_feature": "F_8408f817",
+      "solutions": [
+        "S_6eab57b6",
+        "S_9ef84012"
+      ],
+      "child_features": []
+    },
+    "S_6eab57b6": {
+      "type": "Solution",
+      "description": "尝试更换左/右电机并重新注册",
+      "parent_problem": "P_e81f8519",
+      "success_node": "SUCCESS"
+    },
+    "F_8d7b4415": {
+      "type": "Feature",
+      "description": "机器人自动关机",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_c31e22c9",
+          "hard"
+        ],
+        [
+          "P_6ffd1dbb",
+          "soft"
+        ],
+        [
+          "P_362b90db",
+          "soft"
+        ],
+        [
+          "P_e4af8bbf",
+          "soft"
+        ],
+        [
+          "P_f57ce632",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_bb199bfc",
+        "F_63aa0467"
+      ]
+    },
+    "F_bb199bfc": {
+      "type": "Feature",
+      "description": "测量机器人充电极板电压低于4V，高于3V",
+      "parent_node": "F_8d7b4415",
+      "child_problems": [
+        [
+          "P_83247708",
+          "hard"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_83247708": {
+      "type": "Problem",
+      "description": "设备无法开机。",
+      "parent_feature": "F_bb199bfc",
+      "solutions": [
+        "S_f3c111b5",
+        "S_1664eca2",
+        "S_6bc6b8d9"
+      ],
+      "child_features": []
+    },
+    "S_f3c111b5": {
+      "type": "Solution",
+      "description": "进行手动充电，5分钟后观察是否能开机",
+      "parent_problem": "P_83247708",
+      "success_node": "SUCCESS"
+    },
+    "S_1664eca2": {
+      "type": "Solution",
+      "description": "按照视频指引激活电池并充电5分钟",
+      "parent_problem": "P_83247708",
+      "success_node": "SUCCESS"
+    },
+    "P_c5de566f": {
+      "type": "Problem",
+      "description": "电池损坏的可能原因是什么？",
+      "parent_feature": "F_63aa0467",
+      "solutions": [],
+      "child_features": []
+    },
+    "S_d027a49e": {
+      "type": "Solution",
+      "description": "尝试更换电池",
+      "parent_problem": "P_c31e22c9",
+      "success_node": "SUCCESS"
+    },
+    "S_6bc6b8d9": {
+      "type": "Solution",
+      "description": "检查电池连接线松动",
+      "parent_problem": "P_83247708",
+      "success_node": "SUCCESS"
+    },
+    "S_74435844": {
+      "type": "Solution",
+      "description": "尝试重新插拔电池连接线",
+      "parent_problem": "P_3a6aa458",
+      "success_node": "SUCCESS"
+    },
+    "P_6ffd1dbb": {
+      "type": "Problem",
+      "description": "传感器板可能存在故障或不准确的读数。",
+      "parent_feature": "F_8d7b4415",
+      "solutions": [
+        "S_3ad58797",
+        "S_4c10679e"
+      ],
+      "child_features": []
+    },
+    "S_3ad58797": {
+      "type": "Solution",
+      "description": "尝试更换传感器板",
+      "parent_problem": "P_6ffd1dbb",
+      "success_node": "SUCCESS"
+    },
+    "S_4c10679e": {
+      "type": "Solution",
+      "description": "尝试更换BMSP板",
+      "parent_problem": "P_6ffd1dbb",
+      "success_node": "SUCCESS"
+    },
+    "P_e4af8bbf": {
+      "type": "Problem",
+      "description": "电池无法正常供电。",
+      "parent_feature": "F_8d7b4415",
+      "solutions": [
+        "S_d8c7788d"
+      ],
+      "child_features": []
+    },
+    "S_d8c7788d": {
+      "type": "Solution",
+      "description": "检查电池连接线松动",
+      "parent_problem": "P_e4af8bbf",
+      "success_node": "SUCCESS"
+    },
+    "P_dcd7e5b8": {
+      "type": "Problem",
+      "description": "如何解决机器人耗电过快的问题？",
+      "parent_feature": "F_e54537e4",
+      "solutions": [
+        "S_5cbed6dd",
+        "S_24f0ea9a",
+        "S_2ae34227"
+      ],
+      "child_features": []
+    },
+    "S_5cbed6dd": {
+      "type": "Solution",
+      "description": "拆机检查电池损坏",
+      "parent_problem": "P_dcd7e5b8",
+      "success_node": "SUCCESS"
+    },
+    "S_24f0ea9a": {
+      "type": "Solution",
+      "description": "尝试更换电池",
+      "parent_problem": "P_dcd7e5b8",
+      "success_node": "SUCCESS"
+    },
+    "S_2ae34227": {
+      "type": "Solution",
+      "description": "尝试更换电源板",
+      "parent_problem": "P_dcd7e5b8",
+      "success_node": "SUCCESS"
+    },
+    "F_c73b783d": {
+      "type": "Feature",
+      "description": "地毯上有异物",
+      "parent_node": "F_bfaa1956",
+      "child_problems": [
+        [
+          "P_a51795a6",
+          "hard"
+        ],
+        [
+          "P_e0f78784",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_a51795a6": {
+      "type": "Problem",
+      "description": "设备运行不正常。",
+      "parent_feature": "F_c73b783d",
+      "solutions": [
+        "S_41f0404d"
+      ],
+      "child_features": []
+    },
+    "S_41f0404d": {
+      "type": "Solution",
+      "description": "清理异物",
+      "parent_problem": "P_a51795a6",
+      "success_node": "SUCCESS"
+    },
+    "F_0bed5536": {
+      "type": "Feature",
+      "description": "轮子松动或损坏",
+      "parent_node": "F_0bed5536",
+      "child_problems": [
+        [
+          "P_c5059f0e",
+          "hard"
+        ],
+        [
+          "P_9837a72a",
+          "soft"
+        ],
+        [
+          "P_4749207b",
+          "soft"
+        ],
+        [
+          "P_7588398d",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_0bed5536"
+      ]
+    },
+    "P_c5059f0e": {
+      "type": "Problem",
+      "description": "轮子出现磨损或损坏。",
+      "parent_feature": "F_0bed5536",
+      "solutions": [
+        "S_acdcfe80",
+        "S_6ae23c19"
+      ],
+      "child_features": []
+    },
+    "S_acdcfe80": {
+      "type": "Solution",
+      "description": "重新安装或更换轮子",
+      "parent_problem": "P_c5059f0e",
+      "success_node": "SUCCESS"
+    },
+    "P_20df79a7": {
+      "type": "Problem",
+      "description": "霍尔传感器读数不准确。",
+      "parent_feature": "F_956f1540",
+      "solutions": [
+        "S_3ee3ed85",
+        "S_3b73658f"
+      ],
+      "child_features": []
+    },
+    "S_3ee3ed85": {
+      "type": "Solution",
+      "description": "校准霍尔",
+      "parent_problem": "P_20df79a7",
+      "success_node": "SUCCESS"
+    },
+    "S_3b73658f": {
+      "type": "Solution",
+      "description": "更换霍尔板",
+      "parent_problem": "P_20df79a7",
+      "success_node": "SUCCESS"
+    },
+    "P_0b37ded7": {
+      "type": "Problem",
+      "description": "轮径不准确导致测量误差。",
+      "parent_feature": "F_956f1540",
+      "solutions": [
+        "S_1d364065"
+      ],
+      "child_features": []
+    },
+    "S_1d364065": {
+      "type": "Solution",
+      "description": "校准轮径",
+      "parent_problem": "P_0b37ded7",
+      "success_node": "SUCCESS"
+    },
+    "F_0d2978bb": {
+      "type": "Feature",
+      "description": "机器人转向不灵活",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_5a0414e1",
+          "hard"
+        ],
+        [
+          "P_475f0bfb",
+          "soft"
+        ],
+        [
+          "P_10ca66f5",
+          "soft"
+        ],
+        [
+          "P_5f0b63f4",
+          "soft"
+        ],
+        [
+          "P_964520c6",
+          "soft"
+        ],
+        [
+          "P_b439ce1f",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_5a0414e1": {
+      "type": "Problem",
+      "description": "万向轮因异物堵塞而无法正常转动。",
+      "parent_feature": "F_0d2978bb",
+      "solutions": [
+        "S_f432d1f8"
+      ],
+      "child_features": []
+    },
+    "S_f432d1f8": {
+      "type": "Solution",
+      "description": "清理万向轮异物",
+      "parent_problem": "P_5a0414e1",
+      "success_node": "SUCCESS"
+    },
+    "P_475f0bfb": {
+      "type": "Problem",
+      "description": "驱动轮出现故障或性能下降。",
+      "parent_feature": "F_0d2978bb",
+      "solutions": [
+        "S_8982d6e3"
+      ],
+      "child_features": []
+    },
+    "S_8982d6e3": {
+      "type": "Solution",
+      "description": "重新安装或更换驱动轮",
+      "parent_problem": "P_475f0bfb",
+      "success_node": "SUCCESS"
+    },
+    "P_10ca66f5": {
+      "type": "Problem",
+      "description": "底盘存在损坏或故障。",
+      "parent_feature": "F_0d2978bb",
+      "solutions": [
+        "S_d4b47e0a"
+      ],
+      "child_features": []
+    },
+    "S_d4b47e0a": {
+      "type": "Solution",
+      "description": "重新安装或更换底盘",
+      "parent_problem": "P_10ca66f5",
+      "success_node": "SUCCESS"
+    },
+    "P_5f0b63f4": {
+      "type": "Problem",
+      "description": "霍尔板出现故障导致设备无法正常工作。",
+      "parent_feature": "F_0d2978bb",
+      "solutions": [
+        "S_f0139000"
+      ],
+      "child_features": []
+    },
+    "S_f0139000": {
+      "type": "Solution",
+      "description": "重新安装或更换霍尔板",
+      "parent_problem": "P_5f0b63f4",
+      "success_node": "SUCCESS"
+    },
+    "P_2d14a31a": {
+      "type": "Problem",
+      "description": "如何解决电机无法正常注册的问题？",
+      "parent_feature": "F_e54537e4",
+      "solutions": [
+        "S_e13a79d3",
+        "S_26e10d5c",
+        "S_53a468c1"
+      ],
+      "child_features": [
+        "F_4c5595fc"
+      ]
+    },
+    "S_e13a79d3": {
+      "type": "Solution",
+      "description": "多尝试几次注册电机",
+      "parent_problem": "P_2d14a31a",
+      "success_node": "SUCCESS"
+    },
+    "F_4c5595fc": {
+      "type": "Feature",
+      "description": "电机不在线",
+      "parent_node": "F_2a4432f8",
+      "child_problems": [
+        [
+          "P_27576fed",
+          "hard"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_27576fed": {
+      "type": "Problem",
+      "description": "电机无法正常工作。",
+      "parent_feature": "F_4c5595fc",
+      "solutions": [
+        "S_8a6a1bd0",
+        "S_cebcecc0",
+        "S_ab361fc5"
+      ],
+      "child_features": []
+    },
+    "S_8a6a1bd0": {
+      "type": "Solution",
+      "description": "重新插拔电机连接线",
+      "parent_problem": "P_27576fed",
+      "success_node": "SUCCESS"
+    },
+    "S_cebcecc0": {
+      "type": "Solution",
+      "description": "更换电机并注册",
+      "parent_problem": "P_27576fed",
+      "success_node": "SUCCESS"
+    },
+    "S_26e10d5c": {
+      "type": "Solution",
+      "description": "拆机检查BMSP板是否损坏",
+      "parent_problem": "P_2d14a31a",
+      "success_node": "SUCCESS"
+    },
+    "S_53a468c1": {
+      "type": "Solution",
+      "description": "尝试更换BMSP板并重新注册",
+      "parent_problem": "P_2d14a31a",
+      "success_node": "SUCCESS"
+    },
+    "S_4e1d70d0": {
+      "type": "Solution",
+      "description": "重新安装或更换驱动轮",
+      "parent_problem": "P_d805fcc5",
+      "success_node": "SUCCESS"
+    },
+    "P_5a312892": {
+      "type": "Problem",
+      "description": "底盘存在故障或损坏。",
+      "parent_feature": "F_956f1540",
+      "solutions": [
+        "S_98038259"
+      ],
+      "child_features": []
+    },
+    "S_98038259": {
+      "type": "Solution",
+      "description": "重新安装或更换底盘",
+      "parent_problem": "P_5a312892",
+      "success_node": "SUCCESS"
+    },
+    "S_6ae23c19": {
+      "type": "Solution",
+      "description": "清理或更换万向轮",
+      "parent_problem": "P_c5059f0e",
+      "success_node": "SUCCESS"
+    },
+    "P_e0f78784": {
+      "type": "Problem",
+      "description": "万向轮出现卡滞或损坏现象。",
+      "parent_feature": "F_c73b783d",
+      "solutions": [
+        "S_25466d71",
+        "S_2e585e73"
+      ],
+      "child_features": []
+    },
+    "S_25466d71": {
+      "type": "Solution",
+      "description": "清理或更换万向轮",
+      "parent_problem": "P_e0f78784",
+      "success_node": "SUCCESS"
+    },
+    "F_db6e071a": {
+      "type": "Feature",
+      "description": "机器人按键指示灯不亮",
+      "parent_node": "F_db6e071a",
+      "child_problems": [
+        [
+          "P_9d42463a",
+          "hard"
+        ],
+        [
+          "P_e837a48f",
+          "soft"
+        ],
+        [
+          "P_9a7e6b6f",
+          "soft"
+        ],
+        [
+          "P_ba5c0745",
+          "soft"
+        ],
+        [
+          "P_7838ea34",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_db6e071a",
+        "F_f51752d0",
+        "F_350cc997"
+      ]
+    },
+    "P_9d42463a": {
+      "type": "Problem",
+      "description": "按键板指示灯不亮。",
+      "parent_feature": "F_db6e071a",
+      "solutions": [
+        "S_bba87844"
+      ],
+      "child_features": []
+    },
+    "S_bba87844": {
+      "type": "Solution",
+      "description": "更换按键板指示灯",
+      "parent_problem": "P_9d42463a",
+      "success_node": "SUCCESS"
+    },
+    "P_e837a48f": {
+      "type": "Problem",
+      "description": "如何检查按键板和BMSP板的损坏情况？",
+      "parent_feature": "F_db6e071a",
+      "solutions": [],
+      "child_features": []
+    },
+    "P_9a7e6b6f": {
+      "type": "Problem",
+      "description": "按键板或BMSP板出现故障导致设备无法正常操作。",
+      "parent_feature": "F_db6e071a",
+      "solutions": [
+        "S_54257fef"
+      ],
+      "child_features": []
+    },
+    "S_54257fef": {
+      "type": "Solution",
+      "description": "更换按键板和BMSP板",
+      "parent_problem": "P_9a7e6b6f",
+      "success_node": "SUCCESS"
+    },
+    "F_67ca6400": {
+      "type": "Feature",
+      "description": "机器人向格口反方向卸货",
+      "parent_node": "F_67ca6400",
+      "child_problems": [
+        [
+          "P_db64f712",
+          "hard"
+        ],
+        [
+          "P_65420bdd",
+          "soft"
+        ],
+        [
+          "P_ebe98520",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_67ca6400",
+        "F_22a84d3c"
+      ]
+    },
+    "P_db64f712": {
+      "type": "Problem",
+      "description": "皮带机的卸货方向设置不正确。",
+      "parent_feature": "F_67ca6400",
+      "solutions": [
+        "S_636d58e3"
+      ],
+      "child_features": []
+    },
+    "S_636d58e3": {
+      "type": "Solution",
+      "description": "修改RCS配置文件中皮带机的卸货方向",
+      "parent_problem": "P_db64f712",
+      "success_node": "SUCCESS"
+    },
+    "P_9837a72a": {
+      "type": "Problem",
+      "description": "螺丝松动导致设备不稳定。",
+      "parent_feature": "F_0bed5536",
+      "solutions": [
+        "S_f9f7e726"
+      ],
+      "child_features": []
+    },
+    "S_f9f7e726": {
+      "type": "Solution",
+      "description": "拧紧螺丝",
+      "parent_problem": "P_9837a72a",
+      "success_node": "SUCCESS"
+    },
+    "P_4749207b": {
+      "type": "Problem",
+      "description": "抱箍安装不当导致设备不稳定。",
+      "parent_feature": "F_0bed5536",
+      "solutions": [
+        "S_c3e0bec3"
+      ],
+      "child_features": []
+    },
+    "S_c3e0bec3": {
+      "type": "Solution",
+      "description": "重新拆装抱箍",
+      "parent_problem": "P_4749207b",
+      "success_node": "SUCCESS"
+    },
+    "P_7588398d": {
+      "type": "Problem",
+      "description": "电机无法正常启动。",
+      "parent_feature": "F_0bed5536",
+      "solutions": [
+        "S_f4109eb4",
+        "S_72165782"
+      ],
+      "child_features": []
+    },
+    "S_f4109eb4": {
+      "type": "Solution",
+      "description": "拔插电机线",
+      "parent_problem": "P_7588398d",
+      "success_node": "SUCCESS"
+    },
+    "S_72165782": {
+      "type": "Solution",
+      "description": "更换电机并重新注册",
+      "parent_problem": "P_7588398d",
+      "success_node": "SUCCESS"
+    },
+    "S_ab361fc5": {
+      "type": "Solution",
+      "description": "重新安装或更换电机",
+      "parent_problem": "P_27576fed",
+      "success_node": "SUCCESS"
+    },
+    "P_ec3652b3": {
+      "type": "Problem",
+      "description": "霍尔传感器读数不准确。",
+      "parent_feature": "F_2a4432f8",
+      "solutions": [
+        "S_2d92c5ec"
+      ],
+      "child_features": []
+    },
+    "S_2d92c5ec": {
+      "type": "Solution",
+      "description": "校准霍尔",
+      "parent_problem": "P_ec3652b3",
+      "success_node": "SUCCESS"
+    },
+    "S_b4589d53": {
+      "type": "Solution",
+      "description": "重新安装或更换霍尔板",
+      "parent_problem": "P_d5b8cd6b",
+      "success_node": "SUCCESS"
+    },
+    "F_0e44e126": {
+      "type": "Feature",
+      "description": "无法读取到地毯的RFID值",
+      "parent_node": "F_0e44e126",
+      "child_problems": [
+        [
+          "P_a9f4cdf2",
+          "hard"
+        ]
+      ],
+      "child_features": [
+        "F_821582ea",
+        "F_0e44e126",
+        "F_8f5f8772"
+      ]
+    },
+    "P_a9f4cdf2": {
+      "type": "Problem",
+      "description": "地毯位置的RFID值与实际位置不匹配。",
+      "parent_feature": "F_0e44e126",
+      "solutions": [
+        "S_40d35796",
+        "S_7bc4f365"
+      ],
+      "child_features": []
+    },
+    "S_40d35796": {
+      "type": "Solution",
+      "description": "更换地毯并修改码文件中此坐标位置的RFID值",
+      "parent_problem": "P_a9f4cdf2",
+      "success_node": "SUCCESS"
+    },
+    "F_bfaa1956": {
+      "type": "Feature",
+      "description": "机器人原地转动",
+      "parent_node": "ORIGIN",
+      "child_problems": [],
+      "child_features": [
+        "F_c73b783d"
+      ]
+    },
+    "S_2e585e73": {
+      "type": "Solution",
+      "description": "清理异物",
+      "parent_problem": "P_e0f78784",
+      "success_node": "SUCCESS"
+    },
+    "F_de73b9e6": {
+      "type": "Feature",
+      "description": "机器人卸货动作无力",
+      "parent_node": "ORIGIN",
+      "child_problems": [],
+      "child_features": [
+        "F_36ea300b"
+      ]
+    },
+    "F_36ea300b": {
+      "type": "Feature",
+      "description": "翻板电机状态异常",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_ac5c90fe",
+          "hard"
+        ],
+        [
+          "P_843e9925",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_ac5c90fe": {
+      "type": "Problem",
+      "description": "电机无法正常运行。",
+      "parent_feature": "F_36ea300b",
+      "solutions": [
+        "S_b9ae7a39"
+      ],
+      "child_features": []
+    },
+    "S_b9ae7a39": {
+      "type": "Solution",
+      "description": "重新注册电机",
+      "parent_problem": "P_ac5c90fe",
+      "success_node": "SUCCESS"
+    },
+    "S_9ef84012": {
+      "type": "Solution",
+      "description": "更换翻板电机并重新注册",
+      "parent_problem": "P_e81f8519",
+      "success_node": "SUCCESS"
+    },
+    "F_9cbe9409": {
+      "type": "Feature",
+      "description": "电池传感器板子接头连接片断掉",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_fdabe83f",
+          "hard"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_fdabe83f": {
+      "type": "Problem",
+      "description": "传感器板子故障导致设备无法正常工作。",
+      "parent_feature": "F_9cbe9409",
+      "solutions": [
+        "S_25867c5f"
+      ],
+      "child_features": []
+    },
+    "S_25867c5f": {
+      "type": "Solution",
+      "description": "更换传感器板子",
+      "parent_problem": "P_fdabe83f",
+      "success_node": "SUCCESS"
+    },
+    "P_843e9925": {
+      "type": "Problem",
+      "description": "翻板无法正常工作。",
+      "parent_feature": "F_36ea300b",
+      "solutions": [
+        "S_ea3939c1"
+      ],
+      "child_features": []
+    },
+    "S_ea3939c1": {
+      "type": "Solution",
+      "description": "重新注册翻板",
+      "parent_problem": "P_843e9925",
+      "success_node": "SUCCESS"
+    },
+    "P_37c4be3a": {
+      "type": "Problem",
+      "description": "系统时间不准确。",
+      "parent_feature": "F_426045a9",
+      "solutions": [
+        "S_2056f5c2"
+      ],
+      "child_features": []
+    },
+    "S_2056f5c2": {
+      "type": "Solution",
+      "description": "关闭时间同步",
+      "parent_problem": "P_37c4be3a",
+      "success_node": "SUCCESS"
+    },
+    "S_b07da0db": {
+      "type": "Solution",
+      "description": "新加入的机器人需要先校准轮径",
+      "parent_problem": "P_8ec15aeb",
+      "success_node": "SUCCESS"
+    },
+    "F_24c1b23b": {
+      "type": "Feature",
+      "description": "需要添加白名单",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_1cdec73c",
+          "soft"
+        ],
+        [
+          "P_3eae4de6",
+          "soft"
+        ],
+        [
+          "P_23fcad47",
+          "soft"
+        ],
+        [
+          "P_469bc502",
+          "soft"
+        ],
+        [
+          "P_b28d2454",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_1cdec73c": {
+      "type": "Problem",
+      "description": "条码规则如何符合正则表达式？",
+      "parent_feature": "F_24c1b23b",
+      "solutions": [],
+      "child_features": []
+    },
+    "P_3eae4de6": {
+      "type": "Problem",
+      "description": "条码不符合规则或未在白名单中。",
+      "parent_feature": "F_24c1b23b",
+      "solutions": [
+        "S_25a584f3",
+        "S_fbbe5f04"
+      ],
+      "child_features": []
+    },
+    "S_25a584f3": {
+      "type": "Solution",
+      "description": "请提供符合规则的条码并添加至白名单",
+      "parent_problem": "P_3eae4de6",
+      "success_node": "SUCCESS"
+    },
+    "P_23fcad47": {
+      "type": "Problem",
+      "description": "如何在config文件中添加正则表达式？",
+      "parent_feature": "F_24c1b23b",
+      "solutions": [
+        "S_b8eabe70"
+      ],
+      "child_features": []
+    },
+    "S_b8eabe70": {
+      "type": "Solution",
+      "description": "打开扫码软件exe的config文件并添加正则表达式至白名单",
+      "parent_problem": "P_23fcad47",
+      "success_node": "SUCCESS"
+    },
+    "P_469bc502": {
+      "type": "Problem",
+      "description": "如何保存config文件并重启扫码软件？",
+      "parent_feature": "F_24c1b23b",
+      "solutions": [
+        "S_51c555b5"
+      ],
+      "child_features": []
+    },
+    "S_51c555b5": {
+      "type": "Solution",
+      "description": "保存config文件并重启扫码软件",
+      "parent_problem": "P_469bc502",
+      "success_node": "SUCCESS"
+    },
+    "F_1c4fee08": {
+      "type": "Feature",
+      "description": "新加了一种条码类型需要配置",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_858e47ec",
+          "soft"
+        ],
+        [
+          "P_eb628ab1",
+          "soft"
+        ],
+        [
+          "P_e60e27ef",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_153a8593"
+      ]
+    },
+    "F_153a8593": {
+      "type": "Feature",
+      "description": "条码规则为：^[A-Z]{2}[0-9]{17}$",
+      "parent_node": "F_1c4fee08",
+      "child_problems": [
+        [
+          "P_fafb2902",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_fafb2902": {
+      "type": "Problem",
+      "description": "扫码软件无法识别特定格式的二维码。",
+      "parent_feature": "F_153a8593",
+      "solutions": [
+        "S_bce44e1d"
+      ],
+      "child_features": []
+    },
+    "S_bce44e1d": {
+      "type": "Solution",
+      "description": "根据输出的正则表达式，打开扫码软件exe的config文件，找到白名单，在空白行的白名单中添加正则表达式",
+      "parent_problem": "P_fafb2902",
+      "success_node": "SUCCESS"
+    },
+    "P_e2d3c980": {
+      "type": "Problem",
+      "description": "扫码软件无法正常运行。",
+      "parent_feature": "F_e54537e4",
+      "solutions": [
+        "S_3550412d",
+        "S_039ebe4e",
+        "S_b1a6f2ef"
+      ],
+      "child_features": []
+    },
+    "S_3550412d": {
+      "type": "Solution",
+      "description": "保存config文件并重启扫码软件",
+      "parent_problem": "P_e2d3c980",
+      "success_node": "SUCCESS"
+    },
+    "P_b28d2454": {
+      "type": "Problem",
+      "description": "扫码台无法正常工作。",
+      "parent_feature": "F_24c1b23b",
+      "solutions": [
+        "S_c47f6733"
+      ],
+      "child_features": []
+    },
+    "S_c47f6733": {
+      "type": "Solution",
+      "description": "根据更换扫码台操作流程指引进行操作",
+      "parent_problem": "P_b28d2454",
+      "success_node": "SUCCESS"
+    },
+    "S_039ebe4e": {
+      "type": "Solution",
+      "description": "进行扫码枪VID获取操作",
+      "parent_problem": "P_e2d3c980",
+      "success_node": "SUCCESS"
+    },
+    "F_0c2176fc": {
+      "type": "Feature",
+      "description": "货架蓝灯报警",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_51386f23",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_76e7a8f9"
+      ]
+    },
+    "P_51386f23": {
+      "type": "Problem",
+      "description": "如何处理货架数据异常？",
+      "parent_feature": "F_0c2176fc",
+      "solutions": [
+        "S_bbb10da5"
+      ],
+      "child_features": []
+    },
+    "S_bbb10da5": {
+      "type": "Solution",
+      "description": "请WMS（上游系统）检查货架是否释放",
+      "parent_problem": "P_51386f23",
+      "success_node": "SUCCESS"
+    },
+    "F_76e7a8f9": {
+      "type": "Feature",
+      "description": "货架未释放",
+      "parent_node": "F_0c2176fc",
+      "child_problems": [
+        [
+          "P_3aa4216b",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_3aa4216b": {
+      "type": "Problem",
+      "description": "上游系统未能正确释放货架。",
+      "parent_feature": "F_76e7a8f9",
+      "solutions": [
+        "S_5324d338"
+      ],
+      "child_features": []
+    },
+    "S_5324d338": {
+      "type": "Solution",
+      "description": "上游系统释放货架，然后再次插入尝试",
+      "parent_problem": "P_3aa4216b",
+      "success_node": "SUCCESS"
+    },
+    "F_dc96fcaf": {
+      "type": "Feature",
+      "description": "需要安装加密狗驱动",
+      "parent_node": "ORIGIN",
+      "child_problems": [],
+      "child_features": [
+        "F_ff1f3b56",
+        "F_08f5fd7a",
+        "F_7e23e81a",
+        "F_8d381ab9"
+      ]
+    },
+    "F_ff1f3b56": {
+      "type": "Feature",
+      "description": "加密狗不正常插入电脑中",
+      "parent_node": "F_dc96fcaf",
+      "child_problems": [],
+      "child_features": []
+    },
+    "F_08f5fd7a": {
+      "type": "Feature",
+      "description": "加密狗驱动未安装",
+      "parent_node": "F_dc96fcaf",
+      "child_problems": [
+        [
+          "P_4c8f9c0c",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_4c8f9c0c": {
+      "type": "Problem",
+      "description": "加密狗无法被识别或正常工作。",
+      "parent_feature": "F_08f5fd7a",
+      "solutions": [
+        "S_48a39cda"
+      ],
+      "child_features": []
+    },
+    "S_48a39cda": {
+      "type": "Solution",
+      "description": "安装加密狗驱动",
+      "parent_problem": "P_4c8f9c0c",
+      "success_node": "SUCCESS"
+    },
+    "F_7e23e81a": {
+      "type": "Feature",
+      "description": "进入网址http://localhost:1947/_int_/devices.html查询加密狗驱动不正常",
+      "parent_node": "F_dc96fcaf",
+      "child_problems": [
+        [
+          "P_07e89275",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_07e89275": {
+      "type": "Problem",
+      "description": "加密狗驱动无法正常工作。",
+      "parent_feature": "F_7e23e81a",
+      "solutions": [
+        "S_8af47346"
+      ],
+      "child_features": []
+    },
+    "S_8af47346": {
+      "type": "Solution",
+      "description": "更换新的加密狗驱动",
+      "parent_problem": "P_07e89275",
+      "success_node": "SUCCESS"
+    },
+    "F_8d381ab9": {
+      "type": "Feature",
+      "description": "加密狗不在rcs所在的内网里",
+      "parent_node": "F_dc96fcaf",
+      "child_problems": [],
+      "child_features": [
+        "F_82a35c43"
+      ]
+    },
+    "F_82a35c43": {
+      "type": "Feature",
+      "description": "加密狗插入内网的任意一台RCS电脑中",
+      "parent_node": "F_8d381ab9",
+      "child_problems": [],
+      "child_features": []
+    },
+    "F_36774cd9": {
+      "type": "Feature",
+      "description": "07134料箱丢失",
+      "parent_node": "ORIGIN",
+      "child_problems": [],
+      "child_features": [
+        "F_312d04fe",
+        "F_c07e87c9"
+      ]
+    },
+    "F_312d04fe": {
+      "type": "Feature",
+      "description": "RCS没有07134号料箱的库存信息",
+      "parent_node": "F_36774cd9",
+      "child_problems": [
+        [
+          "P_677d1d78",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_677d1d78": {
+      "type": "Problem",
+      "description": "无法确定料箱的具体位置。",
+      "parent_feature": "F_312d04fe",
+      "solutions": [
+        "S_fe858ef0"
+      ],
+      "child_features": []
+    },
+    "S_fe858ef0": {
+      "type": "Solution",
+      "description": "打开RCS的日志进行精确查找这个料箱的具体位置",
+      "parent_problem": "P_677d1d78",
+      "success_node": "SUCCESS"
+    },
+    "F_c07e87c9": {
+      "type": "Feature",
+      "description": "未找到料箱位置",
+      "parent_node": "F_36774cd9",
+      "child_problems": [
+        [
+          "P_3a4860ab",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_3a4860ab": {
+      "type": "Problem",
+      "description": "拉箱机无法自动定位到料箱位置。",
+      "parent_feature": "F_c07e87c9",
+      "solutions": [
+        "S_a358cef3"
+      ],
+      "child_features": []
+    },
+    "S_a358cef3": {
+      "type": "Solution",
+      "description": "控制拉箱机移动到查找的位置处进行手动扫描料箱",
+      "parent_problem": "P_3a4860ab",
+      "success_node": "SUCCESS"
+    },
+    "F_ee65ad15": {
+      "type": "Feature",
+      "description": "机器人校准轮径，位移移动不到位",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_6c7b3004",
+          "soft"
+        ],
+        [
+          "P_485ceb51",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_331fcc96"
+      ]
+    },
+    "P_6c7b3004": {
+      "type": "Problem",
+      "description": "如何正确设置机器人配置中的“来回跑,校轮径启动位移”？",
+      "parent_feature": "F_ee65ad15",
+      "solutions": [
+        "S_b74d3760"
+      ],
+      "child_features": []
+    },
+    "S_b74d3760": {
+      "type": "Solution",
+      "description": "修改机器人配置中的“来回跑,校轮径启动位移”设置",
+      "parent_problem": "P_6c7b3004",
+      "success_node": "SUCCESS"
+    },
+    "F_331fcc96": {
+      "type": "Feature",
+      "description": "机器人前进方向十个地毯上有障碍物",
+      "parent_node": "F_ee65ad15",
+      "child_problems": [
+        [
+          "P_c9342436",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_c9342436": {
+      "type": "Problem",
+      "description": "机器人无法顺利前进。",
+      "parent_feature": "F_331fcc96",
+      "solutions": [
+        "S_30fb86a0"
+      ],
+      "child_features": []
+    },
+    "S_30fb86a0": {
+      "type": "Solution",
+      "description": "清除机器人前进方向的障碍物",
+      "parent_problem": "P_c9342436",
+      "success_node": "SUCCESS"
+    },
+    "P_485ceb51": {
+      "type": "Problem",
+      "description": "机器人升级的config文件如何与地毯大小保持一致？",
+      "parent_feature": "F_ee65ad15",
+      "solutions": [
+        "S_a24c4823"
+      ],
+      "child_features": []
+    },
+    "S_a24c4823": {
+      "type": "Solution",
+      "description": "修改config中地毯大小并升级小车",
+      "parent_problem": "P_485ceb51",
+      "success_node": "SUCCESS"
+    },
+    "P_964520c6": {
+      "type": "Problem",
+      "description": "如何解决轮径不对的问题？",
+      "parent_feature": "F_0d2978bb",
+      "solutions": [],
+      "child_features": []
+    },
+    "P_b439ce1f": {
+      "type": "Problem",
+      "description": "机器人在运行过程中出现跑偏现象。",
+      "parent_feature": "F_0d2978bb",
+      "solutions": [
+        "S_5717ccfe"
+      ],
+      "child_features": []
+    },
+    "S_5717ccfe": {
+      "type": "Solution",
+      "description": "根据机器人跑偏操作流程指引处理",
+      "parent_problem": "P_b439ce1f",
+      "success_node": "SUCCESS"
+    },
+    "F_a548ff8b": {
+      "type": "Feature",
+      "description": "波次无法关闭",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_2f858251",
+          "soft"
+        ],
+        [
+          "P_0f8742dc",
+          "soft"
+        ],
+        [
+          "P_9db0e38a",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_220b46c3",
+        "F_477925e5",
+        "F_becd0184",
+        "F_f7f08fd5",
+        "F_49394a8d",
+        "F_ce00a7d1",
+        "F_e002b0e7"
+      ]
+    },
+    "F_220b46c3": {
+      "type": "Feature",
+      "description": "MCS订单状态未更新",
+      "parent_node": "F_a548ff8b",
+      "child_problems": [],
+      "child_features": []
+    },
+    "F_477925e5": {
+      "type": "Feature",
+      "description": "系统中有正在分拣的货物",
+      "parent_node": "F_f7f08fd5",
+      "child_problems": [],
+      "child_features": []
+    },
+    "F_becd0184": {
+      "type": "Feature",
+      "description": "系统中没有正在分拣的货物",
+      "parent_node": "F_a548ff8b",
+      "child_problems": [
+        [
+          "P_095e8edb",
+          "soft"
+        ],
+        [
+          "P_9b9368c1",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_f1ad43c8"
+      ]
+    },
+    "P_095e8edb": {
+      "type": "Problem",
+      "description": "波次无法正常结束或处理。",
+      "parent_feature": "F_becd0184",
+      "solutions": [
+        "S_152d4049"
+      ],
+      "child_features": []
+    },
+    "S_152d4049": {
+      "type": "Solution",
+      "description": "从后台强制关闭波次，密码为波次号后六位",
+      "parent_problem": "P_095e8edb",
+      "success_node": "SUCCESS"
+    },
+    "F_4c6b8b1f": {
+      "type": "Feature",
+      "description": "当前格口未解锁",
+      "parent_node": "F_c416b4a6",
+      "child_problems": [
+        [
+          "P_e47313bc",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_e47313bc": {
+      "type": "Problem",
+      "description": "当前格口无法使用或被锁定。",
+      "parent_feature": "F_4c6b8b1f",
+      "solutions": [
+        "S_c584cb20"
+      ],
+      "child_features": []
+    },
+    "S_c584cb20": {
+      "type": "Solution",
+      "description": "打开WCS软件，点击高级，进行当前格口解锁重置",
+      "parent_problem": "P_e47313bc",
+      "success_node": "SUCCESS"
+    },
+    "F_d153de33": {
+      "type": "Feature",
+      "description": "相机断连",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_382cba51",
+          "soft"
+        ],
+        [
+          "P_973ee2fc",
+          "soft"
+        ],
+        [
+          "P_b449aa29",
+          "soft"
+        ],
+        [
+          "P_e6925589",
+          "soft"
+        ],
+        [
+          "P_a5cfcb30",
+          "soft"
+        ],
+        [
+          "P_920542f4",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_3f7bd71a",
+        "F_00cecba2",
+        "F_ea945743",
+        "F_b8a41b19",
+        "F_e29151e1",
+        "F_f9eadd6b"
+      ]
+    },
+    "F_3f7bd71a": {
+      "type": "Feature",
+      "description": "扫码软件显示两个相机均失去连接",
+      "parent_node": "F_d153de33",
+      "child_problems": [
+        [
+          "P_cd028f32",
+          "soft"
+        ],
+        [
+          "P_3403a72e",
+          "soft"
+        ],
+        [
+          "P_fd17a8b6",
+          "soft"
+        ],
+        [
+          "P_36dbb8dd",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_cd028f32": {
+      "type": "Problem",
+      "description": "扫码台程序是否为最新版本？",
+      "parent_feature": "F_b8a41b19",
+      "solutions": [],
+      "child_features": [
+        "F_b9678049"
+      ]
+    },
+    "F_b9678049": {
+      "type": "Feature",
+      "description": "确认扫码台程序为新版本",
+      "parent_node": "P_cd028f32",
+      "child_problems": [],
+      "child_features": []
+    },
+    "P_3403a72e": {
+      "type": "Problem",
+      "description": "相机连接资源异常的原因是什么？",
+      "parent_feature": "F_3f7bd71a",
+      "solutions": [
+        "S_b30736a8"
+      ],
+      "child_features": []
+    },
+    "S_b30736a8": {
+      "type": "Solution",
+      "description": "相机断电后重新上电",
+      "parent_problem": "P_3403a72e",
+      "success_node": "SUCCESS"
+    },
+    "P_fd17a8b6": {
+      "type": "Problem",
+      "description": "扫码台内网故障如何排查和解决？",
+      "parent_feature": "F_3f7bd71a",
+      "solutions": [
+        "S_0380d07d"
+      ],
+      "child_features": []
+    },
+    "P_36dbb8dd": {
+      "type": "Problem",
+      "description": "扫码台软件出现故障或无响应。",
+      "parent_feature": "F_3f7bd71a",
+      "solutions": [
+        "S_9626e2f1"
+      ],
+      "child_features": []
+    },
+    "S_9626e2f1": {
+      "type": "Solution",
+      "description": "重启扫码台软件",
+      "parent_problem": "P_36dbb8dd",
+      "success_node": "SUCCESS"
+    },
+    "S_0380d07d": {
+      "type": "Solution",
+      "description": "打开电控箱，插拔相机的网线",
+      "parent_problem": "P_fd17a8b6",
+      "success_node": "SUCCESS"
+    },
+    "F_b652d489": {
+      "type": "Feature",
+      "description": "扫码台相机画面显示与实际相反",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_e87042b6",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_7cb291d7",
+        "F_b1efd073",
+        "F_bf05e38a"
+      ]
+    },
+    "P_e87042b6": {
+      "type": "Problem",
+      "description": "扫码台相机编码如何正确配对？",
+      "parent_feature": "F_b652d489",
+      "solutions": [
+        "S_8800400e"
+      ],
+      "child_features": []
+    },
+    "S_8800400e": {
+      "type": "Solution",
+      "description": "修改配置文件使其和实际位置保持一致，并保存重启rcs软件",
+      "parent_problem": "P_e87042b6",
+      "success_node": "SUCCESS"
+    },
+    "F_7cb291d7": {
+      "type": "Feature",
+      "description": "扫码台位置左右不一致",
+      "parent_node": "F_b652d489",
+      "child_problems": [
+        [
+          "P_2d61bd12",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_2d61bd12": {
+      "type": "Problem",
+      "description": "扫码台位置配置不正确。",
+      "parent_feature": "F_7cb291d7",
+      "solutions": [
+        "S_7f7c1291"
+      ],
+      "child_features": []
+    },
+    "S_7f7c1291": {
+      "type": "Solution",
+      "description": "打开rcs软件的grid.physical文件检查扫码台位置",
+      "parent_problem": "P_2d61bd12",
+      "success_node": "SUCCESS"
+    },
+    "F_b1efd073": {
+      "type": "Feature",
+      "description": "扫码软件exe的config文件和dahua.cfg文件左右扫码台名称不一致",
+      "parent_node": "F_b652d489",
+      "child_problems": [
+        [
+          "P_afd00228",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_afd00228": {
+      "type": "Problem",
+      "description": "扫码软件与配置文件不一致导致无法正常运行。",
+      "parent_feature": "F_b1efd073",
+      "solutions": [
+        "S_b9cf6991"
+      ],
+      "child_features": []
+    },
+    "S_b9cf6991": {
+      "type": "Solution",
+      "description": "修改配置文件和RCS软件保持一致，并保存重启扫码软件",
+      "parent_problem": "P_afd00228",
+      "success_node": "SUCCESS"
+    },
+    "F_bf05e38a": {
+      "type": "Feature",
+      "description": "SVS下相机命名重复",
+      "parent_node": "F_b652d489",
+      "child_problems": [
+        [
+          "P_e84d9479",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_e84d9479": {
+      "type": "Problem",
+      "description": "命名不规范导致混淆。",
+      "parent_feature": "F_bf05e38a",
+      "solutions": [
+        "S_3e689648"
+      ],
+      "child_features": []
+    },
+    "S_3e689648": {
+      "type": "Solution",
+      "description": "修改命名",
+      "parent_problem": "P_e84d9479",
+      "success_node": "SUCCESS"
+    },
+    "F_1dd0dfaa": {
+      "type": "Feature",
+      "description": "WCS系统离线",
+      "parent_node": "ORIGIN",
+      "child_problems": [],
+      "child_features": [
+        "F_901274c5",
+        "F_ce5f39c1",
+        "F_a3be4e43",
+        "F_cd9b5d2d",
+        "F_985c668a"
+      ]
+    },
+    "F_901274c5": {
+      "type": "Feature",
+      "description": "WCS电脑未正常开机",
+      "parent_node": "F_1dd0dfaa",
+      "child_problems": [
+        [
+          "P_a05a0b4e",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_a05a0b4e": {
+      "type": "Problem",
+      "description": "WCS程序无法启动。",
+      "parent_feature": "F_901274c5",
+      "solutions": [
+        "S_a8ed573c"
+      ],
+      "child_features": []
+    },
+    "S_a8ed573c": {
+      "type": "Solution",
+      "description": "开机并启动WCS程序",
+      "parent_problem": "P_a05a0b4e",
+      "success_node": "SUCCESS"
+    },
+    "F_ce5f39c1": {
+      "type": "Feature",
+      "description": "扫码台防火墙未打开",
+      "parent_node": "F_1dd0dfaa",
+      "child_problems": [
+        [
+          "P_817a1572",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_817a1572": {
+      "type": "Problem",
+      "description": "扫码台无法正常连接网络。",
+      "parent_feature": "F_ce5f39c1",
+      "solutions": [
+        "S_f85d5e57"
+      ],
+      "child_features": []
+    },
+    "S_f85d5e57": {
+      "type": "Solution",
+      "description": "关闭扫码台防火墙",
+      "parent_problem": "P_817a1572",
+      "success_node": "SUCCESS"
+    },
+    "F_666f8bf8": {
+      "type": "Feature",
+      "description": "RCS下层界面白屏",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_34c794fb",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_d5fd831c"
+      ]
+    },
+    "P_34c794fb": {
+      "type": "Problem",
+      "description": "如何检查日志是否有定时清除以解决内存不足问题？",
+      "parent_feature": "F_666f8bf8",
+      "solutions": [
+        "S_e61e6dad"
+      ],
+      "child_features": []
+    },
+    "S_e61e6dad": {
+      "type": "Solution",
+      "description": "设置日志定时清除",
+      "parent_problem": "P_34c794fb",
+      "success_node": "SUCCESS"
+    },
+    "F_d5fd831c": {
+      "type": "Feature",
+      "description": "电脑运行时间过长",
+      "parent_node": "F_f788eb5c",
+      "child_problems": [
+        [
+          "P_66a010e7",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_66a010e7": {
+      "type": "Problem",
+      "description": "RCS程序出现了异常或卡顿。",
+      "parent_feature": "F_d5fd831c",
+      "solutions": [
+        "S_6c0f2159",
+        "S_7078504e"
+      ],
+      "child_features": []
+    },
+    "S_6c0f2159": {
+      "type": "Solution",
+      "description": "关闭重启RCS程序，任务结束之后，电脑关机重启",
+      "parent_problem": "P_66a010e7",
+      "success_node": "SUCCESS"
+    },
+    "P_b5cdcd73": {
+      "type": "Problem",
+      "description": "如何解决停车位数量不足的问题？",
+      "parent_feature": "F_63aa0467",
+      "solutions": [
+        "S_84829b4c",
+        "S_870b193a"
+      ],
+      "child_features": []
+    },
+    "S_84829b4c": {
+      "type": "Solution",
+      "description": "联系售后，增加停车位",
+      "parent_problem": "P_b5cdcd73",
+      "success_node": "SUCCESS"
+    },
+    "F_c3a41f5e": {
+      "type": "Feature",
+      "description": "PDA扫掉件报错",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_a11eaa92",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_ae036546"
+      ]
+    },
+    "F_ae036546": {
+      "type": "Feature",
+      "description": "PDA未连接到正确的网络",
+      "parent_node": "F_c3a41f5e",
+      "child_problems": [
+        [
+          "P_a8cb4677",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_a8cb4677": {
+      "type": "Problem",
+      "description": "PDA无法与立镖和上游系统进行通讯。",
+      "parent_feature": "F_ae036546",
+      "solutions": [
+        "S_aa8eb38d"
+      ],
+      "child_features": []
+    },
+    "S_aa8eb38d": {
+      "type": "Solution",
+      "description": "连接PDA到立镖和上游系统通讯的网络",
+      "parent_problem": "P_a8cb4677",
+      "success_node": "SUCCESS"
+    },
+    "P_a11eaa92": {
+      "type": "Problem",
+      "description": "如何正确配置PDA的IP和端口？",
+      "parent_feature": "F_c3a41f5e",
+      "solutions": [
+        "S_b0438205"
+      ],
+      "child_features": []
+    },
+    "S_b0438205": {
+      "type": "Solution",
+      "description": "配置PDA的IP和端口，并再次扫描",
+      "parent_problem": "P_a11eaa92",
+      "success_node": "SUCCESS"
+    },
+    "F_f58fdf3d": {
+      "type": "Feature",
+      "description": "需要降低3D分拣机翻板卸货速度",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_ff039d86",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_072155ea"
+      ]
+    },
+    "F_072155ea": {
+      "type": "Feature",
+      "description": "打开3D分拣机工具未连接到分拣机",
+      "parent_node": "F_f58fdf3d",
+      "child_problems": [],
+      "child_features": [
+        "F_d19d5da9"
+      ]
+    },
+    "F_d19d5da9": {
+      "type": "Feature",
+      "description": "连接到分拣机的IP地址",
+      "parent_node": "F_072155ea",
+      "child_problems": [],
+      "child_features": []
+    },
+    "P_ff039d86": {
+      "type": "Problem",
+      "description": "翻板速度配置选项如何修改？",
+      "parent_feature": "F_f58fdf3d",
+      "solutions": [
+        "S_106bee60"
+      ],
+      "child_features": []
+    },
+    "S_106bee60": {
+      "type": "Solution",
+      "description": "修改翻板速度配置选项",
+      "parent_problem": "P_ff039d86",
+      "success_node": "SUCCESS"
+    },
+    "F_a9c41567": {
+      "type": "Feature",
+      "description": "波次提示货架不可用",
+      "parent_node": "ORIGIN",
+      "child_problems": [],
+      "child_features": [
+        "F_6b9515a0",
+        "F_5497ab0c"
+      ]
+    },
+    "F_6b9515a0": {
+      "type": "Feature",
+      "description": "货架亮蓝灯提示未释放",
+      "parent_node": "F_a9c41567",
+      "child_problems": [
+        [
+          "P_b2aa4d67",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_b2aa4d67": {
+      "type": "Problem",
+      "description": "货架为何未释放？",
+      "parent_feature": "F_6b9515a0",
+      "solutions": [],
+      "child_features": []
+    },
+    "F_5497ab0c": {
+      "type": "Feature",
+      "description": "货架状态异常",
+      "parent_node": "F_a9c41567",
+      "child_problems": [
+        [
+          "P_040e3aba",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_040e3aba": {
+      "type": "Problem",
+      "description": "货架无法正常工作或出现故障。",
+      "parent_feature": "F_5497ab0c",
+      "solutions": [
+        "S_5e463abe"
+      ],
+      "child_features": []
+    },
+    "S_5e463abe": {
+      "type": "Solution",
+      "description": "将货架拉出2分钟，插回",
+      "parent_problem": "P_040e3aba",
+      "success_node": "SUCCESS"
+    },
+    "F_f788eb5c": {
+      "type": "Feature",
+      "description": "扫码台扫码后返回task过慢",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_b9df2c1d",
+          "soft"
+        ],
+        [
+          "P_2123f622",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_d5fd831c"
+      ]
+    },
+    "P_b9df2c1d": {
+      "type": "Problem",
+      "description": "硬盘空间不足该如何处理？",
+      "parent_feature": "F_f788eb5c",
+      "solutions": [
+        "S_e804c464"
+      ],
+      "child_features": []
+    },
+    "S_e804c464": {
+      "type": "Solution",
+      "description": "设置日志定时清除",
+      "parent_problem": "P_b9df2c1d",
+      "success_node": "SUCCESS"
+    },
+    "P_2123f622": {
+      "type": "Problem",
+      "description": "如何定时清除日志？",
+      "parent_feature": "F_f788eb5c",
+      "solutions": [
+        "S_f30150e5"
+      ],
+      "child_features": []
+    },
+    "S_f30150e5": {
+      "type": "Solution",
+      "description": "设置日志定时清除",
+      "parent_problem": "P_2123f622",
+      "success_node": "SUCCESS"
+    },
+    "S_7078504e": {
+      "type": "Solution",
+      "description": "关闭重启扫码台程序，任务结束之后，电脑关机重启",
+      "parent_problem": "P_66a010e7",
+      "success_node": "SUCCESS"
+    },
+    "F_48fcc247": {
+      "type": "Feature",
+      "description": "需要修改locate文件RFID",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_05e79aa4",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_88c23c92"
+      ]
+    },
+    "F_88c23c92": {
+      "type": "Feature",
+      "description": "更换地毯后需注意地毯方向一致",
+      "parent_node": "F_48fcc247",
+      "child_problems": [
+        [
+          "P_5669245f",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_5669245f": {
+      "type": "Problem",
+      "description": "机器人无法正确识别更换后的地毯坐标。",
+      "parent_feature": "F_88c23c92",
+      "solutions": [
+        "S_ad6c46d4"
+      ],
+      "child_features": []
+    },
+    "S_ad6c46d4": {
+      "type": "Solution",
+      "description": "进行地毯更换后，打开一台机器人的电源，放到更换过的地毯上，查看当前地毯坐标，修改locate文件并重启rcs",
+      "parent_problem": "P_5669245f",
+      "success_node": "SUCCESS"
+    },
+    "P_05e79aa4": {
+      "type": "Problem",
+      "description": "地毯更换过程中出现了文件冲突或错误。",
+      "parent_feature": "F_48fcc247",
+      "solutions": [
+        "S_26179b55"
+      ],
+      "child_features": []
+    },
+    "S_26179b55": {
+      "type": "Solution",
+      "description": "全量更换地毯时需删除platforms下的locate文件并备份",
+      "parent_problem": "P_05e79aa4",
+      "success_node": "SUCCESS"
+    },
+    "P_d5d68ee9": {
+      "type": "Problem",
+      "description": "地毯导致机器人定位不准确。",
+      "parent_feature": "F_e54537e4",
+      "solutions": [
+        "S_60745c62",
+        "S_886dafa0",
+        "S_6f23cc86",
+        "S_1d00b270"
+      ],
+      "child_features": []
+    },
+    "S_60745c62": {
+      "type": "Solution",
+      "description": "进行全量更换地毯，搬下所有机器人，删除locate文件，启动地图扫码模式，放机器人并开始扫描",
+      "parent_problem": "P_d5d68ee9",
+      "success_node": "SUCCESS"
+    },
+    "F_874ec16f": {
+      "type": "Feature",
+      "description": "需要搬移机器人",
+      "parent_node": "ORIGIN",
+      "child_problems": [],
+      "child_features": [
+        "F_f0c51977",
+        "F_7c46bd47"
+      ]
+    },
+    "F_f0c51977": {
+      "type": "Feature",
+      "description": "原先RCS上未关机的机器人",
+      "parent_node": "F_874ec16f",
+      "child_problems": [
+        [
+          "P_e82a4194",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_e82a4194": {
+      "type": "Problem",
+      "description": "机器人无法正常工作。",
+      "parent_feature": "F_f0c51977",
+      "solutions": [
+        "S_77eace4c"
+      ],
+      "child_features": []
+    },
+    "S_77eace4c": {
+      "type": "Solution",
+      "description": "关机并删除机器人",
+      "parent_problem": "P_e82a4194",
+      "success_node": "SUCCESS"
+    },
+    "F_7c46bd47": {
+      "type": "Feature",
+      "description": "新的RCS软件中未添加的机器人",
+      "parent_node": "F_874ec16f",
+      "child_problems": [
+        [
+          "P_49365cce",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_49365cce": {
+      "type": "Problem",
+      "description": "机器人无法正常运行。",
+      "parent_feature": "F_7c46bd47",
+      "solutions": [
+        "S_c0e2023b"
+      ],
+      "child_features": []
+    },
+    "S_c0e2023b": {
+      "type": "Solution",
+      "description": "添加被删除的机器人并开机",
+      "parent_problem": "P_49365cce",
+      "success_node": "SUCCESS"
+    },
+    "F_f7f08fd5": {
+      "type": "Feature",
+      "description": "波次无法在wes上关闭",
+      "parent_node": "F_a548ff8b",
+      "child_problems": [],
+      "child_features": [
+        "F_477925e5"
+      ]
+    },
+    "F_34cabb1e": {
+      "type": "Feature",
+      "description": "小车翻板朝向不对",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_afc90713",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_afc90713": {
+      "type": "Problem",
+      "description": "如何配置朝向配置文件？",
+      "parent_feature": "F_34cabb1e",
+      "solutions": [
+        "S_ef1168e8"
+      ],
+      "child_features": []
+    },
+    "S_ef1168e8": {
+      "type": "Solution",
+      "description": "调整翻板开口朝向配置并重启RCS软件",
+      "parent_problem": "P_afc90713",
+      "success_node": "SUCCESS"
+    },
+    "F_b589060c": {
+      "type": "Feature",
+      "description": "相邻两个发货口的排队区，小车只前往其中一个发货口",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_0c58feb5",
+          "soft"
+        ],
+        [
+          "P_5d38f2c9",
+          "soft"
+        ],
+        [
+          "P_771aac2e",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_432e3be5"
+      ]
+    },
+    "P_0c58feb5": {
+      "type": "Problem",
+      "description": "如何解决排队区路线横穿导致车子只被一个发货口捕获的问题？",
+      "parent_feature": "F_b589060c",
+      "solutions": [],
+      "child_features": []
+    },
+    "P_5d38f2c9": {
+      "type": "Problem",
+      "description": "发货口可能未打开。",
+      "parent_feature": "F_b589060c",
+      "solutions": [
+        "S_23c61722"
+      ],
+      "child_features": []
+    },
+    "S_23c61722": {
+      "type": "Solution",
+      "description": "检查另一个发货口是否打开",
+      "parent_problem": "P_5d38f2c9",
+      "success_node": "SUCCESS"
+    },
+    "F_432e3be5": {
+      "type": "Feature",
+      "description": "另一个发货口已关闭",
+      "parent_node": "F_b589060c",
+      "child_problems": [
+        [
+          "P_2e07e628",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_2e07e628": {
+      "type": "Problem",
+      "description": "发货口无法通过鼠标右键点击打开。",
+      "parent_feature": "F_432e3be5",
+      "solutions": [
+        "S_cca75409"
+      ],
+      "child_features": []
+    },
+    "S_cca75409": {
+      "type": "Solution",
+      "description": "鼠标右键点击被关闭的发货口打开",
+      "parent_problem": "P_2e07e628",
+      "success_node": "SUCCESS"
+    },
+    "F_46b51cfe": {
+      "type": "Feature",
+      "description": "防火墙未打开",
+      "parent_node": "F_e54537e4",
+      "child_problems": [
+        [
+          "P_222a0753",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_222a0753": {
+      "type": "Problem",
+      "description": "防火墙可能阻止了网络连接。",
+      "parent_feature": "F_46b51cfe",
+      "solutions": [
+        "S_067c9627"
+      ],
+      "child_features": []
+    },
+    "S_067c9627": {
+      "type": "Solution",
+      "description": "关闭防火墙",
+      "parent_problem": "P_222a0753",
+      "success_node": "SUCCESS"
+    },
+    "P_e2b34e50": {
+      "type": "Problem",
+      "description": "如何解决本地电脑的IP问题？",
+      "parent_feature": "F_e54537e4",
+      "solutions": [
+        "S_b86460ae"
+      ],
+      "child_features": []
+    },
+    "S_b86460ae": {
+      "type": "Solution",
+      "description": "检查并修改IP",
+      "parent_problem": "P_e2b34e50",
+      "success_node": "SUCCESS"
+    },
+    "F_8744ca95": {
+      "type": "Feature",
+      "description": "AP电源不正常",
+      "parent_node": "F_e54537e4",
+      "child_problems": [
+        [
+          "P_bc5cdb75",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_bc5cdb75": {
+      "type": "Problem",
+      "description": "电源可能无法正常供电。",
+      "parent_feature": "F_8744ca95",
+      "solutions": [
+        "S_f7ce8126"
+      ],
+      "child_features": []
+    },
+    "S_f7ce8126": {
+      "type": "Solution",
+      "description": "检查电源供电",
+      "parent_problem": "P_bc5cdb75",
+      "success_node": "SUCCESS"
+    },
+    "F_f21554e0": {
+      "type": "Feature",
+      "description": "扫码台不显示车号",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_744f6b5e",
+          "soft"
+        ],
+        [
+          "P_b2726dcd",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_bb4d0cdb",
+        "F_8baedda6",
+        "F_222acf80"
+      ]
+    },
+    "F_bb4d0cdb": {
+      "type": "Feature",
+      "description": "扫码台电脑防火墙开启",
+      "parent_node": "F_f21554e0",
+      "child_problems": [
+        [
+          "P_04e7ce4d",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_04e7ce4d": {
+      "type": "Problem",
+      "description": "扫码台电脑无法正常连接网络。",
+      "parent_feature": "F_bb4d0cdb",
+      "solutions": [
+        "S_6bc79191"
+      ],
+      "child_features": []
+    },
+    "S_6bc79191": {
+      "type": "Solution",
+      "description": "关闭扫码台电脑的防火墙",
+      "parent_problem": "P_04e7ce4d",
+      "success_node": "SUCCESS"
+    },
+    "P_744f6b5e": {
+      "type": "Problem",
+      "description": "扫码台exe的config配置中如何更正扫码台编号？",
+      "parent_feature": "F_f21554e0",
+      "solutions": [
+        "S_825e1a4f"
+      ],
+      "child_features": []
+    },
+    "S_825e1a4f": {
+      "type": "Solution",
+      "description": "修改正确的配置并重启扫码软件",
+      "parent_problem": "P_744f6b5e",
+      "success_node": "SUCCESS"
+    },
+    "F_ebc01177": {
+      "type": "Feature",
+      "description": "每次落件容易触发满包",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_3fb98482",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_3fb98482": {
+      "type": "Problem",
+      "description": "如何调整满包触发时间设置？",
+      "parent_feature": "F_ebc01177",
+      "solutions": [],
+      "child_features": []
+    },
+    "F_821582ea": {
+      "type": "Feature",
+      "description": "美国希音B4第四套下层车服无法启动",
+      "parent_node": "F_0e44e126",
+      "child_problems": [
+        [
+          "P_5ad1ff69",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_5ad1ff69": {
+      "type": "Problem",
+      "description": "小车在充电桩位置急停且无法找到位置，如何解决rfid未记录的问题？",
+      "parent_feature": "F_821582ea",
+      "solutions": [],
+      "child_features": []
+    },
+    "S_7bc4f365": {
+      "type": "Solution",
+      "description": "更换地毯或者rfid，根据少量更换地毯问题操作指引进行",
+      "parent_problem": "P_a9f4cdf2",
+      "success_node": "SUCCESS"
+    },
+    "F_8f5f8772": {
+      "type": "Feature",
+      "description": "地毯上能够读取到rfid",
+      "parent_node": "F_0e44e126",
+      "child_problems": [
+        [
+          "P_20fb17b1",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_20fb17b1": {
+      "type": "Problem",
+      "description": "设备故障或异常现象反复出现。",
+      "parent_feature": "F_8f5f8772",
+      "solutions": [
+        "S_3e2570b2"
+      ],
+      "child_features": []
+    },
+    "S_3e2570b2": {
+      "type": "Solution",
+      "description": "持续观察，再次出现时保留现场联系专业的售后技术人员查看",
+      "parent_problem": "P_20fb17b1",
+      "success_node": "SUCCESS"
+    },
+    "F_a3be4e43": {
+      "type": "Feature",
+      "description": "电脑的防火墙被打开",
+      "parent_node": "F_1dd0dfaa",
+      "child_problems": [
+        [
+          "P_51b7fb2d",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_51b7fb2d": {
+      "type": "Problem",
+      "description": "防火墙可能阻止了网络连接。",
+      "parent_feature": "F_a3be4e43",
+      "solutions": [
+        "S_a6217e73"
+      ],
+      "child_features": []
+    },
+    "S_a6217e73": {
+      "type": "Solution",
+      "description": "关闭防火墙",
+      "parent_problem": "P_51b7fb2d",
+      "success_node": "SUCCESS"
+    },
+    "F_cd9b5d2d": {
+      "type": "Feature",
+      "description": "ping目标电脑ip无法通讯",
+      "parent_node": "F_1dd0dfaa",
+      "child_problems": [
+        [
+          "P_e200f1be",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_e200f1be": {
+      "type": "Problem",
+      "description": "电脑出现卡顿或无响应的情况。",
+      "parent_feature": "F_cd9b5d2d",
+      "solutions": [
+        "S_461df31f"
+      ],
+      "child_features": []
+    },
+    "S_461df31f": {
+      "type": "Solution",
+      "description": "重启电脑",
+      "parent_problem": "P_e200f1be",
+      "success_node": "SUCCESS"
+    },
+    "F_985c668a": {
+      "type": "Feature",
+      "description": "打开电脑ip设置，ip和子网掩码不正确",
+      "parent_node": "F_da263b14",
+      "child_problems": [
+        [
+          "P_e1c84078",
+          "soft"
+        ],
+        [
+          "P_91a69b0f",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_e1c84078": {
+      "type": "Problem",
+      "description": "网络连接不稳定或无法访问。",
+      "parent_feature": "F_985c668a",
+      "solutions": [
+        "S_40e90d42"
+      ],
+      "child_features": []
+    },
+    "S_40e90d42": {
+      "type": "Solution",
+      "description": "设置正确的ip和子网掩码",
+      "parent_problem": "P_e1c84078",
+      "success_node": "SUCCESS"
+    },
+    "F_11c16e0e": {
+      "type": "Feature",
+      "description": "魔毯潮湿",
+      "parent_node": "F_53e4c6f0",
+      "child_problems": [
+        [
+          "P_0e114abb",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_0e114abb": {
+      "type": "Problem",
+      "description": "魔毯可能因湿滑而导致安全隐患。",
+      "parent_feature": "F_11c16e0e",
+      "solutions": [
+        "S_07ae2d21"
+      ],
+      "child_features": []
+    },
+    "S_07ae2d21": {
+      "type": "Solution",
+      "description": "降低车速并检查魔毯干燥情况",
+      "parent_problem": "P_0e114abb",
+      "success_node": "SUCCESS"
+    },
+    "F_0f0f5a1e": {
+      "type": "Feature",
+      "description": "扫码台扫条码没有声音",
+      "parent_node": "ORIGIN",
+      "child_problems": [],
+      "child_features": [
+        "F_a49b99d4"
+      ]
+    },
+    "F_a49b99d4": {
+      "type": "Feature",
+      "description": "电控箱内线路松动",
+      "parent_node": "F_0f0f5a1e",
+      "child_problems": [
+        [
+          "P_1b40a75b",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_1b40a75b": {
+      "type": "Problem",
+      "description": "线路连接不良导致设备无法正常工作。",
+      "parent_feature": "F_a49b99d4",
+      "solutions": [
+        "S_696f6379"
+      ],
+      "child_features": []
+    },
+    "S_696f6379": {
+      "type": "Solution",
+      "description": "插紧线路",
+      "parent_problem": "P_1b40a75b",
+      "success_node": "SUCCESS"
+    },
+    "F_141634d8": {
+      "type": "Feature",
+      "description": "桌面上RCS图标消失",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_2dd6e82f",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_978a3317"
+      ]
+    },
+    "F_978a3317": {
+      "type": "Feature",
+      "description": "RCS电脑上有安装杀毒软件",
+      "parent_node": "F_141634d8",
+      "child_problems": [
+        [
+          "P_a42f681e",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_a42f681e": {
+      "type": "Problem",
+      "description": "快捷方式无法正常工作。",
+      "parent_feature": "F_978a3317",
+      "solutions": [
+        "S_4afab5f7"
+      ],
+      "child_features": []
+    },
+    "S_4afab5f7": {
+      "type": "Solution",
+      "description": "卸载杀毒软件后重新生成快捷方式",
+      "parent_problem": "P_a42f681e",
+      "success_node": "SUCCESS"
+    },
+    "P_2dd6e82f": {
+      "type": "Problem",
+      "description": "如何恢复误删除导致的图标消失？",
+      "parent_feature": "F_141634d8",
+      "solutions": [
+        "S_a73527b1"
+      ],
+      "child_features": []
+    },
+    "S_a73527b1": {
+      "type": "Solution",
+      "description": "从回收站还原快捷图标",
+      "parent_problem": "P_2dd6e82f",
+      "success_node": "SUCCESS"
+    },
+    "F_8fe2f93d": {
+      "type": "Feature",
+      "description": "rcs的redis报错",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_9bf0d53e",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_5406405c"
+      ]
+    },
+    "P_9bf0d53e": {
+      "type": "Problem",
+      "description": "如何解决Redis配置不正常的问题？",
+      "parent_feature": "F_8fe2f93d",
+      "solutions": [
+        "S_dcd4bfbd"
+      ],
+      "child_features": []
+    },
+    "S_dcd4bfbd": {
+      "type": "Solution",
+      "description": "修改正确的redis并重启rcs",
+      "parent_problem": "P_9bf0d53e",
+      "success_node": "SUCCESS"
+    },
+    "F_5406405c": {
+      "type": "Feature",
+      "description": "redis服务未启动",
+      "parent_node": "F_8fe2f93d",
+      "child_problems": [
+        [
+          "P_2d77f12f",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_2d77f12f": {
+      "type": "Problem",
+      "description": "Redis服务出现故障或无法响应请求。",
+      "parent_feature": "F_5406405c",
+      "solutions": [
+        "S_c23d4ae8"
+      ],
+      "child_features": []
+    },
+    "S_c23d4ae8": {
+      "type": "Solution",
+      "description": "重新启动redis",
+      "parent_problem": "P_2d77f12f",
+      "success_node": "SUCCESS"
+    },
+    "P_9b9368c1": {
+      "type": "Problem",
+      "description": "存在未完成的任务。",
+      "parent_feature": "F_becd0184",
+      "solutions": [
+        "S_fc93ae47"
+      ],
+      "child_features": []
+    },
+    "S_fc93ae47": {
+      "type": "Solution",
+      "description": "打开RCS和WCS软件查看是否有未完成的任务",
+      "parent_problem": "P_9b9368c1",
+      "success_node": "SUCCESS"
+    },
+    "P_2f858251": {
+      "type": "Problem",
+      "description": "如何分拣完成挂起的42个料箱以关闭波次？",
+      "parent_feature": "F_a548ff8b",
+      "solutions": [
+        "S_c2f371e0"
+      ],
+      "child_features": []
+    },
+    "S_c2f371e0": {
+      "type": "Solution",
+      "description": "分拣完成挂起的料箱或缺件后再尝试关闭波次",
+      "parent_problem": "P_2f858251",
+      "success_node": "SUCCESS"
+    },
+    "F_49394a8d": {
+      "type": "Feature",
+      "description": "3D分拣机有报错",
+      "parent_node": "F_a548ff8b",
+      "child_problems": [
+        [
+          "P_a209fe63",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_a209fe63": {
+      "type": "Problem",
+      "description": "分拣机出现故障并报错。",
+      "parent_feature": "F_49394a8d",
+      "solutions": [
+        "S_72002545"
+      ],
+      "child_features": []
+    },
+    "S_72002545": {
+      "type": "Solution",
+      "description": "根据分拣机报错操作指引进行维修",
+      "parent_problem": "P_a209fe63",
+      "success_node": "SUCCESS"
+    },
+    "F_770a5253": {
+      "type": "Feature",
+      "description": "插一下这件货分到了哪里",
+      "parent_node": "ORIGIN",
+      "child_problems": [],
+      "child_features": [
+        "F_16cb91ad"
+      ]
+    },
+    "F_16cb91ad": {
+      "type": "Feature",
+      "description": "未查询包裹的分拣信息",
+      "parent_node": "F_770a5253",
+      "child_problems": [
+        [
+          "P_3c513035",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_3c513035": {
+      "type": "Problem",
+      "description": "无法找到特定条码的相关日志信息。",
+      "parent_feature": "F_16cb91ad",
+      "solutions": [
+        "S_8d1d9e91"
+      ],
+      "child_features": []
+    },
+    "S_8d1d9e91": {
+      "type": "Solution",
+      "description": "打开rcs软件目录下的server_log日志里的sorting日志，输入想要查询的条码进行搜索",
+      "parent_problem": "P_3c513035",
+      "success_node": "SUCCESS"
+    },
+    "F_f1afbd57": {
+      "type": "Feature",
+      "description": "机器人并排同时转弯的时候都会相互干扰导致急停",
+      "parent_node": "ORIGIN",
+      "child_problems": [],
+      "child_features": [
+        "F_29272f8a"
+      ]
+    },
+    "F_29272f8a": {
+      "type": "Feature",
+      "description": "正常情况下机器人是不允许在并排的时候同时进行转弯",
+      "parent_node": "F_f1afbd57",
+      "child_problems": [
+        [
+          "P_36fd1c84",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_36fd1c84": {
+      "type": "Problem",
+      "description": "机器人在相邻时转弯时发生碰撞。",
+      "parent_feature": "F_29272f8a",
+      "solutions": [
+        "S_7eded3f9"
+      ],
+      "child_features": []
+    },
+    "S_7eded3f9": {
+      "type": "Solution",
+      "description": "修改配置“是否允许两个机器人在相邻时转弯”",
+      "parent_problem": "P_36fd1c84",
+      "success_node": "SUCCESS"
+    },
+    "P_858e47ec": {
+      "type": "Problem",
+      "description": "无法找到所需的json文件。",
+      "parent_feature": "F_1c4fee08",
+      "solutions": [
+        "S_1540bd72"
+      ],
+      "child_features": []
+    },
+    "S_1540bd72": {
+      "type": "Solution",
+      "description": "打开rcs软件的platforms文件，找到json文件",
+      "parent_problem": "P_858e47ec",
+      "success_node": "SUCCESS"
+    },
+    "P_5ff18534": {
+      "type": "Problem",
+      "description": "两个机器人在相邻时转弯导致冲突或碰撞。",
+      "parent_feature": "F_e54537e4",
+      "solutions": [
+        "S_b2817e50"
+      ],
+      "child_features": []
+    },
+    "S_b2817e50": {
+      "type": "Solution",
+      "description": "在json文件中找到“是否允许两个机器人在相邻时转弯”，修改此配置变成false，保存并重启rcs软件",
+      "parent_problem": "P_5ff18534",
+      "success_node": "SUCCESS"
+    },
+    "F_9505bd19": {
+      "type": "Feature",
+      "description": "扫码台启动失败",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_55760097",
+          "soft"
+        ],
+        [
+          "P_f55ae478",
+          "soft"
+        ],
+        [
+          "P_faa098b2",
+          "soft"
+        ],
+        [
+          "P_a01b4d43",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_ec4ce372",
+        "F_eff93ee6",
+        "F_9fb9e09c"
+      ]
+    },
+    "P_55760097": {
+      "type": "Problem",
+      "description": "如何修复dahua.cfg配置文件损坏的问题？",
+      "parent_feature": "F_9505bd19",
+      "solutions": [
+        "S_690b5a3c"
+      ],
+      "child_features": []
+    },
+    "S_690b5a3c": {
+      "type": "Solution",
+      "description": "删除dahua.cfg文件后重新打开软件",
+      "parent_problem": "P_55760097",
+      "success_node": "SUCCESS"
+    },
+    "S_870b193a": {
+      "type": "Solution",
+      "description": "增加紧急地图停车区",
+      "parent_problem": "P_b5cdcd73",
+      "success_node": "SUCCESS"
+    },
+    "F_2d8cfe7e": {
+      "type": "Feature",
+      "description": "满包雷达离线报错",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_dca72dc0",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_f0505797",
+        "F_66fc436f",
+        "F_b5c1384e"
+      ]
+    },
+    "F_f0505797": {
+      "type": "Feature",
+      "description": "分拣机LCD中启用了满包雷达",
+      "parent_node": "F_2d8cfe7e",
+      "child_problems": [
+        [
+          "P_b1441d48",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_b1441d48": {
+      "type": "Problem",
+      "description": "满包雷达设置无法正常取消。",
+      "parent_feature": "F_f0505797",
+      "solutions": [
+        "S_ce6d2883"
+      ],
+      "child_features": []
+    },
+    "S_ce6d2883": {
+      "type": "Solution",
+      "description": "手动取消满包雷达设置",
+      "parent_problem": "P_b1441d48",
+      "success_node": "SUCCESS"
+    },
+    "P_dca72dc0": {
+      "type": "Problem",
+      "description": "雷达线路出现故障的原因是什么？",
+      "parent_feature": "F_2d8cfe7e",
+      "solutions": [
+        "S_a4b4dbde"
+      ],
+      "child_features": []
+    },
+    "S_a4b4dbde": {
+      "type": "Solution",
+      "description": "拔插并插进雷达线",
+      "parent_problem": "P_dca72dc0",
+      "success_node": "SUCCESS"
+    },
+    "F_66fc436f": {
+      "type": "Feature",
+      "description": "雷达不旋转闪烁",
+      "parent_node": "F_2d8cfe7e",
+      "child_problems": [
+        [
+          "P_d91132f2",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_d91132f2": {
+      "type": "Problem",
+      "description": "雷达出现故障或性能下降。",
+      "parent_feature": "F_66fc436f",
+      "solutions": [
+        "S_8b5b5d88"
+      ],
+      "child_features": []
+    },
+    "S_8b5b5d88": {
+      "type": "Solution",
+      "description": "更换雷达",
+      "parent_problem": "P_d91132f2",
+      "success_node": "SUCCESS"
+    },
+    "F_17c75fef": {
+      "type": "Feature",
+      "description": "注册失败",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_43d28b23",
+          "soft"
+        ],
+        [
+          "P_e9d72ada",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_654210fa",
+        "F_f66493b4"
+      ]
+    },
+    "P_43d28b23": {
+      "type": "Problem",
+      "description": "如何处理已存在的货架以进行注册覆盖？",
+      "parent_feature": "F_17c75fef",
+      "solutions": [],
+      "child_features": []
+    },
+    "P_e9d72ada": {
+      "type": "Problem",
+      "description": "新货架未注册，无法使用。",
+      "parent_feature": "F_17c75fef",
+      "solutions": [
+        "S_002dd0c4"
+      ],
+      "child_features": []
+    },
+    "S_002dd0c4": {
+      "type": "Solution",
+      "description": "需要使用PDA货架注册功能注册新货架",
+      "parent_problem": "P_e9d72ada",
+      "success_node": "SUCCESS"
+    },
+    "F_654210fa": {
+      "type": "Feature",
+      "description": "老货架名称已修改但RFID未更换",
+      "parent_node": "F_17c75fef",
+      "child_problems": [
+        [
+          "P_1a0e9027",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_1a0e9027": {
+      "type": "Problem",
+      "description": "数据库存在错误或不一致性。",
+      "parent_feature": "F_654210fa",
+      "solutions": [
+        "S_47d2b636"
+      ],
+      "child_features": []
+    },
+    "S_47d2b636": {
+      "type": "Solution",
+      "description": "请联系专业的售后技术人员修改数据库",
+      "parent_problem": "P_1a0e9027",
+      "success_node": "SUCCESS"
+    },
+    "F_f66493b4": {
+      "type": "Feature",
+      "description": "老货架名称已修改且RFID已更换",
+      "parent_node": "F_17c75fef",
+      "child_problems": [
+        [
+          "P_4d59e761",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_4d59e761": {
+      "type": "Problem",
+      "description": "货架功能未能正确注册或覆盖。",
+      "parent_feature": "F_f66493b4",
+      "solutions": [
+        "S_aac49900"
+      ],
+      "child_features": []
+    },
+    "S_aac49900": {
+      "type": "Solution",
+      "description": "使用PDA注册货架功能进行注册覆盖",
+      "parent_problem": "P_4d59e761",
+      "success_node": "SUCCESS"
+    },
+    "F_81c93edb": {
+      "type": "Feature",
+      "description": "发货口的急停按钮失效了",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_e2476e8a",
+          "soft"
+        ],
+        [
+          "P_8d2f6c5f",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_e7a39918"
+      ]
+    },
+    "F_e7a39918": {
+      "type": "Feature",
+      "description": "急停按钮USB接口松动",
+      "parent_node": "F_81c93edb",
+      "child_problems": [],
+      "child_features": [
+        "F_1da99907"
+      ]
+    },
+    "F_1da99907": {
+      "type": "Feature",
+      "description": "紧固急停按钮USB接口",
+      "parent_node": "F_e7a39918",
+      "child_problems": [],
+      "child_features": []
+    },
+    "P_e2476e8a": {
+      "type": "Problem",
+      "description": "如何注册急停按钮？",
+      "parent_feature": "F_81c93edb",
+      "solutions": [
+        "S_c4b9e4ff"
+      ],
+      "child_features": []
+    },
+    "S_c4b9e4ff": {
+      "type": "Solution",
+      "description": "打开注册软件重新注册按钮",
+      "parent_problem": "P_e2476e8a",
+      "success_node": "SUCCESS"
+    },
+    "P_8d2f6c5f": {
+      "type": "Problem",
+      "description": "急停按钮如何修复或更换？",
+      "parent_feature": "F_81c93edb",
+      "solutions": [
+        "S_fb57da93"
+      ],
+      "child_features": []
+    },
+    "S_fb57da93": {
+      "type": "Solution",
+      "description": "更换急停按钮",
+      "parent_problem": "P_8d2f6c5f",
+      "success_node": "SUCCESS"
+    },
+    "P_b86e2fcb": {
+      "type": "Problem",
+      "description": "现场魔毯上铺设的垫子是否会导致起步打滑？",
+      "parent_feature": "F_956f1540",
+      "solutions": [],
+      "child_features": []
+    },
+    "P_1e75d9c6": {
+      "type": "Problem",
+      "description": "机器人在运行过程中出现跑偏现象。",
+      "parent_feature": "F_956f1540",
+      "solutions": [
+        "S_8d013bb7"
+      ],
+      "child_features": []
+    },
+    "S_8d013bb7": {
+      "type": "Solution",
+      "description": "根据机器人跑偏操作流程指引进行指导排查",
+      "parent_problem": "P_1e75d9c6",
+      "success_node": "SUCCESS"
+    },
+    "F_4a7a784e": {
+      "type": "Feature",
+      "description": "机器人打滑导致跑偏",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_973b0a5b",
+          "soft"
+        ],
+        [
+          "P_9e342806",
+          "soft"
+        ],
+        [
+          "P_17d97b9c",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_65af1604",
+        "F_ad78c3e4",
+        "F_81c8f842",
+        "F_97934a65"
+      ]
+    },
+    "F_65af1604": {
+      "type": "Feature",
+      "description": "单台车校准轮径后轮径仍然偏",
+      "parent_node": "F_4a7a784e",
+      "child_problems": [
+        [
+          "P_b48417c9",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_b48417c9": {
+      "type": "Problem",
+      "description": "车轮径不一致导致行驶不稳定。",
+      "parent_feature": "F_65af1604",
+      "solutions": [
+        "S_ce114db6"
+      ],
+      "child_features": []
+    },
+    "S_ce114db6": {
+      "type": "Solution",
+      "description": "进行单台车轮径校准",
+      "parent_problem": "P_b48417c9",
+      "success_node": "SUCCESS"
+    },
+    "F_ad78c3e4": {
+      "type": "Feature",
+      "description": "全场校准轮径后轮径仍然偏",
+      "parent_node": "F_4a7a784e",
+      "child_problems": [
+        [
+          "P_0048b214",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_0048b214": {
+      "type": "Problem",
+      "description": "轮径不一致导致车辆性能下降。",
+      "parent_feature": "F_ad78c3e4",
+      "solutions": [
+        "S_a07c9b92"
+      ],
+      "child_features": []
+    },
+    "S_a07c9b92": {
+      "type": "Solution",
+      "description": "进行全场轮径校准",
+      "parent_problem": "P_0048b214",
+      "success_node": "SUCCESS"
+    },
+    "P_973b0a5b": {
+      "type": "Problem",
+      "description": "霍尔为何未注册？",
+      "parent_feature": "F_4a7a784e",
+      "solutions": [
+        "S_d959f45f"
+      ],
+      "child_features": []
+    },
+    "S_d959f45f": {
+      "type": "Solution",
+      "description": "重新注册霍尔",
+      "parent_problem": "P_973b0a5b",
+      "success_node": "SUCCESS"
+    },
+    "F_1c937081": {
+      "type": "Feature",
+      "description": "上下层格口状态不一致",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_d5d5eee2",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_d5d5eee2": {
+      "type": "Problem",
+      "description": "如何在下层RCS的grid.physical文件中配置格口名称AD0105R20？",
+      "parent_feature": "F_1c937081",
+      "solutions": [
+        "S_44138130"
+      ],
+      "child_features": []
+    },
+    "S_44138130": {
+      "type": "Solution",
+      "description": "修改一致并正确的格口名称，保存后重启RCS软件",
+      "parent_problem": "P_d5d5eee2",
+      "success_node": "SUCCESS"
+    },
+    "F_00cecba2": {
+      "type": "Feature",
+      "description": "扫码台连接相机离线",
+      "parent_node": "F_d153de33",
+      "child_problems": [],
+      "child_features": [
+        "F_60e0613e"
+      ]
+    },
+    "F_60e0613e": {
+      "type": "Feature",
+      "description": "相机网络正常",
+      "parent_node": "F_00cecba2",
+      "child_problems": [],
+      "child_features": []
+    },
+    "P_382cba51": {
+      "type": "Problem",
+      "description": "扫码台软件如何修复？",
+      "parent_feature": "F_d153de33",
+      "solutions": [
+        "S_df516cb6"
+      ],
+      "child_features": []
+    },
+    "S_df516cb6": {
+      "type": "Solution",
+      "description": "重启扫码台",
+      "parent_problem": "P_382cba51",
+      "success_node": "SUCCESS"
+    },
+    "F_ea945743": {
+      "type": "Feature",
+      "description": "大华网线及电源线未连接",
+      "parent_node": "F_d153de33",
+      "child_problems": [
+        [
+          "P_479ab7e1",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_479ab7e1": {
+      "type": "Problem",
+      "description": "网络连接不稳定或无法连接。",
+      "parent_feature": "F_ea945743",
+      "solutions": [
+        "S_3c4d5538"
+      ],
+      "child_features": []
+    },
+    "S_3c4d5538": {
+      "type": "Solution",
+      "description": "检查大华网线及电源线连接",
+      "parent_problem": "P_479ab7e1",
+      "success_node": "SUCCESS"
+    },
+    "P_973ee2fc": {
+      "type": "Problem",
+      "description": "扫码台Dahua及LabScanner.exe.config文件如何正确配置？",
+      "parent_feature": "F_d153de33",
+      "solutions": [
+        "S_941d753f"
+      ],
+      "child_features": []
+    },
+    "S_941d753f": {
+      "type": "Solution",
+      "description": "检查扫码台dahua及LabScanner.exe.config文件配置",
+      "parent_problem": "P_973ee2fc",
+      "success_node": "SUCCESS"
+    },
+    "F_ee479abc": {
+      "type": "Feature",
+      "description": "RCS中格口显示满包状态，灯条软件显示空闲",
+      "parent_node": "F_c416b4a6",
+      "child_problems": [
+        [
+          "P_8869b907",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_8869b907": {
+      "type": "Problem",
+      "description": "格口可能被关闭。",
+      "parent_feature": "F_ee479abc",
+      "solutions": [
+        "S_334177db"
+      ],
+      "child_features": []
+    },
+    "S_334177db": {
+      "type": "Solution",
+      "description": "检查格口是否被关闭",
+      "parent_problem": "P_8869b907",
+      "success_node": "SUCCESS"
+    },
+    "F_e2429719": {
+      "type": "Feature",
+      "description": "格口软件被关闭",
+      "parent_node": "F_c416b4a6",
+      "child_problems": [
+        [
+          "P_14f50387",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_14f50387": {
+      "type": "Problem",
+      "description": "格口软件无法正常运行。",
+      "parent_feature": "F_e2429719",
+      "solutions": [
+        "S_2cf80d62"
+      ],
+      "child_features": []
+    },
+    "S_2cf80d62": {
+      "type": "Solution",
+      "description": "打开格口软件",
+      "parent_problem": "P_14f50387",
+      "success_node": "SUCCESS"
+    },
+    "F_684107a5": {
+      "type": "Feature",
+      "description": "右侧相机识别速度慢，但左边正常",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_6bb30785",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_a64deb3f"
+      ]
+    },
+    "P_6bb30785": {
+      "type": "Problem",
+      "description": "如何配置相机参数？",
+      "parent_feature": "F_684107a5",
+      "solutions": [
+        "S_27a96085"
+      ],
+      "child_features": []
+    },
+    "S_27a96085": {
+      "type": "Solution",
+      "description": "在svs软件中连接相机进行修改配置",
+      "parent_problem": "P_6bb30785",
+      "success_node": "SUCCESS"
+    },
+    "F_a64deb3f": {
+      "type": "Feature",
+      "description": "画面输出比不当",
+      "parent_node": "F_684107a5",
+      "child_problems": [],
+      "child_features": [
+        "F_cd76212f"
+      ]
+    },
+    "F_cd76212f": {
+      "type": "Feature",
+      "description": "检查画面输出比",
+      "parent_node": "F_a64deb3f",
+      "child_problems": [],
+      "child_features": []
+    },
+    "F_93f014f9": {
+      "type": "Feature",
+      "description": "内存不足导致车服软件不显示地图",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_d06fe26a",
+          "soft"
+        ],
+        [
+          "P_81a881c8",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_196ef9fa"
+      ]
+    },
+    "F_196ef9fa": {
+      "type": "Feature",
+      "description": "车服软件内存不足",
+      "parent_node": "F_93f014f9",
+      "child_problems": [
+        [
+          "P_b4dfa10a",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_b4dfa10a": {
+      "type": "Problem",
+      "description": "磁盘空间不足导致系统性能下降。",
+      "parent_feature": "F_196ef9fa",
+      "solutions": [
+        "S_a91a29eb"
+      ],
+      "child_features": []
+    },
+    "S_a91a29eb": {
+      "type": "Solution",
+      "description": "检查磁盘空间并进行整理",
+      "parent_problem": "P_b4dfa10a",
+      "success_node": "SUCCESS"
+    },
+    "P_d06fe26a": {
+      "type": "Problem",
+      "description": "某软件为何会导致资源占用异常？",
+      "parent_feature": "F_93f014f9",
+      "solutions": [
+        "S_3df868f2"
+      ],
+      "child_features": []
+    },
+    "S_3df868f2": {
+      "type": "Solution",
+      "description": "删除占用资源异常的软件",
+      "parent_problem": "P_d06fe26a",
+      "success_node": "SUCCESS"
+    },
+    "P_81a881c8": {
+      "type": "Problem",
+      "description": "rcs软件出现了无响应或卡顿的情况。",
+      "parent_feature": "F_93f014f9",
+      "solutions": [
+        "S_fc15c2a1"
+      ],
+      "child_features": []
+    },
+    "S_fc15c2a1": {
+      "type": "Solution",
+      "description": "现场不操作的情况下重启rcs软件",
+      "parent_problem": "P_81a881c8",
+      "success_node": "SUCCESS"
+    },
+    "S_b1a6f2ef": {
+      "type": "Solution",
+      "description": "重启rcs软件",
+      "parent_problem": "P_e2d3c980",
+      "success_node": "SUCCESS"
+    },
+    "F_f466c660": {
+      "type": "Feature",
+      "description": "无法通过二维码下载PDS软件",
+      "parent_node": "ORIGIN",
+      "child_problems": [],
+      "child_features": [
+        "F_22700ffa"
+      ]
+    },
+    "F_22700ffa": {
+      "type": "Feature",
+      "description": "PDA未连接正确的网络",
+      "parent_node": "F_f466c660",
+      "child_problems": [
+        [
+          "P_b76ce12a",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_b76ce12a": {
+      "type": "Problem",
+      "description": "PDA无法与立镖和上游系统进行通讯。",
+      "parent_feature": "F_22700ffa",
+      "solutions": [
+        "S_38df3cf1"
+      ],
+      "child_features": []
+    },
+    "S_38df3cf1": {
+      "type": "Solution",
+      "description": "连接PDA到立镖和上游系统通讯的网络",
+      "parent_problem": "P_b76ce12a",
+      "success_node": "SUCCESS"
+    },
+    "F_8b4c7286": {
+      "type": "Feature",
+      "description": "货架RFID信息数据重复",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_72c92203",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_72c92203": {
+      "type": "Problem",
+      "description": "如何处理重复注册的货架RFID信息？",
+      "parent_feature": "F_8b4c7286",
+      "solutions": [
+        "S_44631faa"
+      ],
+      "child_features": []
+    },
+    "S_44631faa": {
+      "type": "Solution",
+      "description": "更换其中一个货架的RFID并重新进行注册",
+      "parent_problem": "P_72c92203",
+      "success_node": "SUCCESS"
+    },
+    "F_afbc3492": {
+      "type": "Feature",
+      "description": "扫码台上面扫描左边的条码，右边发车",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_d1c7f504",
+          "soft"
+        ],
+        [
+          "P_05909a47",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_0906178c"
+      ]
+    },
+    "F_0906178c": {
+      "type": "Feature",
+      "description": "扫码台软件上面的发货口左右顺序配置错误",
+      "parent_node": "F_afbc3492",
+      "child_problems": [
+        [
+          "P_dce2ccd7",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_dce2ccd7": {
+      "type": "Problem",
+      "description": "扫码台的名称配置不正确。",
+      "parent_feature": "F_0906178c",
+      "solutions": [
+        "S_05213d0f"
+      ],
+      "child_features": []
+    },
+    "S_05213d0f": {
+      "type": "Solution",
+      "description": "打开rcs查看当前扫码台左右的名称并检查配置",
+      "parent_problem": "P_dce2ccd7",
+      "success_node": "SUCCESS"
+    },
+    "P_d1c7f504": {
+      "type": "Problem",
+      "description": "扫码软件exe的config文件名称与rcs不一致，如何解决？",
+      "parent_feature": "F_afbc3492",
+      "solutions": [],
+      "child_features": []
+    },
+    "P_05909a47": {
+      "type": "Problem",
+      "description": "扫码软件无法正常识别左右相机。",
+      "parent_feature": "F_afbc3492",
+      "solutions": [
+        "S_36e33208"
+      ],
+      "child_features": []
+    },
+    "S_36e33208": {
+      "type": "Solution",
+      "description": "根据具体左右相机修改ip，并重启扫码软件",
+      "parent_problem": "P_05909a47",
+      "success_node": "SUCCESS"
+    },
+    "F_ce00a7d1": {
+      "type": "Feature",
+      "description": "有一个包裹一直卡在分拣机没有投递",
+      "parent_node": "F_a548ff8b",
+      "child_problems": [
+        [
+          "P_c8d32b93",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_c8d32b93": {
+      "type": "Problem",
+      "description": "存在未完成的任务。",
+      "parent_feature": "F_ce00a7d1",
+      "solutions": [
+        "S_5f733b4b"
+      ],
+      "child_features": []
+    },
+    "S_5f733b4b": {
+      "type": "Solution",
+      "description": "打开RCS和WCS软件查看是否有未完成的任务",
+      "parent_problem": "P_c8d32b93",
+      "success_node": "SUCCESS"
+    },
+    "P_0f8742dc": {
+      "type": "Problem",
+      "description": "RCS和WCS软件有哪些未完成的任务？",
+      "parent_feature": "F_a548ff8b",
+      "solutions": [],
+      "child_features": []
+    },
+    "P_9db0e38a": {
+      "type": "Problem",
+      "description": "任务无法成功关闭波次。",
+      "parent_feature": "F_a548ff8b",
+      "solutions": [
+        "S_b7ecc21d"
+      ],
+      "child_features": []
+    },
+    "S_b7ecc21d": {
+      "type": "Solution",
+      "description": "让任务完成后关闭再次尝试关闭波次，若还是无法关闭则联系专业的售后人员处理",
+      "parent_problem": "P_9db0e38a",
+      "success_node": "SUCCESS"
+    },
+    "F_f1ad43c8": {
+      "type": "Feature",
+      "description": "查看3D分拣机是否有报错",
+      "parent_node": "F_becd0184",
+      "child_problems": [],
+      "child_features": []
+    },
+    "F_b8a41b19": {
+      "type": "Feature",
+      "description": "扫码台没有连接到相机",
+      "parent_node": "F_d153de33",
+      "child_problems": [
+        [
+          "P_8afa17e4",
+          "soft"
+        ],
+        [
+          "P_cd028f32",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_8afa17e4": {
+      "type": "Problem",
+      "description": "相机在使用过程中出现故障或无法正常工作。",
+      "parent_feature": "F_b8a41b19",
+      "solutions": [
+        "S_4cf84d98"
+      ],
+      "child_features": []
+    },
+    "S_4cf84d98": {
+      "type": "Solution",
+      "description": "进行相机离线操作流程指引排查",
+      "parent_problem": "P_8afa17e4",
+      "success_node": "SUCCESS"
+    },
+    "P_b2726dcd": {
+      "type": "Problem",
+      "description": "条码如何符合扫码台的扫码规则？",
+      "parent_feature": "F_f21554e0",
+      "solutions": [
+        "S_b3c11573"
+      ],
+      "child_features": []
+    },
+    "S_b3c11573": {
+      "type": "Solution",
+      "description": "根据添加白名单操作指引进行",
+      "parent_problem": "P_b2726dcd",
+      "success_node": "SUCCESS"
+    },
+    "F_8baedda6": {
+      "type": "Feature",
+      "description": "SVS软件中相机条码设置未打开当前条码设置",
+      "parent_node": "F_f21554e0",
+      "child_problems": [
+        [
+          "P_624842a3",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_624842a3": {
+      "type": "Problem",
+      "description": "相机条码设置未正确启用。",
+      "parent_feature": "F_8baedda6",
+      "solutions": [
+        "S_352d2e84"
+      ],
+      "child_features": []
+    },
+    "S_352d2e84": {
+      "type": "Solution",
+      "description": "检查SVS软件中相机条码设置是否打开当前条码设置",
+      "parent_problem": "P_624842a3",
+      "success_node": "SUCCESS"
+    },
+    "F_222acf80": {
+      "type": "Feature",
+      "description": "相机的光圈、焦距等设置不正确",
+      "parent_node": "F_f21554e0",
+      "child_problems": [
+        [
+          "P_09222424",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_09222424": {
+      "type": "Problem",
+      "description": "拍摄的照片模糊或曝光不当。",
+      "parent_feature": "F_222acf80",
+      "solutions": [
+        "S_9c8ccf65"
+      ],
+      "child_features": []
+    },
+    "S_9c8ccf65": {
+      "type": "Solution",
+      "description": "微调相机的光圈、焦距等数值",
+      "parent_problem": "P_09222424",
+      "success_node": "SUCCESS"
+    },
+    "P_ba5c0745": {
+      "type": "Problem",
+      "description": "按钮盒软件是否存在断连问题？",
+      "parent_feature": "F_db6e071a",
+      "solutions": [],
+      "child_features": []
+    },
+    "P_7838ea34": {
+      "type": "Problem",
+      "description": "CAN线连接不良导致通信故障。",
+      "parent_feature": "F_db6e071a",
+      "solutions": [
+        "S_be303fc7"
+      ],
+      "child_features": []
+    },
+    "S_be303fc7": {
+      "type": "Solution",
+      "description": "检查连接CAN线",
+      "parent_problem": "P_7838ea34",
+      "success_node": "SUCCESS"
+    },
+    "F_f51752d0": {
+      "type": "Feature",
+      "description": "按钮盒不正常",
+      "parent_node": "F_db6e071a",
+      "child_problems": [
+        [
+          "P_90f30335",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_90f30335": {
+      "type": "Problem",
+      "description": "按钮盒故障导致无法正常操作。",
+      "parent_feature": "F_f51752d0",
+      "solutions": [
+        "S_76d43c10"
+      ],
+      "child_features": []
+    },
+    "S_76d43c10": {
+      "type": "Solution",
+      "description": "更换按钮盒",
+      "parent_problem": "P_90f30335",
+      "success_node": "SUCCESS"
+    },
+    "F_350cc997": {
+      "type": "Feature",
+      "description": "满包传感器不正常",
+      "parent_node": "F_db6e071a",
+      "child_problems": [
+        [
+          "P_ac81678e",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_ac81678e": {
+      "type": "Problem",
+      "description": "传感器故障导致数据不准确。",
+      "parent_feature": "F_350cc997",
+      "solutions": [
+        "S_3ee42542"
+      ],
+      "child_features": []
+    },
+    "S_3ee42542": {
+      "type": "Solution",
+      "description": "调整或更换传感器",
+      "parent_problem": "P_ac81678e",
+      "success_node": "SUCCESS"
+    },
+    "F_ec4ce372": {
+      "type": "Feature",
+      "description": "RCS软件未启动",
+      "parent_node": "F_9505bd19",
+      "child_problems": [
+        [
+          "P_16b26dac",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_16b26dac": {
+      "type": "Problem",
+      "description": "RCS软件未正常运行。",
+      "parent_feature": "F_ec4ce372",
+      "solutions": [
+        "S_03198ed3"
+      ],
+      "child_features": []
+    },
+    "S_03198ed3": {
+      "type": "Solution",
+      "description": "启动RCS软件",
+      "parent_problem": "P_16b26dac",
+      "success_node": "SUCCESS"
+    },
+    "F_eff93ee6": {
+      "type": "Feature",
+      "description": "防火墙未关闭",
+      "parent_node": "F_9505bd19",
+      "child_problems": [
+        [
+          "P_a765d41d",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_a765d41d": {
+      "type": "Problem",
+      "description": "防火墙可能阻止了网络连接。",
+      "parent_feature": "F_eff93ee6",
+      "solutions": [
+        "S_4e3f409f"
+      ],
+      "child_features": []
+    },
+    "S_4e3f409f": {
+      "type": "Solution",
+      "description": "关闭防火墙",
+      "parent_problem": "P_a765d41d",
+      "success_node": "SUCCESS"
+    },
+    "P_f55ae478": {
+      "type": "Problem",
+      "description": "如何修正RCS电脑的IP配置？",
+      "parent_feature": "F_9505bd19",
+      "solutions": [
+        "S_19647acb"
+      ],
+      "child_features": []
+    },
+    "S_19647acb": {
+      "type": "Solution",
+      "description": "请配置正确的IP并保存，保存完毕后重启扫码软件",
+      "parent_problem": "P_f55ae478",
+      "success_node": "SUCCESS"
+    },
+    "P_b449aa29": {
+      "type": "Problem",
+      "description": "相机的焦距和光圈应该如何正确设置？",
+      "parent_feature": "F_d153de33",
+      "solutions": [
+        "S_a51bbd26"
+      ],
+      "child_features": []
+    },
+    "S_a51bbd26": {
+      "type": "Solution",
+      "description": "调试相机的焦距和光圈设置",
+      "parent_problem": "P_b449aa29",
+      "success_node": "SUCCESS"
+    },
+    "P_771c9c03": {
+      "type": "Problem",
+      "description": "现场人员为何未及时反馈并提供充足数据？",
+      "parent_feature": "F_63aa0467",
+      "solutions": [],
+      "child_features": []
+    },
+    "F_a2800fb5": {
+      "type": "Feature",
+      "description": "查询现场低电量机器人不过去优先充电的原因",
+      "parent_node": "ORIGIN",
+      "child_problems": [],
+      "child_features": [
+        "F_34aaab06",
+        "F_17330f28"
+      ]
+    },
+    "F_34aaab06": {
+      "type": "Feature",
+      "description": "机器人开机后10分钟才过去充电，显示充电失败",
+      "parent_node": "F_a2800fb5",
+      "child_problems": [
+        [
+          "P_3957c03e",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_3957c03e": {
+      "type": "Problem",
+      "description": "机器人充电不足导致无法正常工作。",
+      "parent_feature": "F_34aaab06",
+      "solutions": [
+        "S_6e94085f"
+      ],
+      "child_features": []
+    },
+    "S_6e94085f": {
+      "type": "Solution",
+      "description": "调整充电时间，确保机器人及时充电",
+      "parent_problem": "P_3957c03e",
+      "success_node": "SUCCESS"
+    },
+    "F_17330f28": {
+      "type": "Feature",
+      "description": "机器人第二次尝试充电显示充电成功",
+      "parent_node": "F_a2800fb5",
+      "child_problems": [
+        [
+          "P_fbff39d1",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_fbff39d1": {
+      "type": "Problem",
+      "description": "充电状态无法被实时监控和确认。",
+      "parent_feature": "F_17330f28",
+      "solutions": [
+        "S_3f03dade"
+      ],
+      "child_features": []
+    },
+    "S_3f03dade": {
+      "type": "Solution",
+      "description": "记录充电成功状态并反馈给现场人员",
+      "parent_problem": "P_fbff39d1",
+      "success_node": "SUCCESS"
+    },
+    "F_0bc20e75": {
+      "type": "Feature",
+      "description": "场地类型为Tsort",
+      "parent_node": "F_c416b4a6",
+      "child_problems": [
+        [
+          "P_7ed2e16c",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_7ed2e16c": {
+      "type": "Problem",
+      "description": "格口软件可能未运行。",
+      "parent_feature": "F_0bc20e75",
+      "solutions": [
+        "S_9fe48aac"
+      ],
+      "child_features": []
+    },
+    "S_9fe48aac": {
+      "type": "Solution",
+      "description": "检查格口软件是否被关闭",
+      "parent_problem": "P_7ed2e16c",
+      "success_node": "SUCCESS"
+    },
+    "F_66bf4863": {
+      "type": "Feature",
+      "description": "场地类型为3D",
+      "parent_node": "F_c416b4a6",
+      "child_problems": [],
+      "child_features": [
+        "F_68aec3ab"
+      ]
+    },
+    "F_68aec3ab": {
+      "type": "Feature",
+      "description": "检查分拣机是否报错",
+      "parent_node": "F_66bf4863",
+      "child_problems": [],
+      "child_features": []
+    },
+    "F_4af61e25": {
+      "type": "Feature",
+      "description": "分拣机报错",
+      "parent_node": "F_c416b4a6",
+      "child_problems": [
+        [
+          "P_74398ac9",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_74398ac9": {
+      "type": "Problem",
+      "description": "分拣机出现错误导致无法正常运行。",
+      "parent_feature": "F_4af61e25",
+      "solutions": [
+        "S_7f12295f"
+      ],
+      "child_features": []
+    },
+    "S_7f12295f": {
+      "type": "Solution",
+      "description": "根据分拣机报错流程指引输出操作",
+      "parent_problem": "P_74398ac9",
+      "success_node": "SUCCESS"
+    },
+    "P_9e342806": {
+      "type": "Problem",
+      "description": "轮径如何影响车辆性能？",
+      "parent_feature": "F_4a7a784e",
+      "solutions": [],
+      "child_features": []
+    },
+    "P_17d97b9c": {
+      "type": "Problem",
+      "description": "行走系统出现打滑现象。",
+      "parent_feature": "F_4a7a784e",
+      "solutions": [
+        "S_ef482ecb"
+      ],
+      "child_features": []
+    },
+    "S_ef482ecb": {
+      "type": "Solution",
+      "description": "根据错误码434行走打滑进行输出排查流程",
+      "parent_problem": "P_17d97b9c",
+      "success_node": "SUCCESS"
+    },
+    "F_60c7d533": {
+      "type": "Feature",
+      "description": "机器人定位丢失",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_37ab7622",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_37ab7622": {
+      "type": "Problem",
+      "description": "机器人在行驶过程中出现跑偏现象。",
+      "parent_feature": "F_60c7d533",
+      "solutions": [
+        "S_2e0a5d3d"
+      ],
+      "child_features": []
+    },
+    "S_2e0a5d3d": {
+      "type": "Solution",
+      "description": "根据机器人跑偏步骤进行处理",
+      "parent_problem": "P_37ab7622",
+      "success_node": "SUCCESS"
+    },
+    "S_886dafa0": {
+      "type": "Solution",
+      "description": "根据机器人跑偏步骤进行处理",
+      "parent_problem": "P_d5d68ee9",
+      "success_node": "SUCCESS"
+    },
+    "F_22a84d3c": {
+      "type": "Feature",
+      "description": "最下层的货和最上层的货物反了",
+      "parent_node": "F_67ca6400",
+      "child_problems": [
+        [
+          "P_0fb7f1c3",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_0fb7f1c3": {
+      "type": "Problem",
+      "description": "如何确认MCS未重启导致坐标未同步？",
+      "parent_feature": "F_22a84d3c",
+      "solutions": [],
+      "child_features": []
+    },
+    "P_65420bdd": {
+      "type": "Problem",
+      "description": "如何纠正货架坐标设置错误？",
+      "parent_feature": "F_67ca6400",
+      "solutions": [
+        "S_4ddb51ba"
+      ],
+      "child_features": []
+    },
+    "S_4ddb51ba": {
+      "type": "Solution",
+      "description": "修改正确的坐标",
+      "parent_problem": "P_65420bdd",
+      "success_node": "SUCCESS"
+    },
+    "F_f49272f5": {
+      "type": "Feature",
+      "description": "RCS 离线",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_a27ef4e7",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_25f9aae5",
+        "F_0f705228"
+      ]
+    },
+    "F_25f9aae5": {
+      "type": "Feature",
+      "description": "无法ping通2.3",
+      "parent_node": "F_f49272f5",
+      "child_problems": [
+        [
+          "P_8335bc69",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_8335bc69": {
+      "type": "Problem",
+      "description": "rcs电脑无法与内网机器通信。",
+      "parent_feature": "F_25f9aae5",
+      "solutions": [
+        "S_3d7ff14f"
+      ],
+      "child_features": []
+    },
+    "S_3d7ff14f": {
+      "type": "Solution",
+      "description": "找到一台内网机器ping一下rcs电脑的ip是否通",
+      "parent_problem": "P_8335bc69",
+      "success_node": "SUCCESS"
+    },
+    "F_0f705228": {
+      "type": "Feature",
+      "description": "rcs电脑的防火墙被打开",
+      "parent_node": "F_f49272f5",
+      "child_problems": [
+        [
+          "P_ddb523fc",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_ddb523fc": {
+      "type": "Problem",
+      "description": "防火墙可能阻止了网络连接。",
+      "parent_feature": "F_0f705228",
+      "solutions": [
+        "S_849e12ac"
+      ],
+      "child_features": []
+    },
+    "S_849e12ac": {
+      "type": "Solution",
+      "description": "关闭防火墙",
+      "parent_problem": "P_ddb523fc",
+      "success_node": "SUCCESS"
+    },
+    "P_a27ef4e7": {
+      "type": "Problem",
+      "description": "如何检查rcs的网线连接和IP及子网掩码设置是否正确？",
+      "parent_feature": "F_f49272f5",
+      "solutions": [
+        "S_65168273"
+      ],
+      "child_features": []
+    },
+    "S_65168273": {
+      "type": "Solution",
+      "description": "插好网线或设置好ip和子网掩码",
+      "parent_problem": "P_a27ef4e7",
+      "success_node": "SUCCESS"
+    },
+    "P_e6925589": {
+      "type": "Problem",
+      "description": "如何配置扫码台程序中的deviceUserId？",
+      "parent_feature": "F_d153de33",
+      "solutions": [
+        "S_17e76eb5"
+      ],
+      "child_features": [
+        "F_1936cbaf"
+      ]
+    },
+    "S_17e76eb5": {
+      "type": "Solution",
+      "description": "查看deviceUserId是否配置",
+      "parent_problem": "P_e6925589",
+      "success_node": "SUCCESS"
+    },
+    "F_e29151e1": {
+      "type": "Feature",
+      "description": "扫码台程序为新版本，deviceUserId已配置",
+      "parent_node": "F_d153de33",
+      "child_problems": [
+        [
+          "P_58c34a5b",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_58c34a5b": {
+      "type": "Problem",
+      "description": "相机在使用过程中出现断电现象。",
+      "parent_feature": "F_e29151e1",
+      "solutions": [
+        "S_44590cc2"
+      ],
+      "child_features": []
+    },
+    "S_44590cc2": {
+      "type": "Solution",
+      "description": "相机断电后重新上电",
+      "parent_problem": "P_58c34a5b",
+      "success_node": "SUCCESS"
+    },
+    "F_f9eadd6b": {
+      "type": "Feature",
+      "description": "相机未能连接",
+      "parent_node": "F_d153de33",
+      "child_problems": [
+        [
+          "P_1209f0d2",
+          "soft"
+        ],
+        [
+          "P_2c279e1c",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_1209f0d2": {
+      "type": "Problem",
+      "description": "扫码台软件出现故障或无响应。",
+      "parent_feature": "F_f9eadd6b",
+      "solutions": [
+        "S_b6196061",
+        "S_4760ddf7"
+      ],
+      "child_features": []
+    },
+    "S_b6196061": {
+      "type": "Solution",
+      "description": "重启扫码台软件",
+      "parent_problem": "P_1209f0d2",
+      "success_node": "SUCCESS"
+    },
+    "S_4760ddf7": {
+      "type": "Solution",
+      "description": "打开电控箱，插拔相机的网线",
+      "parent_problem": "P_1209f0d2",
+      "success_node": "SUCCESS"
+    },
+    "F_1569a21f": {
+      "type": "Feature",
+      "description": "某台小车和车服的通信异常",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_6973cffc",
+          "soft"
+        ],
+        [
+          "P_cf861b8e",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_e54537e4",
+        "F_7211e5a1",
+        "F_30cdd959"
+      ]
+    },
+    "F_7211e5a1": {
+      "type": "Feature",
+      "description": "无线通讯模块松动",
+      "parent_node": "F_1569a21f",
+      "child_problems": [
+        [
+          "P_64139e05",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_64139e05": {
+      "type": "Problem",
+      "description": "通讯模块连接不良。",
+      "parent_feature": "F_7211e5a1",
+      "solutions": [
+        "S_8c59dc6a"
+      ],
+      "child_features": []
+    },
+    "S_8c59dc6a": {
+      "type": "Solution",
+      "description": "插紧通讯模块",
+      "parent_problem": "P_64139e05",
+      "success_node": "SUCCESS"
+    },
+    "F_30cdd959": {
+      "type": "Feature",
+      "description": "机器人开机后通讯仍不成功",
+      "parent_node": "F_1569a21f",
+      "child_problems": [
+        [
+          "P_d1ad8e97",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_d1ad8e97": {
+      "type": "Problem",
+      "description": "通讯模块可能存在故障。",
+      "parent_feature": "F_30cdd959",
+      "solutions": [
+        "S_ae82b349"
+      ],
+      "child_features": []
+    },
+    "S_ae82b349": {
+      "type": "Solution",
+      "description": "更换正常机器上的通讯模块进行交换查看是否正常",
+      "parent_problem": "P_d1ad8e97",
+      "success_node": "SUCCESS"
+    },
+    "P_6973cffc": {
+      "type": "Problem",
+      "description": "通讯模块如何进行故障排查和修复？",
+      "parent_feature": "F_1569a21f",
+      "solutions": [],
+      "child_features": []
+    },
+    "P_cf861b8e": {
+      "type": "Problem",
+      "description": "通讯模块故障导致设备无法正常通信。",
+      "parent_feature": "F_1569a21f",
+      "solutions": [
+        "S_edd67330"
+      ],
+      "child_features": []
+    },
+    "S_edd67330": {
+      "type": "Solution",
+      "description": "更换通讯模块",
+      "parent_problem": "P_cf861b8e",
+      "success_node": "SUCCESS"
+    },
+    "F_50861fe0": {
+      "type": "Feature",
+      "description": "扫描地图RFID",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_f9b22d99",
+          "soft"
+        ],
+        [
+          "P_a7a48f33",
+          "soft"
+        ],
+        [
+          "P_3d1400b6",
+          "soft"
+        ],
+        [
+          "P_021c4314",
+          "soft"
+        ],
+        [
+          "P_c5e389e4",
+          "soft"
+        ],
+        [
+          "P_d49a3cd9",
+          "soft"
+        ],
+        [
+          "P_486512b7",
+          "soft"
+        ],
+        [
+          "P_7316b901",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_62e2438d",
+        "F_0503fead",
+        "F_30144aef",
+        "F_3070cea5",
+        "F_40ddbb42",
+        "F_58a665c1",
+        "F_4455f9b9",
+        "F_c2aaa42d",
+        "F_7dde189c"
+      ]
+    },
+    "P_f9b22d99": {
+      "type": "Problem",
+      "description": "更换少量地毯时如何避免其他地毯错乱？",
+      "parent_feature": "F_d5275f58",
+      "solutions": [],
+      "child_features": []
+    },
+    "P_a7a48f33": {
+      "type": "Problem",
+      "description": "机器人无法正常工作。",
+      "parent_feature": "F_50861fe0",
+      "solutions": [
+        "S_90bfe8f0"
+      ],
+      "child_features": []
+    },
+    "S_90bfe8f0": {
+      "type": "Solution",
+      "description": "少量更换地毯时未打开机器人的电源",
+      "parent_problem": "P_a7a48f33",
+      "success_node": "SUCCESS"
+    },
+    "P_134890d7": {
+      "type": "Problem",
+      "description": "机器人无法正常工作。",
+      "parent_feature": "F_e54537e4",
+      "solutions": [
+        "S_203b0241"
+      ],
+      "child_features": []
+    },
+    "S_203b0241": {
+      "type": "Solution",
+      "description": "打开一台机器人的电源并放到更换过的地毯上",
+      "parent_problem": "P_134890d7",
+      "success_node": "SUCCESS"
+    },
+    "F_62e2438d": {
+      "type": "Feature",
+      "description": "未查看当前地毯的坐标",
+      "parent_node": "F_50861fe0",
+      "child_problems": [],
+      "child_features": [
+        "F_45f23189"
+      ]
+    },
+    "F_45f23189": {
+      "type": "Feature",
+      "description": "在RCS软件上查看当前地毯的坐标",
+      "parent_node": "F_62e2438d",
+      "child_problems": [],
+      "child_features": []
+    },
+    "F_0503fead": {
+      "type": "Feature",
+      "description": "未打开RCS的platforms文件",
+      "parent_node": "F_50861fe0",
+      "child_problems": [
+        [
+          "P_6f6444ee",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_6f6444ee": {
+      "type": "Problem",
+      "description": "RCS平台文件无法访问或加载。",
+      "parent_feature": "F_0503fead",
+      "solutions": [
+        "S_fb9e06a7"
+      ],
+      "child_features": []
+    },
+    "S_fb9e06a7": {
+      "type": "Solution",
+      "description": "打开RCS的platforms文件",
+      "parent_problem": "P_6f6444ee",
+      "success_node": "SUCCESS"
+    },
+    "F_30144aef": {
+      "type": "Feature",
+      "description": "未打开locate文件",
+      "parent_node": "F_50861fe0",
+      "child_problems": [],
+      "child_features": []
+    },
+    "P_3d1400b6": {
+      "type": "Problem",
+      "description": "如何更换左边的部件？",
+      "parent_feature": "F_50861fe0",
+      "solutions": [
+        "S_61668b3a"
+      ],
+      "child_features": []
+    },
+    "S_61668b3a": {
+      "type": "Solution",
+      "description": "找到更换的左边",
+      "parent_problem": "P_3d1400b6",
+      "success_node": "SUCCESS"
+    },
+    "F_3070cea5": {
+      "type": "Feature",
+      "description": "未使用磁条图选择更换过地毯的机器人",
+      "parent_node": "F_50861fe0",
+      "child_problems": [
+        [
+          "P_4492d482",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_4492d482": {
+      "type": "Problem",
+      "description": "地毯更换后，机器人无法正确识别环境。",
+      "parent_feature": "F_3070cea5",
+      "solutions": [
+        "S_512a0574"
+      ],
+      "child_features": []
+    },
+    "S_512a0574": {
+      "type": "Solution",
+      "description": "使用磁条图选择更换过地毯的机器人",
+      "parent_problem": "P_4492d482",
+      "success_node": "SUCCESS"
+    },
+    "F_40ddbb42": {
+      "type": "Feature",
+      "description": "未读取更换过地毯上的RFID",
+      "parent_node": "F_50861fe0",
+      "child_problems": [
+        [
+          "P_e984e3e3",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_e984e3e3": {
+      "type": "Problem",
+      "description": "地毯上的RFID无法被识别或读取。",
+      "parent_feature": "F_40ddbb42",
+      "solutions": [
+        "S_9a06a62f"
+      ],
+      "child_features": []
+    },
+    "S_9a06a62f": {
+      "type": "Solution",
+      "description": "读取更换过地毯上的RFID并复制",
+      "parent_problem": "P_e984e3e3",
+      "success_node": "SUCCESS"
+    },
+    "P_021c4314": {
+      "type": "Problem",
+      "description": "如何替换locate中的RFID？",
+      "parent_feature": "F_50861fe0",
+      "solutions": [
+        "S_c70f65db"
+      ],
+      "child_features": []
+    },
+    "S_c70f65db": {
+      "type": "Solution",
+      "description": "替换locate中的RFID并保存",
+      "parent_problem": "P_021c4314",
+      "success_node": "SUCCESS"
+    },
+    "P_c5e389e4": {
+      "type": "Problem",
+      "description": "如何重启RCS？",
+      "parent_feature": "F_50861fe0",
+      "solutions": [
+        "S_89f062af"
+      ],
+      "child_features": []
+    },
+    "S_89f062af": {
+      "type": "Solution",
+      "description": "重启RCS",
+      "parent_problem": "P_c5e389e4",
+      "success_node": "SUCCESS"
+    },
+    "P_d49a3cd9": {
+      "type": "Problem",
+      "description": "全量更换地毯时是否需要搬下所有机器人？",
+      "parent_feature": "F_50861fe0",
+      "solutions": [
+        "S_a64af304"
+      ],
+      "child_features": []
+    },
+    "S_a64af304": {
+      "type": "Solution",
+      "description": "把地毯上所有机器人搬下来",
+      "parent_problem": "P_d49a3cd9",
+      "success_node": "SUCCESS"
+    },
+    "P_486512b7": {
+      "type": "Problem",
+      "description": "如何删除platforms下的locate文件？",
+      "parent_feature": "F_50861fe0",
+      "solutions": [
+        "S_148fb109"
+      ],
+      "child_features": []
+    },
+    "S_148fb109": {
+      "type": "Solution",
+      "description": "删除platforms下的locate文件（删除前需备份）",
+      "parent_problem": "P_486512b7",
+      "success_node": "SUCCESS"
+    },
+    "F_58a665c1": {
+      "type": "Feature",
+      "description": "未打开RCS目录下的启动器",
+      "parent_node": "F_50861fe0",
+      "child_problems": [
+        [
+          "P_4ea00a1f",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_4ea00a1f": {
+      "type": "Problem",
+      "description": "启动器无法正常启动。",
+      "parent_feature": "F_58a665c1",
+      "solutions": [
+        "S_559fe2c4"
+      ],
+      "child_features": []
+    },
+    "S_559fe2c4": {
+      "type": "Solution",
+      "description": "打开RCS目录下的启动器",
+      "parent_problem": "P_4ea00a1f",
+      "success_node": "SUCCESS"
+    },
+    "F_4455f9b9": {
+      "type": "Feature",
+      "description": "未选择地图扫码模式",
+      "parent_node": "F_50861fe0",
+      "child_problems": [],
+      "child_features": [
+        "F_3be57fa9"
+      ]
+    },
+    "F_3be57fa9": {
+      "type": "Feature",
+      "description": "选择地图扫码模式",
+      "parent_node": "F_4455f9b9",
+      "child_problems": [],
+      "child_features": []
+    },
+    "F_c2aaa42d": {
+      "type": "Feature",
+      "description": "未放一台机器人到平台上并输入机器人ID",
+      "parent_node": "F_50861fe0",
+      "child_problems": [
+        [
+          "P_a39b30d2",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_a39b30d2": {
+      "type": "Problem",
+      "description": "平台无法识别或连接到机器人。",
+      "parent_feature": "F_c2aaa42d",
+      "solutions": [
+        "S_3b0ef736"
+      ],
+      "child_features": []
+    },
+    "S_3b0ef736": {
+      "type": "Solution",
+      "description": "放一台机器人到平台上并在扫码模式软件里输入机器人ID",
+      "parent_problem": "P_a39b30d2",
+      "success_node": "SUCCESS"
+    },
+    "P_7316b901": {
+      "type": "Problem",
+      "description": "机器人放置位置未选择。",
+      "parent_feature": "F_50861fe0",
+      "solutions": [],
+      "child_features": []
+    },
+    "F_7dde189c": {
+      "type": "Feature",
+      "description": "未点击开始扫描",
+      "parent_node": "F_50861fe0",
+      "child_problems": [
+        [
+          "P_e6417ca6",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_e6417ca6": {
+      "type": "Problem",
+      "description": "扫描功能未启动。",
+      "parent_feature": "F_7dde189c",
+      "solutions": [
+        "S_6a4b0d13"
+      ],
+      "child_features": []
+    },
+    "S_6a4b0d13": {
+      "type": "Solution",
+      "description": "点击开始扫描",
+      "parent_problem": "P_e6417ca6",
+      "success_node": "SUCCESS"
+    },
+    "F_df060e15": {
+      "type": "Feature",
+      "description": "更换地图",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_3073acad",
+          "soft"
+        ],
+        [
+          "P_896c8807",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_3073acad": {
+      "type": "Problem",
+      "description": "旧地图数据丢失或无法恢复。",
+      "parent_feature": "F_df060e15",
+      "solutions": [
+        "S_eb8a6b1a"
+      ],
+      "child_features": []
+    },
+    "S_eb8a6b1a": {
+      "type": "Solution",
+      "description": "需要注意将旧的地图进行备份",
+      "parent_problem": "P_3073acad",
+      "success_node": "SUCCESS"
+    },
+    "P_a01959eb": {
+      "type": "Problem",
+      "description": "地图数据丢失或损坏。",
+      "parent_feature": "F_e54537e4",
+      "solutions": [
+        "S_2efffed7"
+      ],
+      "child_features": []
+    },
+    "S_2efffed7": {
+      "type": "Solution",
+      "description": "进行地图备份",
+      "parent_problem": "P_a01959eb",
+      "success_node": "SUCCESS"
+    },
+    "P_896c8807": {
+      "type": "Problem",
+      "description": "新地图更新后可能存在功能或性能问题。",
+      "parent_feature": "F_df060e15",
+      "solutions": [
+        "S_e22f404c"
+      ],
+      "child_features": []
+    },
+    "S_e22f404c": {
+      "type": "Solution",
+      "description": "更新完成新的地图后进行随机跑测试是否有问题",
+      "parent_problem": "P_896c8807",
+      "success_node": "SUCCESS"
+    },
+    "P_1d1b1d47": {
+      "type": "Problem",
+      "description": "系统稳定性不足。",
+      "parent_feature": "F_e54537e4",
+      "solutions": [
+        "S_9cab0374"
+      ],
+      "child_features": []
+    },
+    "S_9cab0374": {
+      "type": "Solution",
+      "description": "进行随机跑测试",
+      "parent_problem": "P_1d1b1d47",
+      "success_node": "SUCCESS"
+    },
+    "F_cfe7bbfa": {
+      "type": "Feature",
+      "description": "需要修改小车编号",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_4fd1e10d",
+          "soft"
+        ],
+        [
+          "P_b819d9ea",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_0e51ef0c",
+        "F_0d4635db"
+      ]
+    },
+    "P_4fd1e10d": {
+      "type": "Problem",
+      "description": "机器人在更换BMSP板后无法正常识别或运行。",
+      "parent_feature": "F_cfe7bbfa",
+      "solutions": [
+        "S_1385d879"
+      ],
+      "child_features": []
+    },
+    "S_1385d879": {
+      "type": "Solution",
+      "description": "机器人更换过BMSP板后需要重新设置编号",
+      "parent_problem": "P_4fd1e10d",
+      "success_node": "SUCCESS"
+    },
+    "P_321272ed": {
+      "type": "Problem",
+      "description": "无法快速添加新项目。",
+      "parent_feature": "F_e54537e4",
+      "solutions": [
+        "S_1a6dc3ab"
+      ],
+      "child_features": []
+    },
+    "S_1a6dc3ab": {
+      "type": "Solution",
+      "description": "开机并在rcs软件机器人界面点击快速添加按钮",
+      "parent_problem": "P_321272ed",
+      "success_node": "SUCCESS"
+    },
+    "F_0e51ef0c": {
+      "type": "Feature",
+      "description": "机器人未识别",
+      "parent_node": "F_cfe7bbfa",
+      "child_problems": [],
+      "child_features": [
+        "F_c2002d61"
+      ]
+    },
+    "F_c2002d61": {
+      "type": "Feature",
+      "description": "在机器人上按A按钮，听到嘟嘟嘟的响声后则表示识别完成",
+      "parent_node": "F_0e51ef0c",
+      "child_problems": [],
+      "child_features": []
+    },
+    "F_0d4635db": {
+      "type": "Feature",
+      "description": "未查看rcs快速加车界面机器人编号",
+      "parent_node": "F_cfe7bbfa",
+      "child_problems": [
+        [
+          "P_30bdeeda",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_30bdeeda": {
+      "type": "Problem",
+      "description": "机器人编号缺失或未添加。",
+      "parent_feature": "F_0d4635db",
+      "solutions": [
+        "S_0b54c4fd"
+      ],
+      "child_features": []
+    },
+    "S_0b54c4fd": {
+      "type": "Solution",
+      "description": "查看rcs快速加车界面机器人编号，并添加机器人",
+      "parent_problem": "P_30bdeeda",
+      "success_node": "SUCCESS"
+    },
+    "P_b819d9ea": {
+      "type": "Problem",
+      "description": "如何调用AP界面进行修改？",
+      "parent_feature": "F_cfe7bbfa",
+      "solutions": [
+        "S_534d56b4"
+      ],
+      "child_features": []
+    },
+    "S_534d56b4": {
+      "type": "Solution",
+      "description": "按住Ctrl＋K按钮调用ap界面，点击右下角空白处两下调出修改界面，在界面中修改机器人编号",
+      "parent_problem": "P_b819d9ea",
+      "success_node": "SUCCESS"
+    },
+    "F_81c8f842": {
+      "type": "Feature",
+      "description": "D仓第1套下层两台小车偏位导致RCS无法启动",
+      "parent_node": "F_4a7a784e",
+      "child_problems": [
+        [
+          "P_79ce7361",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_79ce7361": {
+      "type": "Problem",
+      "description": "机器人在行驶过程中出现跑偏现象。",
+      "parent_feature": "F_81c8f842",
+      "solutions": [
+        "S_7cb2d79c"
+      ],
+      "child_features": []
+    },
+    "S_7cb2d79c": {
+      "type": "Solution",
+      "description": "根据机器人跑偏步骤进行处理",
+      "parent_problem": "P_79ce7361",
+      "success_node": "SUCCESS"
+    },
+    "P_a5cfcb30": {
+      "type": "Problem",
+      "description": "相机与发货口名称不匹配导致发货错误。",
+      "parent_feature": "F_d153de33",
+      "solutions": [
+        "S_85191359"
+      ],
+      "child_features": []
+    },
+    "S_85191359": {
+      "type": "Solution",
+      "description": "配置相机对应的发货口名称",
+      "parent_problem": "P_a5cfcb30",
+      "success_node": "SUCCESS"
+    },
+    "P_2c279e1c": {
+      "type": "Problem",
+      "description": "相机无法正常启动或响应。",
+      "parent_feature": "F_f9eadd6b",
+      "solutions": [
+        "S_0473123f",
+        "S_fd6755b4"
+      ],
+      "child_features": []
+    },
+    "S_0473123f": {
+      "type": "Solution",
+      "description": "重新上电相机",
+      "parent_problem": "P_2c279e1c",
+      "success_node": "SUCCESS"
+    },
+    "P_920542f4": {
+      "type": "Problem",
+      "description": "如何解决重启扫码台软件后无法连接的问题？",
+      "parent_feature": "F_d153de33",
+      "solutions": [
+        "S_8f29fb6c"
+      ],
+      "child_features": []
+    },
+    "S_8f29fb6c": {
+      "type": "Solution",
+      "description": "重启扫码台软件",
+      "parent_problem": "P_920542f4",
+      "success_node": "SUCCESS"
+    },
+    "S_fd6755b4": {
+      "type": "Solution",
+      "description": "打开电控箱，插拔相机的网线",
+      "parent_problem": "P_2c279e1c",
+      "success_node": "SUCCESS"
+    },
+    "P_faa098b2": {
+      "type": "Problem",
+      "description": "如何修复配置文件乱码问题？",
+      "parent_feature": "F_9505bd19",
+      "solutions": [],
+      "child_features": []
+    },
+    "P_a01b4d43": {
+      "type": "Problem",
+      "description": "桌面图标的快捷方式显示为白色文件。",
+      "parent_feature": "F_9505bd19",
+      "solutions": [
+        "S_3c71c9a8"
+      ],
+      "child_features": []
+    },
+    "S_3c71c9a8": {
+      "type": "Solution",
+      "description": "查看桌面图标的快捷方式是否变成白色文件并删除并重新建一个快捷方式",
+      "parent_problem": "P_a01b4d43",
+      "success_node": "SUCCESS"
+    },
+    "F_9fb9e09c": {
+      "type": "Feature",
+      "description": "dahua.config文件异常",
+      "parent_node": "F_9505bd19",
+      "child_problems": [
+        [
+          "P_a2810060",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_a2810060": {
+      "type": "Problem",
+      "description": "扫码软件无法正常启动或运行。",
+      "parent_feature": "F_9fb9e09c",
+      "solutions": [
+        "S_1a621caa"
+      ],
+      "child_features": []
+    },
+    "S_1a621caa": {
+      "type": "Solution",
+      "description": "删除dahua.config文件并重新打开扫码软件",
+      "parent_problem": "P_a2810060",
+      "success_node": "SUCCESS"
+    },
+    "F_9d275dd0": {
+      "type": "Feature",
+      "description": "检查机器人状态是否正常，是否处于关机或暂停状态",
+      "parent_node": "F_7dda6456",
+      "child_problems": [],
+      "child_features": []
+    },
+    "F_3a01b394": {
+      "type": "Feature",
+      "description": "相机未在线",
+      "parent_node": "F_8a68fc5b",
+      "child_problems": [
+        [
+          "P_b659b5e8",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_b659b5e8": {
+      "type": "Problem",
+      "description": "网络连接不稳定或被防火墙阻止。",
+      "parent_feature": "F_3a01b394",
+      "solutions": [
+        "S_75c36a89"
+      ],
+      "child_features": []
+    },
+    "S_75c36a89": {
+      "type": "Solution",
+      "description": "检查网络和防火墙",
+      "parent_problem": "P_b659b5e8",
+      "success_node": "SUCCESS"
+    },
+    "F_ce4c2b67": {
+      "type": "Feature",
+      "description": "称重数值不正常",
+      "parent_node": "F_2a4432f8",
+      "child_problems": [],
+      "child_features": []
+    },
+    "F_cf65444b": {
+      "type": "Feature",
+      "description": "称重数值正常",
+      "parent_node": "F_2a4432f8",
+      "child_problems": [
+        [
+          "P_744dcd9e",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_744dcd9e": {
+      "type": "Problem",
+      "description": "称重显示不归零。",
+      "parent_feature": "F_cf65444b",
+      "solutions": [
+        "S_855cb518"
+      ],
+      "child_features": []
+    },
+    "S_855cb518": {
+      "type": "Solution",
+      "description": "按住Ctrl键后点击“称重置零”按钮",
+      "parent_problem": "P_744dcd9e",
+      "success_node": "SUCCESS"
+    },
+    "F_da263b14": {
+      "type": "Feature",
+      "description": "所有小车无法开机",
+      "parent_node": "ORIGIN",
+      "child_problems": [],
+      "child_features": [
+        "F_acd2a322",
+        "F_985c668a",
+        "F_8e340f36",
+        "F_37c650a7"
+      ]
+    },
+    "F_acd2a322": {
+      "type": "Feature",
+      "description": "RCS电脑的防火墙未关闭",
+      "parent_node": "F_da263b14",
+      "child_problems": [
+        [
+          "P_4ea5e7d6",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_4ea5e7d6": {
+      "type": "Problem",
+      "description": "防火墙可能阻止了网络连接。",
+      "parent_feature": "F_acd2a322",
+      "solutions": [
+        "S_3eabbb98"
+      ],
+      "child_features": []
+    },
+    "S_3eabbb98": {
+      "type": "Solution",
+      "description": "关闭防火墙",
+      "parent_problem": "P_4ea5e7d6",
+      "success_node": "SUCCESS"
+    },
+    "P_91a69b0f": {
+      "type": "Problem",
+      "description": "网络连接不稳定或无法访问。",
+      "parent_feature": "F_985c668a",
+      "solutions": [
+        "S_d889e33c"
+      ],
+      "child_features": []
+    },
+    "S_d889e33c": {
+      "type": "Solution",
+      "description": "修改正确的IP和子网掩码",
+      "parent_problem": "P_91a69b0f",
+      "success_node": "SUCCESS"
+    },
+    "F_8e340f36": {
+      "type": "Feature",
+      "description": "无法ping通电脑连接的其他设备",
+      "parent_node": "F_da263b14",
+      "child_problems": [
+        [
+          "P_83dda2f1",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_83dda2f1": {
+      "type": "Problem",
+      "description": "电脑无法连接到网络。",
+      "parent_feature": "F_8e340f36",
+      "solutions": [
+        "S_b7fc3b17"
+      ],
+      "child_features": []
+    },
+    "S_b7fc3b17": {
+      "type": "Solution",
+      "description": "检查电脑网线",
+      "parent_problem": "P_83dda2f1",
+      "success_node": "SUCCESS"
+    },
+    "F_37c650a7": {
+      "type": "Feature",
+      "description": "AP未全在线",
+      "parent_node": "F_da263b14",
+      "child_problems": [
+        [
+          "P_f3b16f06",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_f3b16f06": {
+      "type": "Problem",
+      "description": "AP系统出现离线状态。",
+      "parent_feature": "F_37c650a7",
+      "solutions": [
+        "S_4762b4be"
+      ],
+      "child_features": []
+    },
+    "S_4762b4be": {
+      "type": "Solution",
+      "description": "进入AP离线处理流程进行处理",
+      "parent_problem": "P_f3b16f06",
+      "success_node": "SUCCESS"
+    },
+    "F_74bbd9ac": {
+      "type": "Feature",
+      "description": "全部断电跳闸",
+      "parent_node": "ORIGIN",
+      "child_problems": [],
+      "child_features": [
+        "F_5f34d8d3"
+      ]
+    },
+    "F_5f34d8d3": {
+      "type": "Feature",
+      "description": "车服离线，ap离线，相机断电，上下两层无法正常作业，小车无法正常连接状态",
+      "parent_node": "F_74bbd9ac",
+      "child_problems": [
+        [
+          "P_d7c816fa",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_d7c816fa": {
+      "type": "Problem",
+      "description": "电气系统存在故障或异常。",
+      "parent_feature": "F_5f34d8d3",
+      "solutions": [
+        "S_6238febf"
+      ],
+      "child_features": []
+    },
+    "S_6238febf": {
+      "type": "Solution",
+      "description": "建议联系现场电工进行查看处理",
+      "parent_problem": "P_d7c816fa",
+      "success_node": "SUCCESS"
+    },
+    "F_38e4087b": {
+      "type": "Feature",
+      "description": "WCS日志报无货架可用",
+      "parent_node": "F_c416b4a6",
+      "child_problems": [
+        [
+          "P_cf1d3b87",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_cf1d3b87": {
+      "type": "Problem",
+      "description": "格口可能被关闭。",
+      "parent_feature": "F_38e4087b",
+      "solutions": [
+        "S_04f58801"
+      ],
+      "child_features": []
+    },
+    "S_04f58801": {
+      "type": "Solution",
+      "description": "检查格口是否被关闭",
+      "parent_problem": "P_cf1d3b87",
+      "success_node": "SUCCESS"
+    },
+    "P_c73f671d": {
+      "type": "Problem",
+      "description": "机器人在运行过程中出现异常停止。",
+      "parent_feature": "F_53e4c6f0",
+      "solutions": [
+        "S_2ce185ec"
+      ],
+      "child_features": []
+    },
+    "S_2ce185ec": {
+      "type": "Solution",
+      "description": "按照机器人急停操作步骤进行输出操作流程依次排查",
+      "parent_problem": "P_c73f671d",
+      "success_node": "SUCCESS"
+    },
+    "P_c0982c92": {
+      "type": "Problem",
+      "description": "急停操作流程存在潜在故障或不规范。",
+      "parent_feature": "F_e54537e4",
+      "solutions": [
+        "S_05f6a8de"
+      ],
+      "child_features": []
+    },
+    "S_05f6a8de": {
+      "type": "Solution",
+      "description": "进行急停操作流程排查",
+      "parent_problem": "P_c0982c92",
+      "success_node": "SUCCESS"
+    },
+    "P_ebe98520": {
+      "type": "Problem",
+      "description": "如何在json配置文件中开启只往右边卸货的设置？",
+      "parent_feature": "F_67ca6400",
+      "solutions": [
+        "S_f36be51b"
+      ],
+      "child_features": []
+    },
+    "S_f36be51b": {
+      "type": "Solution",
+      "description": "配置卸货方向为true并重启rcs软件",
+      "parent_problem": "P_ebe98520",
+      "success_node": "SUCCESS"
+    },
+    "F_9cf9d54a": {
+      "type": "Feature",
+      "description": "去掉条码中的空格和回车符",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_06ef9e8e",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_06ef9e8e": {
+      "type": "Problem",
+      "description": "如何解决条码打印问题？",
+      "parent_feature": "F_9cf9d54a",
+      "solutions": [
+        "S_24637db9"
+      ],
+      "child_features": []
+    },
+    "S_24637db9": {
+      "type": "Solution",
+      "description": "在扫码软件exe的config文件中找到添加去掉空格配置项并保存，重启扫码台软件",
+      "parent_problem": "P_06ef9e8e",
+      "success_node": "SUCCESS"
+    },
+    "F_1936cbaf": {
+      "type": "Feature",
+      "description": "在SVS相机工具中配置deviceUserId",
+      "parent_node": "P_e6925589",
+      "child_problems": [],
+      "child_features": []
+    },
+    "F_11274b2f": {
+      "type": "Feature",
+      "description": "车服里显示发货口没有机器人",
+      "parent_node": "ORIGIN",
+      "child_problems": [],
+      "child_features": [
+        "F_bd28aefa",
+        "F_841fe424"
+      ]
+    },
+    "F_bd28aefa": {
+      "type": "Feature",
+      "description": "发货口被关闭",
+      "parent_node": "F_11274b2f",
+      "child_problems": [
+        [
+          "P_28098295",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_28098295": {
+      "type": "Problem",
+      "description": "发货口无法打开。",
+      "parent_feature": "F_bd28aefa",
+      "solutions": [
+        "S_eb73e57d"
+      ],
+      "child_features": []
+    },
+    "S_eb73e57d": {
+      "type": "Solution",
+      "description": "打开发货口",
+      "parent_problem": "P_28098295",
+      "success_node": "SUCCESS"
+    },
+    "F_841fe424": {
+      "type": "Feature",
+      "description": "扫码台进入暂离岗位模式",
+      "parent_node": "F_11274b2f",
+      "child_problems": [
+        [
+          "P_a6dc6c19",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_a6dc6c19": {
+      "type": "Problem",
+      "description": "员工长时间未在岗位上工作。",
+      "parent_feature": "F_841fe424",
+      "solutions": [
+        "S_58ad3179"
+      ],
+      "child_features": []
+    },
+    "S_58ad3179": {
+      "type": "Solution",
+      "description": "关闭暂离岗位",
+      "parent_problem": "P_a6dc6c19",
+      "success_node": "SUCCESS"
+    },
+    "F_d1f96780": {
+      "type": "Feature",
+      "description": "现场全场电量低需要开启紧急充电模式",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_7599b575",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_555609af"
+      ]
+    },
+    "F_555609af": {
+      "type": "Feature",
+      "description": "现场电量低",
+      "parent_node": "F_d1f96780",
+      "child_problems": [
+        [
+          "P_74173e23",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_74173e23": {
+      "type": "Problem",
+      "description": "机器人在执行任务时无法及时充电。",
+      "parent_feature": "F_555609af",
+      "solutions": [
+        "S_eb1b0ee9",
+        "S_210205f7"
+      ],
+      "child_features": []
+    },
+    "S_eb1b0ee9": {
+      "type": "Solution",
+      "description": "在确保机器人上没有任务的情况下选择模式为充电模式则开始紧急充电",
+      "parent_problem": "P_74173e23",
+      "success_node": "SUCCESS"
+    },
+    "S_210205f7": {
+      "type": "Solution",
+      "description": "在确保机器人上没有任务情况下，使用启动器切换紧急充电地图打开，然后选择紧急充电模式开始充电",
+      "parent_problem": "P_74173e23",
+      "success_node": "SUCCESS"
+    },
+    "F_51d40833": {
+      "type": "Feature",
+      "description": "扫码软件显示红X",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_3dcce324",
+          "soft"
+        ],
+        [
+          "P_1c5b92e6",
+          "soft"
+        ],
+        [
+          "P_73735216",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_3dcce324": {
+      "type": "Problem",
+      "description": "如何解决系统内存不足的问题？",
+      "parent_feature": "F_51d40833",
+      "solutions": [
+        "S_3adf85cd"
+      ],
+      "child_features": []
+    },
+    "S_3adf85cd": {
+      "type": "Solution",
+      "description": "重启电脑",
+      "parent_problem": "P_3dcce324",
+      "success_node": "SUCCESS"
+    },
+    "P_1c5b92e6": {
+      "type": "Problem",
+      "description": "如何解决某个软件导致的内存占用过高问题？",
+      "parent_feature": "F_51d40833",
+      "solutions": [
+        "S_5dd5062d"
+      ],
+      "child_features": []
+    },
+    "S_5dd5062d": {
+      "type": "Solution",
+      "description": "删除不必要的软件或清理软件日志并重启电脑",
+      "parent_problem": "P_1c5b92e6",
+      "success_node": "SUCCESS"
+    },
+    "P_73735216": {
+      "type": "Problem",
+      "description": "系统性能下降。",
+      "parent_feature": "F_51d40833",
+      "solutions": [
+        "S_305fa3dd"
+      ],
+      "child_features": []
+    },
+    "S_305fa3dd": {
+      "type": "Solution",
+      "description": "磁盘和内存需要清理",
+      "parent_problem": "P_73735216",
+      "success_node": "SUCCESS"
+    },
+    "P_524324cb": {
+      "type": "Problem",
+      "description": "系统性能缓慢或响应迟缓。",
+      "parent_feature": "F_e54537e4",
+      "solutions": [
+        "S_48bf1b00"
+      ],
+      "child_features": []
+    },
+    "S_48bf1b00": {
+      "type": "Solution",
+      "description": "进行磁盘和内存清理",
+      "parent_problem": "P_524324cb",
+      "success_node": "SUCCESS"
+    },
+    "F_52e19223": {
+      "type": "Feature",
+      "description": "货架亮红灯",
+      "parent_node": "ORIGIN",
+      "child_problems": [],
+      "child_features": [
+        "F_8b3a8613",
+        "F_79434822",
+        "F_b071a8c5"
+      ]
+    },
+    "F_8b3a8613": {
+      "type": "Feature",
+      "description": "分拣机未报错",
+      "parent_node": "F_52e19223",
+      "child_problems": [],
+      "child_features": []
+    },
+    "F_79434822": {
+      "type": "Feature",
+      "description": "有任务货架被拉出",
+      "parent_node": "F_52e19223",
+      "child_problems": [
+        [
+          "P_931d03ea",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_931d03ea": {
+      "type": "Problem",
+      "description": "货架上的物品未被正确放置。",
+      "parent_feature": "F_79434822",
+      "solutions": [
+        "S_e7a61c42"
+      ],
+      "child_features": []
+    },
+    "S_e7a61c42": {
+      "type": "Solution",
+      "description": "找到指定货架并插回",
+      "parent_problem": "P_931d03ea",
+      "success_node": "SUCCESS"
+    },
+    "F_b071a8c5": {
+      "type": "Feature",
+      "description": "报错那一侧分拣机的读卡器无法读取到rfid",
+      "parent_node": "F_52e19223",
+      "child_problems": [
+        [
+          "P_3283e85e",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_3283e85e": {
+      "type": "Problem",
+      "description": "读卡器无法正常读取卡片。",
+      "parent_feature": "F_b071a8c5",
+      "solutions": [
+        "S_8b644c50"
+      ],
+      "child_features": []
+    },
+    "S_8b644c50": {
+      "type": "Solution",
+      "description": "清理读卡器灰层或者拔插读卡器",
+      "parent_problem": "P_3283e85e",
+      "success_node": "SUCCESS"
+    },
+    "F_b5c1384e": {
+      "type": "Feature",
+      "description": "翻板卸货延时350ms时间较短，雷达检测不够用",
+      "parent_node": "F_2d8cfe7e",
+      "child_problems": [
+        [
+          "P_78ad74ca",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_78ad74ca": {
+      "type": "Problem",
+      "description": "翻板卸货延时过长导致卸货效率低下。",
+      "parent_feature": "F_b5c1384e",
+      "solutions": [
+        "S_c00efc8e"
+      ],
+      "child_features": []
+    },
+    "S_c00efc8e": {
+      "type": "Solution",
+      "description": "修改翻板卸货延时为600ms",
+      "parent_problem": "P_78ad74ca",
+      "success_node": "SUCCESS"
+    },
+    "F_e14a65ce": {
+      "type": "Feature",
+      "description": "需要增加AGV二次翻板动作",
+      "parent_node": "ORIGIN",
+      "child_problems": [],
+      "child_features": [
+        "F_7b4891a7"
+      ]
+    },
+    "F_7b4891a7": {
+      "type": "Feature",
+      "description": "AGV翻板为一次性翻板动作，角度为60度",
+      "parent_node": "F_e14a65ce",
+      "child_problems": [
+        [
+          "P_7e328050",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_7e328050": {
+      "type": "Problem",
+      "description": "二次翻板角度设置不当，导致翻板效果不理想。",
+      "parent_feature": "F_7b4891a7",
+      "solutions": [
+        "S_d2e48190"
+      ],
+      "child_features": []
+    },
+    "S_d2e48190": {
+      "type": "Solution",
+      "description": "在rcs的platforms目录下，打开json文件并修改二次翻板角度，使其比一次翻板角度高一些",
+      "parent_problem": "P_7e328050",
+      "success_node": "SUCCESS"
+    },
+    "F_97934a65": {
+      "type": "Feature",
+      "description": "客户手动搬移小车导致进入手动模式",
+      "parent_node": "F_4a7a784e",
+      "child_problems": [
+        [
+          "P_4e1f16fb",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_4e1f16fb": {
+      "type": "Problem",
+      "description": "机器人在运行过程中出现跑偏现象。",
+      "parent_feature": "F_97934a65",
+      "solutions": [
+        "S_c1b8de2c"
+      ],
+      "child_features": []
+    },
+    "S_c1b8de2c": {
+      "type": "Solution",
+      "description": "根据机器人跑偏操作流程指引进行指导排查",
+      "parent_problem": "P_4e1f16fb",
+      "success_node": "SUCCESS"
+    },
+    "F_8a68fc5b": {
+      "type": "Feature",
+      "description": "扫描条码不发车",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_fc58387e",
+          "soft"
+        ],
+        [
+          "P_24ba514d",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_581bf825",
+        "F_3a01b394",
+        "F_d7df70c2"
+      ]
+    },
+    "F_581bf825": {
+      "type": "Feature",
+      "description": "机器人状态异常，可能处于关机或暂停状态",
+      "parent_node": "F_8a68fc5b",
+      "child_problems": [
+        [
+          "P_20efe9c1",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_20efe9c1": {
+      "type": "Problem",
+      "description": "机器人可能出现故障或异常状态。",
+      "parent_feature": "F_581bf825",
+      "solutions": [
+        "S_d235314d"
+      ],
+      "child_features": []
+    },
+    "S_d235314d": {
+      "type": "Solution",
+      "description": "检查机器人状态",
+      "parent_problem": "P_20efe9c1",
+      "success_node": "SUCCESS"
+    },
+    "F_d7df70c2": {
+      "type": "Feature",
+      "description": "称重数值不正常（数值太大或者是负数）",
+      "parent_node": "F_8a68fc5b",
+      "child_problems": [
+        [
+          "P_0c010f6f",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_0c010f6f": {
+      "type": "Problem",
+      "description": "称重结果不准确。",
+      "parent_feature": "F_d7df70c2",
+      "solutions": [
+        "S_f4498fc7"
+      ],
+      "child_features": []
+    },
+    "S_f4498fc7": {
+      "type": "Solution",
+      "description": "调整称重数值",
+      "parent_problem": "P_0c010f6f",
+      "success_node": "SUCCESS"
+    },
+    "P_fc58387e": {
+      "type": "Problem",
+      "description": "如何解决称重平台未能成功重置的问题？",
+      "parent_feature": "F_8a68fc5b",
+      "solutions": [
+        "S_dc7627ec"
+      ],
+      "child_features": []
+    },
+    "S_dc7627ec": {
+      "type": "Solution",
+      "description": "按住Ctrl键后点击“称重置零”按钮",
+      "parent_problem": "P_fc58387e",
+      "success_node": "SUCCESS"
+    },
+    "F_b1dd404d": {
+      "type": "Feature",
+      "description": "分拣机一层对接位置不正确",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_f55cc467",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_fa3d5945"
+      ]
+    },
+    "F_fa3d5945": {
+      "type": "Feature",
+      "description": "分拣机未恢复正确位置",
+      "parent_node": "F_b1dd404d",
+      "child_problems": [
+        [
+          "P_da4a5602",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_da4a5602": {
+      "type": "Problem",
+      "description": "分拣机出现故障或无法正常运行。",
+      "parent_feature": "F_fa3d5945",
+      "solutions": [
+        "S_f2094966"
+      ],
+      "child_features": []
+    },
+    "S_f2094966": {
+      "type": "Solution",
+      "description": "重启分拣机",
+      "parent_problem": "P_da4a5602",
+      "success_node": "SUCCESS"
+    },
+    "P_f55cc467": {
+      "type": "Problem",
+      "description": "接货位置设置界面是否已调整？",
+      "parent_feature": "F_b1dd404d",
+      "solutions": [
+        "S_7b6b9646"
+      ],
+      "child_features": []
+    },
+    "S_7b6b9646": {
+      "type": "Solution",
+      "description": "使用工具或现场LED屏幕调整XY的值",
+      "parent_problem": "P_f55cc467",
+      "success_node": "SUCCESS"
+    },
+    "F_75434b47": {
+      "type": "Feature",
+      "description": "打不了包",
+      "parent_node": "ORIGIN",
+      "child_problems": [],
+      "child_features": [
+        "F_355858ef",
+        "F_461b3363"
+      ]
+    },
+    "F_355858ef": {
+      "type": "Feature",
+      "description": "灯台软件被关闭",
+      "parent_node": "F_75434b47",
+      "child_problems": [
+        [
+          "P_b2d20e38",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_b2d20e38": {
+      "type": "Problem",
+      "description": "灯台软件无法正常集包。",
+      "parent_feature": "F_355858ef",
+      "solutions": [
+        "S_6c55753e"
+      ],
+      "child_features": []
+    },
+    "S_6c55753e": {
+      "type": "Solution",
+      "description": "打开灯台软件重新集包尝试",
+      "parent_problem": "P_b2d20e38",
+      "success_node": "SUCCESS"
+    },
+    "F_461b3363": {
+      "type": "Feature",
+      "description": "PDA网络异常或按钮盒离线",
+      "parent_node": "F_75434b47",
+      "child_problems": [
+        [
+          "P_df5c3962",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_df5c3962": {
+      "type": "Problem",
+      "description": "如何根据PDA无法使用和按钮盒离线操作指引进行操作？",
+      "parent_feature": "F_461b3363",
+      "solutions": [],
+      "child_features": []
+    },
+    "F_02d2c0dd": {
+      "type": "Feature",
+      "description": "部分灯条满包不亮灯",
+      "parent_node": "ORIGIN",
+      "child_problems": [],
+      "child_features": [
+        "F_f2ee65a7"
+      ]
+    },
+    "F_f2ee65a7": {
+      "type": "Feature",
+      "description": "灯条软件中配置文件Lan2CanList.json中设置的满包感应距离很小",
+      "parent_node": "F_02d2c0dd",
+      "child_problems": [
+        [
+          "P_1bdc8fa6",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_1bdc8fa6": {
+      "type": "Problem",
+      "description": "传感器的检测距离不符合预期。",
+      "parent_feature": "F_f2ee65a7",
+      "solutions": [
+        "S_f79bb753"
+      ],
+      "child_features": []
+    },
+    "S_f79bb753": {
+      "type": "Solution",
+      "description": "修改Lan2CanList.json文件中的传感距离为30cm",
+      "parent_problem": "P_1bdc8fa6",
+      "success_node": "SUCCESS"
+    },
+    "P_f57ce632": {
+      "type": "Problem",
+      "description": "机器人意外自动关机。",
+      "parent_feature": "F_8d7b4415",
+      "solutions": [
+        "S_32daa1ab"
+      ],
+      "child_features": []
+    },
+    "S_32daa1ab": {
+      "type": "Solution",
+      "description": "进入机器人自动关机操作流程进行指引",
+      "parent_problem": "P_f57ce632",
+      "success_node": "SUCCESS"
+    },
+    "S_6c241ac2": {
+      "type": "Solution",
+      "description": "进行指引以恢复正常开启",
+      "parent_problem": "P_3fde200f",
+      "success_node": "SUCCESS"
+    },
+    "F_e002b0e7": {
+      "type": "Feature",
+      "description": "系统中有未完成的订单",
+      "parent_node": "F_a548ff8b",
+      "child_problems": [
+        [
+          "P_7bfeae1e",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_7bfeae1e": {
+      "type": "Problem",
+      "description": "存在未完成的订单。",
+      "parent_feature": "F_e002b0e7",
+      "solutions": [
+        "S_74d9acb3"
+      ],
+      "child_features": []
+    },
+    "S_74d9acb3": {
+      "type": "Solution",
+      "description": "找到未完成的订单并改为完成",
+      "parent_problem": "P_7bfeae1e",
+      "success_node": "SUCCESS"
+    },
+    "P_a1bc110f": {
+      "type": "Problem",
+      "description": "如何修正地图规划以包含充电桩的路线？",
+      "parent_feature": "F_63aa0467",
+      "solutions": [],
+      "child_features": []
+    },
+    "S_f31240c2": {
+      "type": "Solution",
+      "description": "在RCS界面查看充电桩是否被关闭，若关闭则右键打开充电桩，若未关闭则联系专业的售后技术人员处理",
+      "parent_problem": "P_dd2206f7",
+      "success_node": "SUCCESS"
+    },
+    "P_8a3c3dd3": {
+      "type": "Problem",
+      "description": "用户对系统操作流程感到困惑。",
+      "parent_feature": "F_e54537e4",
+      "solutions": [
+        "S_b98cf520"
+      ],
+      "child_features": []
+    },
+    "S_b98cf520": {
+      "type": "Solution",
+      "description": "进行指引操作",
+      "parent_problem": "P_8a3c3dd3",
+      "success_node": "SUCCESS"
+    },
+    "P_7599b575": {
+      "type": "Problem",
+      "description": "电池充电速度过慢。",
+      "parent_feature": "F_d1f96780",
+      "solutions": [
+        "S_ab39346e"
+      ],
+      "child_features": []
+    },
+    "S_ab39346e": {
+      "type": "Solution",
+      "description": "切换紧急充电模式",
+      "parent_problem": "P_7599b575",
+      "success_node": "SUCCESS"
+    },
+    "S_931de4d1": {
+      "type": "Solution",
+      "description": "进行手动充电后再开始紧急充电",
+      "parent_problem": "P_3a6aa458",
+      "success_node": "SUCCESS"
+    },
+    "S_fbbe5f04": {
+      "type": "Solution",
+      "description": "在扫码台软件上面添加白名单 ^4C.*US$",
+      "parent_problem": "P_3eae4de6",
+      "success_node": "SUCCESS"
+    },
+    "P_39876f02": {
+      "type": "Problem",
+      "description": "系统无法识别或允许特定用户访问。",
+      "parent_feature": "F_e54537e4",
+      "solutions": [
+        "S_eeb6ee1e"
+      ],
+      "child_features": []
+    },
+    "S_eeb6ee1e": {
+      "type": "Solution",
+      "description": "根据添加白名单操作指引进行",
+      "parent_problem": "P_39876f02",
+      "success_node": "SUCCESS"
+    },
+    "P_eb628ab1": {
+      "type": "Problem",
+      "description": "条码规则如何添加？",
+      "parent_feature": "F_1c4fee08",
+      "solutions": [],
+      "child_features": []
+    },
+    "P_e60e27ef": {
+      "type": "Problem",
+      "description": "系统无法识别或允许特定用户访问。",
+      "parent_feature": "F_1c4fee08",
+      "solutions": [
+        "S_7f234d77"
+      ],
+      "child_features": []
+    },
+    "S_7f234d77": {
+      "type": "Solution",
+      "description": "根据添加白名单操作指引进行",
+      "parent_problem": "P_e60e27ef",
+      "success_node": "SUCCESS"
+    },
+    "F_934cd884": {
+      "type": "Feature",
+      "description": "分拣机传送带头部过度摆动",
+      "parent_node": "ORIGIN",
+      "child_problems": [],
+      "child_features": [
+        "F_3b1aaf3e"
+      ]
+    },
+    "F_3b1aaf3e": {
+      "type": "Feature",
+      "description": "翻板旋转角度设置为1°",
+      "parent_node": "F_934cd884",
+      "child_problems": [
+        [
+          "P_935454f3",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_935454f3": {
+      "type": "Problem",
+      "description": "翻板旋转角度不正确。",
+      "parent_feature": "F_3b1aaf3e",
+      "solutions": [
+        "S_6f221b69"
+      ],
+      "child_features": []
+    },
+    "S_6f221b69": {
+      "type": "Solution",
+      "description": "调整翻板旋转角度至9°",
+      "parent_problem": "P_935454f3",
+      "success_node": "SUCCESS"
+    },
+    "F_744a040c": {
+      "type": "Feature",
+      "description": "飞箱箱号和读码器箱号不一致",
+      "parent_node": "ORIGIN",
+      "child_problems": [],
+      "child_features": [
+        "F_582fb252"
+      ]
+    },
+    "F_582fb252": {
+      "type": "Feature",
+      "description": "读码器读到的箱号是六位，正常情况是七位",
+      "parent_node": "F_744a040c",
+      "child_problems": [
+        [
+          "P_25d327e5",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_25d327e5": {
+      "type": "Problem",
+      "description": "自动扫描系统故障导致无法正常识别料箱。",
+      "parent_feature": "F_582fb252",
+      "solutions": [
+        "S_27700547"
+      ],
+      "child_features": []
+    },
+    "S_27700547": {
+      "type": "Solution",
+      "description": "手动控制此箱子的拉箱机进行手动扫描料箱",
+      "parent_problem": "P_25d327e5",
+      "success_node": "SUCCESS"
+    },
+    "F_1bd7d569": {
+      "type": "Feature",
+      "description": "车服无法一键关闭发货口",
+      "parent_node": "ORIGIN",
+      "child_problems": [],
+      "child_features": [
+        "F_9ece9e87"
+      ]
+    },
+    "F_9ece9e87": {
+      "type": "Feature",
+      "description": "小车数量比停车区多",
+      "parent_node": "F_1bd7d569",
+      "child_problems": [
+        [
+          "P_fc52ff4a",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_fc52ff4a": {
+      "type": "Problem",
+      "description": "地图中的停车区信息不准确。",
+      "parent_feature": "F_9ece9e87",
+      "solutions": [
+        "S_37afc7fc"
+      ],
+      "child_features": []
+    },
+    "S_37afc7fc": {
+      "type": "Solution",
+      "description": "在地图中添加缺少的停车区或者删除多余的机器人",
+      "parent_problem": "P_fc52ff4a",
+      "success_node": "SUCCESS"
+    },
+    "F_d5275f58": {
+      "type": "Feature",
+      "description": "现场更换魔毯需要录入新的rfid",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_82a02b30",
+          "soft"
+        ],
+        [
+          "P_f9b22d99",
+          "soft"
+        ],
+        [
+          "P_12360c7f",
+          "soft"
+        ],
+        [
+          "P_ee1c05aa",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_82a02b30": {
+      "type": "Problem",
+      "description": "地图文件中的rfid信息不正确。",
+      "parent_feature": "F_d5275f58",
+      "solutions": [
+        "S_1d1801e1"
+      ],
+      "child_features": []
+    },
+    "S_1d1801e1": {
+      "type": "Solution",
+      "description": "需要将新的rfid替换到地图文件里",
+      "parent_problem": "P_82a02b30",
+      "success_node": "SUCCESS"
+    },
+    "S_6f23cc86": {
+      "type": "Solution",
+      "description": "进行更换地毯并记录位置",
+      "parent_problem": "P_d5d68ee9",
+      "success_node": "SUCCESS"
+    },
+    "P_12360c7f": {
+      "type": "Problem",
+      "description": "机器人无法正确定位在地毯上的位置。",
+      "parent_feature": "F_d5275f58",
+      "solutions": [
+        "S_75706fba"
+      ],
+      "child_features": []
+    },
+    "S_75706fba": {
+      "type": "Solution",
+      "description": "打开一台机器人的电源，放到更换过的地毯上，查看当前地毯坐标，替换locate中的rfid并重启rcs",
+      "parent_problem": "P_12360c7f",
+      "success_node": "SUCCESS"
+    },
+    "P_ee1c05aa": {
+      "type": "Problem",
+      "description": "地毯更换导致机器人定位失效。",
+      "parent_feature": "F_d5275f58",
+      "solutions": [
+        "S_ca5e15e3"
+      ],
+      "child_features": []
+    },
+    "S_ca5e15e3": {
+      "type": "Solution",
+      "description": "全量更换地毯时需搬走所有机器人并删除locate文件",
+      "parent_problem": "P_ee1c05aa",
+      "success_node": "SUCCESS"
+    },
+    "S_1d00b270": {
+      "type": "Solution",
+      "description": "联系专业的售后技术人员协助进行全量更换地毯操作",
+      "parent_problem": "P_d5d68ee9",
+      "success_node": "SUCCESS"
+    },
+    "F_5f8b04f1": {
+      "type": "Feature",
+      "description": "释放货架",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_291ac4e8",
+          "soft"
+        ]
+      ],
+      "child_features": [
+        "F_1ab2497a",
+        "F_e42252f8",
+        "F_d071b177"
+      ]
+    },
+    "P_291ac4e8": {
+      "type": "Problem",
+      "description": "上游系统为何未释放货架？",
+      "parent_feature": "F_5f8b04f1",
+      "solutions": [],
+      "child_features": []
+    },
+    "F_1ab2497a": {
+      "type": "Feature",
+      "description": "未接入立镖wes",
+      "parent_node": "F_5f8b04f1",
+      "child_problems": [
+        [
+          "P_21f08a89",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_21f08a89": {
+      "type": "Problem",
+      "description": "货架无法正常读取或识别。",
+      "parent_feature": "F_1ab2497a",
+      "solutions": [
+        "S_e0d32408"
+      ],
+      "child_features": []
+    },
+    "S_e0d32408": {
+      "type": "Solution",
+      "description": "货架拉出30s再次插入尝试",
+      "parent_problem": "P_21f08a89",
+      "success_node": "SUCCESS"
+    },
+    "F_e42252f8": {
+      "type": "Feature",
+      "description": "立镖wes已接入",
+      "parent_node": "F_5f8b04f1",
+      "child_problems": [
+        [
+          "P_21c8b43d",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_21c8b43d": {
+      "type": "Problem",
+      "description": "货架被占用，无法进行商品管理。",
+      "parent_feature": "F_e42252f8",
+      "solutions": [
+        "S_9f528528"
+      ],
+      "child_features": []
+    },
+    "S_9f528528": {
+      "type": "Solution",
+      "description": "进入wes接口交互网址进行释放货架",
+      "parent_problem": "P_21c8b43d",
+      "success_node": "SUCCESS"
+    },
+    "F_d071b177": {
+      "type": "Feature",
+      "description": "货架未成功释放",
+      "parent_node": "F_5f8b04f1",
+      "child_problems": [
+        [
+          "P_28a1695d",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_28a1695d": {
+      "type": "Problem",
+      "description": "货架无法正常读取或识别。",
+      "parent_feature": "F_d071b177",
+      "solutions": [
+        "S_8cc41387"
+      ],
+      "child_features": []
+    },
+    "S_8cc41387": {
+      "type": "Solution",
+      "description": "货架拉出30s再次插入尝试",
+      "parent_problem": "P_28a1695d",
+      "success_node": "SUCCESS"
+    },
+    "P_24ba514d": {
+      "type": "Problem",
+      "description": "如何处理扫码后无法发车的操作流程？",
+      "parent_feature": "F_8a68fc5b",
+      "solutions": [
+        "S_bc9cf819"
+      ],
+      "child_features": []
+    },
+    "S_bc9cf819": {
+      "type": "Solution",
+      "description": "进行指引处理",
+      "parent_problem": "P_24ba514d",
+      "success_node": "SUCCESS"
+    },
+    "F_d2b7bafc": {
+      "type": "Feature",
+      "description": "三区在分拣情况下发货口不会自动驱走机器人",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_d5b6a2f1",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_d5b6a2f1": {
+      "type": "Problem",
+      "description": "配置文件设置不正确。",
+      "parent_feature": "F_d2b7bafc",
+      "solutions": [
+        "S_d57955c9"
+      ],
+      "child_features": []
+    },
+    "S_d57955c9": {
+      "type": "Solution",
+      "description": "需要改配置文件",
+      "parent_problem": "P_d5b6a2f1",
+      "success_node": "SUCCESS"
+    },
+    "P_650ddb1f": {
+      "type": "Problem",
+      "description": "发货口的机器人在空闲状态下未能及时被驱赶。",
+      "parent_feature": "F_e54537e4",
+      "solutions": [
+        "S_a4aa3824"
+      ],
+      "child_features": []
+    },
+    "S_a4aa3824": {
+      "type": "Solution",
+      "description": "打开RCS软件的json配置文件，将发货口自动驱赶空闲太久的机器人设置为true",
+      "parent_problem": "P_650ddb1f",
+      "success_node": "SUCCESS"
+    },
+    "F_e59f7461": {
+      "type": "Feature",
+      "description": "小车到达拣选点无法发车",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_2ea09ee2",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_2ea09ee2": {
+      "type": "Problem",
+      "description": "客户上层软件未收到rcs发送的到达信息，如何解决？",
+      "parent_feature": "F_e59f7461",
+      "solutions": [
+        "S_f3abbeda"
+      ],
+      "child_features": []
+    },
+    "S_f3abbeda": {
+      "type": "Solution",
+      "description": "联系客户检查上层软件问题并修复",
+      "parent_problem": "P_2ea09ee2",
+      "success_node": "SUCCESS"
+    },
+    "P_771aac2e": {
+      "type": "Problem",
+      "description": "如何打开IslnductionQueueLengthEnabled配置？",
+      "parent_feature": "F_b589060c",
+      "solutions": [
+        "S_d6a792af"
+      ],
+      "child_features": []
+    },
+    "S_d6a792af": {
+      "type": "Solution",
+      "description": "打开此配置并重启rcs软件",
+      "parent_problem": "P_771aac2e",
+      "success_node": "SUCCESS"
+    },
+    "F_c8a21fad": {
+      "type": "Feature",
+      "description": "RCS上面限制了排队区的长度不起作用",
+      "parent_node": "ORIGIN",
+      "child_problems": [
+        [
+          "P_e917190f",
+          "soft"
+        ]
+      ],
+      "child_features": []
+    },
+    "P_e917190f": {
+      "type": "Problem",
+      "description": "如何在RCS的json配置文件中打开IslnductionQueueLengthEnabled配置？",
+      "parent_feature": "F_c8a21fad",
+      "solutions": [
+        "S_9ed3c11f"
+      ],
+      "child_features": []
+    },
+    "S_9ed3c11f": {
+      "type": "Solution",
+      "description": "打开此配置并重启RCS软件",
+      "parent_problem": "P_e917190f",
+      "success_node": "SUCCESS"
+    }
+  }
+}
